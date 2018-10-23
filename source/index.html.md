@@ -1,14 +1,13 @@
 ---
-title: API Reference
+title: Komodo API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
   - python
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://www.komodoplatform.com'>Komodo Website</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,13 +18,33 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Komodo API Reference Guide.
+
+Komodo is a blockchain technology that enables developers to run fully independent blockchains in a secure and highly competitive environment.
+
+Each independent blockchain built on the Komodo framework has a wide range of capabilities, including Bitcoin-level security, zero-knowledge privacy, enterprise-level scalability, consensus-level smart-contracts, cross-chain interoperability, and more. Because a Komodo-based blockchain is independently owned, the developer has complete freedom to innovate, so long as the essential connections to the Komodo ecosystem remain.
+
+If you find any bugs or if you have any questions, please reach out to us either through [submitting a ticket](https://support.komodoplatform.com/support/home), or on [our Discord channel](https://komodoplatform.com/discord).
+
+## Installing Basic Komodo Software
+
+To install the Komodo daemon, `komodod`, and the software for sending RPC calls, `komodo-cli`, the simplest method is to simply install the baseline version of [the Agama wallet](https://komodoplatform.com/komodo-wallets/). This will include `komodod` and `komodo-cli` by default. You can find this software in the following directory:
+
+```
+# LOCATION_OF_AGAMA/resources/app/assets/bin/OS_NAME/
+```
+
+Alternatively, you may [install Komodo manually from source](https://docs.komodoplatform.com/komodo/install-Komodo-manually.html). This method is not required, but will allow you to stay up to date with the latest features and updates.
+
+Once it is installed, you can activate  [you can create your own asset chain](https://docs.komodoplatform.com/komodo/create-Komodo-Assetchain.html).
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
+### Sub-Sub-Introduction
+
 This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+## Installing DEX Softare
 
 > To authorize, use this code:
 
@@ -236,4 +255,3 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
