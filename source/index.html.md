@@ -20,23 +20,56 @@ search: true
 
 Welcome to the Komodo API Reference Guide.
 
-Komodo is a blockchain technology that enables developers to run fully independent blockchains in a secure and highly competitive environment.
+Komodo's blockchain technology enables developers to run fully independent blockchains in a secure and highly competitive environment.
 
-Each independent blockchain built on the Komodo framework has a wide range of capabilities, including Bitcoin-level security, zero-knowledge privacy, enterprise-level scalability, consensus-level smart-contracts, cross-chain interoperability, and more. Because a Komodo-based blockchain is independently owned, the developer has complete freedom to innovate, so long as the essential connections to the Komodo ecosystem remain.
+Each independent blockchain built on the Komodo framework has a wide range of capabilities, including Bitcoin-hash rate supported security, zero-knowledge privacy, enterprise-level scalability, consensus-level smart contracts, cross-chain interoperability, and more. Because a Komodo-based blockchain is independently managed, the developer has complete freedom, so long as the essential connections to the Komodo ecosystem remain.
 
-If you find any bugs or if you have any questions, please reach out to us either through [submitting a ticket](https://support.komodoplatform.com/support/home), or on [our Discord channel](https://komodoplatform.com/discord).
+If you find any bugs or if you have any questions, please reach out by [submitting a ticket](https://support.komodoplatform.com/support/home), or by speaking to us directly on [our Discord channel](https://komodoplatform.com/discord).
 
 ## Installing Basic Komodo Software
 
-To install the Komodo daemon, `komodod`, and the software for sending RPC calls, `komodo-cli`, the simplest method is to simply install the baseline version of [the Agama wallet](https://komodoplatform.com/komodo-wallets/). This will include `komodod` and `komodo-cli` by default. You can find this software in the following directory:
+To install the Komodo daemon, `komodod`, and its necessary counterpart, `komodo-cli`, the simplest method is to [install the latest version of the Agama wallet](https://komodoplatform.com/komodo-wallets/). Follow the instructions for your preferred operating system.
 
-```
-# LOCATION_OF_AGAMA/resources/app/assets/bin/OS_NAME/
-```
+Once installed, you should find `komodod` and `komodo-cli` in the following directory structure:
 
-Alternatively, you may [install Komodo manually from source](https://docs.komodoplatform.com/komodo/install-Komodo-manually.html). This method is not required, but will allow you to stay up to date with the latest features and updates.
+`LOCATION_OF_AGAMA_INSTALLATION/resources/app/assets/bin/OS_NAME/`
 
-Once it is installed, you can activate  [you can create your own asset chain](https://docs.komodoplatform.com/komodo/create-Komodo-Assetchain.html).
+You may also build `komodod` and `komodo-cli` from source, when you are ready to keep abreast of the latest features and updates. This is not necessary during the testing phase, but is considered the best practice for a blockchain in a production setting. Building from source enables you to receive security patches the moment they are pushed to the `komodod` source. You may find [a walkthrough here](https://docs.komodoplatform.com/komodo/install-Komodo-manually.html).
+
+## Interacting with Komodo-based Blockchains
+
+Navigate to this location, and then to launch the main KMD chain, execute:
+
+`./komodod`
+
+After the daemon launches, you may interact with it using `komodo-cli` like so:
+
+`./komodo-cli getnewaddress`
+
+Likewise, the `komodod` daemon allows you to launch other Komodo-based blockchains, and `komodo-cli` allows you to interact. The list of launch parameters [for each Komodod-based blockchain can be found here](https://github.com/VerusCoin/VerusCoin/blob/master/src/assetchains.old).
+
+For example, to launch the DEX asset chain, execute:
+
+`./komodod -pubkey=$pubkey -ac_name=DEX -ac_supply=999999 -addnode=78.47.196.146 $1 &`
+
+<aside class="warning">
+IMPORTANT: Always execute the launch command EXACTLY as it appears in this list, or as the asset-chain's developers instruct. Failure to do so will cause the 'magic' property to malfunction, and you will have to reinstall and re-sync to regain access to the blockchain's network.
+</aside>
+
+To interact with the DEX daemon, use `komodo-cli` like so:
+
+`./komodo-cli -ac_name=DEX getnewaddress`
+
+Detailed descriptions of all Komodo commands and parameters are provided below.
+
+For more information about creating and interacting with asset chains, please visit our [full documentation here](https://docs.komodoplatform.com/komodo/create-Komodo-Assetchain.html).
+
+<aside class="warning">
+IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives our dPoW security services.
+</aside>
+
+For more details on launching your own Komodo-based blockchain, please read [this walkthrough](https://docs.komodoplatform.com/komodo/create-Komodo-Assetchain.html).
+
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
