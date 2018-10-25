@@ -190,7 +190,7 @@ Structure|Type|Description
   "start"|(number)|the start block height
   "end"|(number)|the end block height
   "chainInfo"|(boolean)|include chain info in results (only applies if start and end specified)
-}
+}| | 
 
 ### Response
 
@@ -456,7 +456,7 @@ The `getaddressutxos` method returns all unspent outputs for an address. It requ
 
 Structure|Type|Description
 ---------|----|-----------
-	{| | 
+	{| |
 	  "addresses"| |
 	    [| |
 	      "address"|(string)|the address
