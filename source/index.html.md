@@ -21,6 +21,9 @@ includes:
   - 115-disclosure
   - 119-generate
   - 123-mining
+  - 127-network
+  - 131-rawtransactions
+  - 134-util
 
 search: true
 ---

@@ -1,0 +1,7 @@
+{                                            |                             |
+"isvalid"                                    |(boolean)                    |indicates whether the address is valid; if not, this is the only property returned
+"address"                                    |(string)                     |the z address validated
+"ismine"                                     |(boolean)                    |indicates if the address is yours or not
+"payingkey"                                  |(string)                     |the hex value of the paying key, a_pk
+"transmissionkey"                            |(string)                     |the hex value of the transmission key, pk_enc
+}                                            |                             |
