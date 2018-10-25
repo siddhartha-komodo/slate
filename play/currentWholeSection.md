@@ -1,40 +1,77 @@
-z_validatepaymentdisclosure
----------------------------
+## setgenerate
 
-::
+> Turn on generation with unlimited processors:
 
-  z_validatepaymentdisclosure "paymentdisclosure"
+```
+command:
 
-The ``z_validatepaymentdisclosure`` method validates a payment disclosure.
+komodo-cli setgenerate true -1
 
-**EXPERIMENTAL FEATURE**
+response:
 
-**WARNING**: Payment disclosure is currently DISABLED. This call always fails.
+(none)
+```
 
-Arguments:
+> Check the setting:
 
-::
+```
+command:
 
-	"paymentdisclosure"       (string, required)   hex data string, with "zpd:" prefix
+komodo-cli getgenerate
 
-Examples:
+response:
 
-::
+true
+```
 
-  command:
+> Turn off generation:
 
-  komodo-cli z_validatepaymentdisclosure "zpd:706462ff004c561a0447ba2ec51184e6c204..."
+```
+command:
 
-  response:
+komodo-cli setgenerate false
 
-  (currently disabled)
+response:
 
-::
+(none)
+```
 
-  command:
+> Turning the setting on via json rpc:
 
-  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_validatepaymentdisclosure", "params": ["zpd:706462ff004c561a0447ba2ec51184e6c204..."] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+```
+command:
 
-  response:
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setgenerate", "params": [true, 1] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
 
-  (currently disabled)
+response:
+
+{
+  "result": null,
+  "error": null,
+  "id": "curltest"
+}
+```
+
+**setgenerate generate ( genproclimit )**
+
+The `setgenerate` method allows the user to set the `generate` property in the coin daemon to `true` or `false`, thus turning generation (mining) on or off.
+
+Generation is limited to [`genproclimit`](## genproclimit) processors. Set `genproclimit` to `-1` for unlimited.
+
+<aside class="notice">
+  See also the [`getgenerate`](## getgenerate) method to query the current setting, and [`genproclimit`](##genproclimit) for setting processor default parameters.
+</aside>
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+generate                                     |(boolean, required)          |set to true to turn on generation; set to off to turn off generation
+genproclimit                                 |(numeric, optional)          |set the processor limit for when generation is on; use value "-1" for unlimited
+
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------
+(none)

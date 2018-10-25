@@ -1,13 +1,13 @@
-## z_validatepaymentdisclosure
+## getgenerate
 
 ```
 command:
 
-komodo-cli z_validatepaymentdisclosure "zpd:706462ff004c561a0447ba2ec51184e6c204..."
+komodo-cli getgenerate
 
 response:
 
-(currently disabled)
+false
 ```
 
 > You can find your rpcuser, rpcpassword, and rpcport in the coin's .conf file.
@@ -15,30 +15,35 @@ response:
 ```
 command:
 
-curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "z_validatepaymentdisclosure", "params": ["zpd:706462ff004c561a0447ba2ec51184e6c204..."] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgenerate", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
 
 response:
 
-(currently disabled)
+{
+  "result": false,
+  "error": null,
+  "id": "curltest"
+}
 ```
 
-**z_validatepaymentdisclosure "paymentdisclosure"**
+**getgenerate**
 
-The ``z_validatepaymentdisclosure`` method validates a payment disclosure.
+The `getgenerate` method returns a boolean value indicating the server's mining status.
 
-<aside class="warning">
-**EXPERIMENTAL FEATURE**
-Payment disclosure is currently DISABLED. This call always fails.
+The default value is false.
+
+<aside class="notice">
+  See also [`-gen`](## gen).
 </aside>
 
 ### Arguments:
 
 Structure|Type|Description
 ---------|----|-----------
-"paymentdisclosure"                          |(string, required)           |hex data string, with "zpd:" prefix
+(none)                                       |(none)                       |
 
 ### Response:
 
 Structure|Type|Description
 ---------|----|-----------
-(currently disabled)                         |                             |
+true/false                                   |(boolean)                    |indicates whether the server is set to generate coins
