@@ -376,6 +376,9 @@
                     <a href="#getblockchaininfo" class="toc-h2 toc-link" data-title="getblockchaininfo">getblockchaininfo</a>
                   </li>
                   <li>
+                    <a href="#getblockcount" class="toc-h2 toc-link" data-title="getblockcount">getblockcount</a>
+                  </li>
+                  <li>
                     <a href="#getblockhash" class="toc-h2 toc-link" data-title="getblockhash">getblockhash</a>
                   </li>
                   <li>
@@ -2114,7 +2117,112 @@ response:
 <td>a string that is serialized, hex-encoded data for the indicated block</td>
 </tr>
 </tbody></table>
-<h2 id='getblockchaininfo'>getblockchaininfo</h2>
+<h2 id='getblockchaininfo'>getblockchaininfo</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockchaininfo
+
+response:
+
+{
+  "chain": "regtest",
+  "blocks": 398,
+  "headers": 398,
+  "bestblockhash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+  "difficulty": 1.000023305960651,
+  "verificationprogress": 1,
+  "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+  "pruned": false,
+  "commitments": 0,
+  "valuePools": [
+    {
+      "id": "sprout",
+      "monitored": true,
+      "chainValue": 0.00000000,
+      "chainValueZat": 0
+    }
+  ],
+  "softforks": [
+    {
+      "id": "bip34",
+      "version": 2,
+      "enforce": {
+        "status": false,
+        "found": 399,
+        "required": 750,
+        "window": 1000
+      },
+      "reject": {
+        "status": false,
+        "found": 399,
+        "required": 950,
+        "window": 1000
+      }
+    }
+  ],
+  "upgrades": {
+  },
+  "consensus": {
+    "chaintip": "00000000",
+    "nextblock": "00000000"
+  }
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "chain": "regtest",
+    "blocks": 398,
+    "headers": 398,
+    "bestblockhash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+    "difficulty": 1.000023305960651,
+    "verificationprogress": 1,
+    "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+    "pruned": false,
+    "commitments": 0,
+    "valuePools": [
+      {
+        "id": "sprout",
+        "monitored": true,
+        "chainValue": 0,
+        "chainValueZat": 0
+      }
+    ],
+    "softforks": [
+      {
+        "id": "bip34",
+        "version": 2,
+        "enforce": {
+          "status": false,
+          "found": 399,
+          "required": 750,
+          "window": 1000
+        },
+        "reject": {
+          "status": false,
+          "found": 399,
+          "required": 950,
+          "window": 1000
+        }
+      }
+    ],
+    "upgrades": {},
+    "consensus": {
+      "chaintip": "00000000",
+      "nextblock": "00000000"
+    }
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
 <p><strong>getblockchaininfo</strong></p>
 
 <p>The <code>getblockchaininfo</code> method returns a json object containing state information about blockchain processing.</p>
@@ -2256,133 +2364,81 @@ When the chain tip is at the last block before a network upgrade activation, the
 </tr>
 <tr>
 <td>}, ...</td>
+<td></td>
+<td>accepts multiple entries</td>
+</tr>
+<tr>
+<td>],</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;upgrades&quot;: {</td>
+<td>(object)</td>
+<td>status of network upgrades</td>
+</tr>
+<tr>
+<td>&quot;xxxxxxxxx_string&quot;: {</td>
+<td>(string)</td>
+<td>branch ID of the upgrade</td>
+</tr>
+<tr>
+<td>&quot;name&quot;</td>
+<td>(string)</td>
+<td>name of upgrade</td>
+</tr>
+<tr>
+<td>&quot;activationheight&quot;</td>
+<td>(numeric)</td>
+<td>block height of activation</td>
+</tr>
+<tr>
+<td>&quot;status&quot;</td>
+<td>(string)</td>
+<td>status of upgrade</td>
+</tr>
+<tr>
+<td>&quot;info&quot;</td>
+<td>(string)</td>
+<td>additional information about upgrade</td>
+</tr>
+<tr>
+<td>}, ...</td>
 <td>accepts multiple entries</td>
 <td></td>
 </tr>
+<tr>
+<td>},</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;consensus&quot;: {</td>
+<td>(object)</td>
+<td>branch IDs of the current and upcoming consensus rules</td>
+</tr>
+<tr>
+<td>&quot;chaintip&quot;</td>
+<td>(string)</td>
+<td>branch ID used to validate the current chain tip</td>
+</tr>
+<tr>
+<td>&quot;nextblock&quot;</td>
+<td>(string)</td>
+<td>branch ID that the next block will be validated under</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
-
-<p>],
-    &quot;upgrades&quot;: {|(object)|status of network upgrades
-      &quot;xxxxxxxxx_string&quot;: {|(string)|branch ID of the upgrade
-          &quot;name&quot;|(string)|name of upgrade
-          &quot;activationheight&quot;|(numeric)|block height of activation
-          &quot;status&quot;|(string)|status of upgrade
-          &quot;info&quot;|(string)|additional information about upgrade
-      }, ...|accepts multiple entries
-    },| |
-    &quot;consensus&quot;: {|(object)|branch IDs of the current and upcoming consensus rules
-     &quot;chaintip&quot;|(string)|branch ID used to validate the current chain tip
-     &quot;nextblock&quot;|(string)|branch ID that the next block will be validated under
-    }| |
-  }| |</p>
-<pre class="highlight plaintext"><code>command:
-
-komodo-cli getblockchaininfo
-
-response:
-
-{
-  "chain": "regtest",
-  "blocks": 398,
-  "headers": 398,
-  "bestblockhash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
-  "difficulty": 1.000023305960651,
-  "verificationprogress": 1,
-  "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
-  "pruned": false,
-  "commitments": 0,
-  "valuePools": [
-    {
-      "id": "sprout",
-      "monitored": true,
-      "chainValue": 0.00000000,
-      "chainValueZat": 0
-    }
-  ],
-  "softforks": [
-    {
-      "id": "bip34",
-      "version": 2,
-      "enforce": {
-        "status": false,
-        "found": 399,
-        "required": 750,
-        "window": 1000
-      },
-      "reject": {
-        "status": false,
-        "found": 399,
-        "required": 950,
-        "window": 1000
-      }
-    }
-  ],
-  "upgrades": {
-  },
-  "consensus": {
-    "chaintip": "00000000",
-    "nextblock": "00000000"
-  }
-}
-</code></pre>
-<blockquote>
-<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
-</blockquote>
-<pre class="highlight plaintext"><code>command:
-
-curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
-
-response:
-
-{
-  "result": {
-    "chain": "regtest",
-    "blocks": 398,
-    "headers": 398,
-    "bestblockhash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
-    "difficulty": 1.000023305960651,
-    "verificationprogress": 1,
-    "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
-    "pruned": false,
-    "commitments": 0,
-    "valuePools": [
-      {
-        "id": "sprout",
-        "monitored": true,
-        "chainValue": 0,
-        "chainValueZat": 0
-      }
-    ],
-    "softforks": [
-      {
-        "id": "bip34",
-        "version": 2,
-        "enforce": {
-          "status": false,
-          "found": 399,
-          "required": 750,
-          "window": 1000
-        },
-        "reject": {
-          "status": false,
-          "found": 399,
-          "required": 950,
-          "window": 1000
-        }
-      }
-    ],
-    "upgrades": {},
-    "consensus": {
-      "chaintip": "00000000",
-      "nextblock": "00000000"
-    }
-  },
-  "error": null,
-  "id": "curltest"
-}
-</code></pre>
-<p>getblockcount</p>
-
+<h2 id='getblockcount'>getblockcount</h2>
 <p><strong>getblockcount</strong></p>
 
 <p>The <code>getblockcount</code> method returns the number of blocks in the best valid block chain.</p>
