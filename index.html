@@ -2546,7 +2546,29 @@ response:
 <td>the block hash</td>
 </tr>
 </tbody></table>
-<h2 id='getblockhashes'>getblockhashes</h2>
+<h2 id='getblockhashes'>getblockhashes</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockhashes 1231614698 1231024505
+
+response:
+
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockhashes 1231614698 1231024505 '{"noOrphans":false, "logicalTimes":true}'
+
+response:
+
+</code></pre>
 <p><strong>getblockhashes high low &#39;{&quot;noOrphans&quot;: bool, &quot;logicalTimes&quot;: bool}&#39;</strong></p>
 
 <p>The <code>getblockhashes</code> method returns an array of hashes of blocks within the timestamp range provided.</p>
@@ -2648,29 +2670,7 @@ response:
 <td></td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
-</blockquote>
-<pre class="highlight plaintext"><code>command:
-
-komodo-cli getblockhashes 1231614698 1231024505
-
-response:
-
-</code></pre><pre class="highlight plaintext"><code>command:
-
-curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
-
-response:
-
-</code></pre><pre class="highlight plaintext"><code>command:
-
-komodo-cli getblockhashes 1231614698 1231024505 '{"noOrphans":false, "logicalTimes":true}'
-
-response:
-
-</code></pre><h2 id='getblockheader'>getblockheader</h2><pre class="highlight plaintext"><code>command:
+<h2 id='getblockheader'>getblockheader</h2><pre class="highlight plaintext"><code>command:
 
 komodo-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
 
