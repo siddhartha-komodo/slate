@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Komodo API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;C&#x2F;C++&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;(more coming)&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,10 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="C/C++">C/C++</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="(more coming)">(more coming)</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -223,30 +224,183 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#installing-basic-komodo-software" class="toc-h2 toc-link" data-title="Installing Basic Komodo Software">Installing Basic Komodo Software</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#interacting-with-komodo-chains" class="toc-h2 toc-link" data-title="Interacting with Komodo Chains">Interacting with Komodo Chains</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#komodo-39-s-native-dex-barterdex" class="toc-h2 toc-link" data-title="Komodo's Native DEX: BarterDEX">Komodo's Native DEX: BarterDEX</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#settings-parameters-amp-maintenance" class="toc-h1 toc-link" data-title="Settings, Parameters, &amp; Maintenance">Settings, Parameters, &amp; Maintenance</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#accessing-the-coin-daemon-remotely" class="toc-h2 toc-link" data-title="Accessing the Coin Daemon Remotely">Accessing the Coin Daemon Remotely</a>
+                  </li>
+                  <li>
+                    <a href="#manually-deleting-blockchain-data" class="toc-h2 toc-link" data-title="Manually Deleting Blockchain Data">Manually Deleting Blockchain Data</a>
+                  </li>
+                  <li>
+                    <a href="#intro-to-parameters-and-settings" class="toc-h2 toc-link" data-title="Intro to Parameters and Settings">Intro to Parameters and Settings</a>
+                  </li>
+                  <li>
+                    <a href="#addressindex" class="toc-h2 toc-link" data-title="addressindex">addressindex</a>
+                  </li>
+                  <li>
+                    <a href="#txindex" class="toc-h2 toc-link" data-title="txindex">txindex</a>
+                  </li>
+                  <li>
+                    <a href="#reindex" class="toc-h2 toc-link" data-title="reindex">reindex</a>
+                  </li>
+                  <li>
+                    <a href="#timestampindex" class="toc-h2 toc-link" data-title="timestampindex">timestampindex</a>
+                  </li>
+                  <li>
+                    <a href="#spentindex" class="toc-h2 toc-link" data-title="spentindex">spentindex</a>
+                  </li>
+                  <li>
+                    <a href="#regtest" class="toc-h2 toc-link" data-title="regtest">regtest</a>
+                  </li>
+                  <li>
+                    <a href="#bantime" class="toc-h2 toc-link" data-title="bantime">bantime</a>
+                  </li>
+                  <li>
+                    <a href="#mempooltxinputlimit" class="toc-h2 toc-link" data-title="mempooltxinputlimit">mempooltxinputlimit</a>
+                  </li>
+                  <li>
+                    <a href="#proxy" class="toc-h2 toc-link" data-title="proxy">proxy</a>
+                  </li>
+                  <li>
+                    <a href="#bind" class="toc-h2 toc-link" data-title="bind">bind</a>
+                  </li>
+                  <li>
+                    <a href="#whitebind" class="toc-h2 toc-link" data-title="whitebind">whitebind</a>
+                  </li>
+                  <li>
+                    <a href="#addnode" class="toc-h2 toc-link" data-title="addnode">addnode</a>
+                  </li>
+                  <li>
+                    <a href="#connect" class="toc-h2 toc-link" data-title="connect">connect</a>
+                  </li>
+                  <li>
+                    <a href="#gen" class="toc-h2 toc-link" data-title="gen">gen</a>
+                  </li>
+                  <li>
+                    <a href="#listen" class="toc-h2 toc-link" data-title="listen">listen</a>
+                  </li>
+                  <li>
+                    <a href="#maxconnections" class="toc-h2 toc-link" data-title="maxconnections">maxconnections</a>
+                  </li>
+                  <li>
+                    <a href="#server" class="toc-h2 toc-link" data-title="server">server</a>
+                  </li>
+                  <li>
+                    <a href="#rpcbind" class="toc-h2 toc-link" data-title="rpcbind">rpcbind</a>
+                  </li>
+                  <li>
+                    <a href="#rpcclienttimeout" class="toc-h2 toc-link" data-title="rpcclienttimeout">rpcclienttimeout</a>
+                  </li>
+                  <li>
+                    <a href="#rpcallowip" class="toc-h2 toc-link" data-title="rpcallowip">rpcallowip</a>
+                  </li>
+                  <li>
+                    <a href="#rpcport" class="toc-h2 toc-link" data-title="rpcport">rpcport</a>
+                  </li>
+                  <li>
+                    <a href="#rpcconnect" class="toc-h2 toc-link" data-title="rpcconnect">rpcconnect</a>
+                  </li>
+                  <li>
+                    <a href="#sendfreetransactions" class="toc-h2 toc-link" data-title="sendfreetransactions">sendfreetransactions</a>
+                  </li>
+                  <li>
+                    <a href="#genproclimit" class="toc-h2 toc-link" data-title="genproclimit">genproclimit</a>
+                  </li>
+                  <li>
+                    <a href="#keypool" class="toc-h2 toc-link" data-title="keypool">keypool</a>
+                  </li>
+                  <li>
+                    <a href="#rewind" class="toc-h2 toc-link" data-title="rewind">rewind</a>
+                  </li>
+                  <li>
+                    <a href="#stopat" class="toc-h2 toc-link" data-title="stopat">stopat</a>
+                  </li>
+                  <li>
+                    <a href="#pubkey" class="toc-h2 toc-link" data-title="pubkey">pubkey</a>
+                  </li>
+                  <li>
+                    <a href="#exchange" class="toc-h2 toc-link" data-title="exchange">exchange</a>
+                  </li>
+                  <li>
+                    <a href="#donation" class="toc-h2 toc-link" data-title="donation">donation</a>
+                  </li>
+                  <li>
+                    <a href="#exportdir" class="toc-h2 toc-link" data-title="exportdir">exportdir</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#address-index" class="toc-h1 toc-link" data-title="Address Index">Address Index</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getaddressbalance" class="toc-h2 toc-link" data-title="getaddressbalance">getaddressbalance</a>
+                  </li>
+                  <li>
+                    <a href="#getaddressdeltas" class="toc-h2 toc-link" data-title="getaddressdeltas">getaddressdeltas</a>
+                  </li>
+                  <li>
+                    <a href="#getaddressmempool" class="toc-h2 toc-link" data-title="getaddressmempool">getaddressmempool</a>
+                  </li>
+                  <li>
+                    <a href="#getaddresstxids" class="toc-h2 toc-link" data-title="getaddresstxids">getaddresstxids</a>
+                  </li>
+                  <li>
+                    <a href="#getaddressutxos" class="toc-h2 toc-link" data-title="getaddressutxos">getaddressutxos</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#blockchain" class="toc-h1 toc-link" data-title="Blockchain">Blockchain</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getbestblockhash" class="toc-h2 toc-link" data-title="getbestblockhash">getbestblockhash</a>
+                  </li>
+                  <li>
+                    <a href="#getblock" class="toc-h2 toc-link" data-title="getblock">getblock</a>
+                  </li>
+                  <li>
+                    <a href="#getblockchaininfo" class="toc-h2 toc-link" data-title="getblockchaininfo">getblockchaininfo</a>
+                  </li>
+                  <li>
+                    <a href="#getblockhash" class="toc-h2 toc-link" data-title="getblockhash">getblockhash</a>
+                  </li>
+                  <li>
+                    <a href="#getblockhashes" class="toc-h2 toc-link" data-title="getblockhashes">getblockhashes</a>
+                  </li>
+                  <li>
+                    <a href="#getblockheader" class="toc-h2 toc-link" data-title="getblockheader">getblockheader</a>
+                  </li>
+                  <li>
+                    <a href="#getchaintips" class="toc-h2 toc-link" data-title="getchaintips">getchaintips</a>
+                  </li>
+                  <li>
+                    <a href="#getmempoolinfo" class="toc-h2 toc-link" data-title="getmempoolinfo">getmempoolinfo</a>
+                  </li>
+                  <li>
+                    <a href="#gettxout" class="toc-h2 toc-link" data-title="gettxout">gettxout</a>
+                  </li>
+                  <li>
+                    <a href="#gettxoutsetinfo" class="toc-h2 toc-link" data-title="gettxoutsetinfo">gettxoutsetinfo</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://www.komodoplatform.com'>Komodo Website</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -254,250 +408,3261 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Komodo API Reference Guide.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Komodo&#39;s blockchain technology enables developers to run fully independent blockchains in a secure and highly competitive environment.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Each independent blockchain built on the Komodo framework has a wide range of capabilities, including Bitcoin-hash rate supported security, zero-knowledge privacy, enterprise-level scalability, consensus-level smart contracts, cross-chain interoperability, and more. Because a Komodo-based blockchain is independently managed, the developer has complete freedom, so long as the essential connections to the Komodo ecosystem remain.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>If you find any bugs or if you have any questions, please reach out by <a href="https://support.komodoplatform.com/support/home">submitting a ticket</a>, or by speaking to us directly on <a href="https://komodoplatform.com/discord">our Discord channel</a>.</p>
+<h2 id='installing-basic-komodo-software'>Installing Basic Komodo Software</h2>
+<p>To install the Komodo daemon, <code>komodod</code>, and its necessary counterpart, <code>komodo-cli</code>, the simplest method is to <a href="https://komodoplatform.com/komodo-wallets/">install the latest version of the Agama wallet</a>. Follow the instructions for your preferred operating system.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>Once installed, you should find <code>komodod</code> and <code>komodo-cli</code> in the following directory structure:</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p><code>LOCATION_OF_AGAMA_INSTALLATION/resources/app/assets/bin/OS_NAME/</code></p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>You may also build <code>komodod</code> and <code>komodo-cli</code> from source, when you are ready to keep abreast of the latest features and updates. This is not necessary during the testing phase, but is considered the best practice for a blockchain in a production setting. Building from source enables you to receive security patches the moment they are pushed to the <code>komodod</code> source.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>You will find <a href="https://docs.komodoplatform.com/komodo/install-Komodo-manually.html">a walkthrough on building from source here</a>.</p>
+<h2 id='interacting-with-komodo-chains'>Interacting with Komodo Chains</h2>
+<p>There are two cooperating pieces of software that the user utilizes when running a Komodo-compatible blockchain from the command line.</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>The first is the coin daemon itself, <code>komodod</code>. This is initiated by calling it from the command line and including any desired runtime parameters. When initiating any Komodo-compatible blockchain other than the main KMD blockchain, the user should also include the <code>-ac_name=COINNAME</code> and <code>-ac_supply=COINSUPPLY</code> parameters.</p>
+
+<p>Once installed, find the installation location.</p>
+
+<ul>
+<li>Binary:
+https://github.com/KomodoPlatform/komodo/releases</li>
+</ul>
+
+<p>If you used the default Agama installer:</p>
+
+<p>MacOS: <code>?</code></p>
+
+<p>Windows: <code>?</code></p>
+
+<p>GNU/Linux: <code>/opt/AgamaApp/resources/app/assets/bin/OS_NAME/</code></p>
+
+<p>If you built Komodo from source:</p>
+
+<p>MacOS: <code>?</code></p>
+
+<p>Win: <code>?</code></p>
+
+<p>GNU/Linux: <code>~/komodo/src/</code></p>
+
+<p>To launch the main KMD chain, execute:</p>
+
+<p><code>./komodod</code></p>
+
+<p>After the daemon launches, you may interact with it using <code>komodo-cli</code> like so:</p>
+
+<p><code>./komodo-cli [API Command]</code></p>
+
+<p>If you are using windows, replace <code>./komodod</code> and <code>./komodo-cli</code> with <code>komodod.exe</code> and <code>komodo-cli.exe</code> for each step.</p>
+
+<p>To launch another Komodo-based blockchain, include the necessary parameters. The list of launch parameters for each Komodod-based blockchain <a href="https://github.com/VerusCoin/VerusCoin/blob/master/src/assetchains.old">is found here</a>.</p>
+
+<p>For example, to launch the DEX asset chain, execute:</p>
+
+<p><code>./komodod -pubkey=$pubkey -ac_name=DEX -ac_supply=999999 -addnode=78.47.196.146 $1 &amp;</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+IMPORTANT: Always execute the launch command EXACTLY as indicated, and as the asset-chain's developers instruct. Failure to do so will cause the blockchain's internal settings to malfunction, and you will have to reinstall and re-sync to regain access to the blockchain's network.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>To interact with the DEX daemon, use <code>komodo-cli</code> like so:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p><code>./komodo-cli -ac_name=DEX getnewaddress</code></p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p>Detailed descriptions of all Komodo commands and parameters are provided below.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<p>Also, in the terminal you can call the Komodo documentation by executing:</p>
+
+<p><code>komodo-cli help</code></p>
+
+<p>To learn more via the terminal about a specific API command, execute:</p>
+
+<p><code>komodo-cli help [API COMMAND]</code></p>
+
+<p>For more information about creating and interacting with asset chains, please visit our <a href="https://docs.komodoplatform.com/komodo/create-Komodo-Assetchain.html">full asset-chain creation documentation here</a>.</p>
+
+<p>Follow this link to find information on <a href="##%20Accessing%20the%20Coin%20Daemon%20Remotely">accessing the coin daemon remotely</a>.</p>
+
+<aside class="warning">
+IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives our dPoW security services.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='komodo-39-s-native-dex-barterdex'>Komodo&#39;s Native DEX: BarterDEX</h2>
+<p>Komodo offers built-in compatibility with a our separately created, atomic-swap powered, decentralized-exchange engine, BarterDEX.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Through the atomic-swap technology that we pioneer, anyone can use our decentralized software, and the end-users utilizing BarterDEX maintain ownership of their private keys at all times. This means that the developers maintaining any cluster of traders utilizing the BarterDEX software are not acting in the capacity of escrow-service and trading providers, unlike other exchanges.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>BarterDEX&#39;s software is installed and accessed separately.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>Because the BarterDEX software is separate from <code>komodod</code> and <code>komodo-cli</code>, at this time we do not include it in this API documentation. Rather, you may find <a href="https://docs.komodoplatform.com/barterDEX/barterDEX-API.html">API documentation for BarterDEX here</a>.</p>
+<h1 id='settings-parameters-amp-maintenance'>Settings, Parameters, &amp; Maintenance</h1><h2 id='accessing-the-coin-daemon-remotely'>Accessing the Coin Daemon Remotely</h2>
+<blockquote>
+<p>Contents of a KMD .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>rpcuser=myusername
+rpcpassword=myrpcpassword
+server=1
+rpcport=7771
+addnode=78.47.196.146
+addnode=5.9.102.210
+addnode=178.63.69.164
+addnode=88.198.65.74
+addnode=5.9.122.241
+addnode=144.76.94.3
+</code></pre>
+<p>To access a coin daemon remotely -- for example, via a <code>curl</code> command in the shell -- the user will need to obtain the <code>rpcuser</code>, <code>rpcpassword</code>, and <code>rpcport</code> from the <code>.conf</code> file of the relevant coin daemon.</p>
+
+<p>Assuming the default installation location, the <code>.conf</code> file can be found by exploring the following directories:</p>
+
+<p><code>MacOS: ~/Library/Application Support/Komodo</code></p>
+
+<p><code>Windows: C:\Users\myusername\AppData\Roaming\Komodo\</code></p>
+
+<p><code>GNU/Linux: ~/.komodo</code></p>
+
+<p>Within that directory there are also subdirectories containing all KMD-compatible coin daemon <code>.conf</code> files.</p>
+<h2 id='manually-deleting-blockchain-data'>Manually Deleting Blockchain Data</h2>
+<p>Sometimes it is necessary to manually delete all blockchain data. This should automatically trigger a full resync of the blockchain.</p>
+
+<p>Users should exercise caution not to delete the <code>wallet.dat</code> file during this procedure. We recommend that the user make frequent backups of the <code>wallet.dat</code> file, especially before deleting files from the application directory.</p>
+
+<p>To erase all synced blockchain data, the following files should be deleted from the <code>.komodo</code> folder:</p>
+
+<p><code>blocks</code></p>
+
+<p><code>chainstate</code></p>
+
+<p><code>notarisations</code></p>
+
+<p><code>komodostate</code></p>
+
+<p><code>komodostate.ind</code></p>
+
+<p><strong>These files can typically be found in the default file locations:</strong></p>
+
+<p><code>MacOS: ~/Library/Application Support/Komodo</code></p>
+
+<p><code>Windows: C:\Users\myusername\AppData\Roaming\Komodo\</code></p>
+
+<p><code>GNU/Linux: ~/.komodo</code></p>
+<h2 id='intro-to-parameters-and-settings'>Intro to Parameters and Settings</h2>
+<p>The following is an abbreviated list of runtime parameters and settings that can be initiated in a <a href="##%20Accessing%20the%20Coin%20Daemon%20Remotely">coin daemon&#39;s .conf file</a>.</p>
+
+<p>These commands largely derive from the upstream Bitcoin software, <code>bitcoind</code>. (Komodo is a fork of Zcash, and Zcash is a privacy-centric fork of Bitcoin. Therefore essentially all commands available in both Bitcoin and Zcash are available in Komodo.)</p>
+
+<p>To see additional runtime parameters not included here, please visit <a href="https://en.bitcoin.it/wiki/Running_Bitcoin">the relevant Bitcoin wiki page</a>.</p>
+<h2 id='addressindex'>addressindex</h2>
+<blockquote>
+<p>Using addressindex as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -addressindex=1
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Using addressindex as a default value in the coin&#39;s .conf file:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<pre class="highlight plaintext"><code>  addressindex=1
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
+<p><code>addressindex</code> instructs a KMD-based coin daemon to maintain an index of all addresses and balances.</p>
+
+<p>The user should <a href="##%20Manually%20Deleting%20Blockchain%20Data">manually delete the blockchain data</a> before initiating this parameter.</p>
+
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+[The `-reindex` parameter](### reindex) is not a viable alternative method for re-syncing the blockchain in this circumstance.
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p><code>addressindex</code> is enabled by default on any asset chain that utilizes the CryptoConditions (CC) smart-contract protocol.</p>
+<h2 id='txindex'>txindex</h2>
+<p><code>txindex</code> instructs a KMD-based coin daemon to track every transaction made on the relevant blockchain.</p>
 
+<p><code>txindex</code> is enabled by default on all KMD-based coin daemons, and is utilized in delayed Proof of Work (dPoW), JUMBLR, and the CryptoConditions (CC) smart-contract protocol. Disabling the feature will cause a normal KMD-based coin daemon to malfunction.</p>
+<h2 id='reindex'>reindex</h2>
+<blockquote>
+<p>Using reindex as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -reindex
+</code></pre>
+<p><code>reindex</code> instructs the daemon to re-index the currently synced blockchain data.</p>
+
+<aside class="notice">
+Depending on the size and state of the chain you are re-indexing, this parameter may prolong the daemon launch time.
+</aside>
+<h2 id='timestampindex'>timestampindex</h2>
+<blockquote>
+<p>Using timestampindex as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  ./komodod -timestampindex=1
+</code></pre>
+<blockquote>
+<p>Using timestampindex as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  timestampindex=1
+</code></pre>
+<p><code>timestampindex</code> instructs a KMD-based coin daemon to maintain a timestamp index for all blockhashes.</p>
+
+<p>The user should manually delete the blockchain data before initiating this parameter ===link to manual deletion instructions===.</p>
+
+<aside class="notice">
+[The `-reindex` parameter](### reindex) is NOT a viable alternative method for re-syncing the blockchain in this circumstance.
+</aside>
+<h2 id='spentindex'>spentindex</h2>
+<blockquote>
+<p>Using spentindex as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -spentindex=1
+</code></pre>
+<blockquote>
+<p>Using spentindex as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  spentindex=1
+</code></pre>
+<p><code>spentindex</code> instructs a KMD-based coin daemon to maintain a full index of all spent transactions (txids).</p>
+
+<p>The user should <a href="##%20Manually%20Deleting%20Blockchain%20Data">manually delete the blockchain data</a> before initiating this parameter.</p>
+
+<p><code>spentindex</code> is enabled by default on any asset chain that utilizes the CryptoConditions (CC) smart contract protocol.</p>
+
+<aside class="notice">
+[The `-reindex` parameter](### reindex) is NOT a viable alternative method for re-syncing the blockchain in this circumstance.
+</aside>
+<h2 id='regtest'>regtest</h2>
+<blockquote>
+<p>Using regtest as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -ac_name=TEST -regtest
+</code></pre>
+<blockquote>
+<p>Using regtest as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>regtest=0
+</code></pre>
+<p><code>regtest</code> instructs the coin daemon to run a regression test network. Typically, the user will create a disposable asset chain for these purposes. The asset-chain coin supply parameter is not required in this instance.</p>
+
+<p>(A regression-test network is a useful tool for rapid trial and testing. Please reach out to our team if you are curious to implement this tool in your workflow and are unfamiliar with how it is done.)</p>
+<h2 id='bantime'>bantime</h2>
+<blockquote>
+<p>Using bantime as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -bantime=100000
+</code></pre>
+<blockquote>
+<p>Using bantime as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  bantime=100000
+</code></pre>
+<p><code>bantime</code> sets the default number of seconds for a ban initiated during the daemon&#39;s session. The default is 86400.</p>
+<h2 id='mempooltxinputlimit'>mempooltxinputlimit</h2>
+<p>** DEPRECATED **</p>
+
+<p><code>mempooltxinputlimit</code> is a runtime parameter inherited from Zcash. The functionality it facilitated is now enabled by default, and therefore the parameter is deprecated. Please see <a href="https://blog.z.cash/new-release-1-1-0/">the Zcash documentation for more information</a>.</p>
+<h2 id='proxy'>proxy</h2>
+<blockquote>
+<p>Using proxy as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -proxy=127.0.0.1:9050
+</code></pre>
+<blockquote>
+<p>Using proxy as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>proxy=127.0.0.1:9050
+</code></pre>
+<p><code>proxy</code> allows the user to connect via a <code>SOCKS5</code> proxy.</p>
+<h2 id='bind'>bind</h2>
+<blockquote>
+<p>Using bind as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -bind=127.0.0.1:9050
+</code></pre>
+<blockquote>
+<p>Using bind as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  bind=127.0.0.1:9050
+</code></pre>
+<p><code>bind</code> instructs the coin daemon to bind to a given address and always listen on it.</p>
+
+<p>Use <code>[host]:port</code> notation for IPv6.</p>
+<h2 id='whitebind'>whitebind</h2>
+<blockquote>
+<p>Using whitebind as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -whitebind=127.0.0.1:9050
+</code></pre>
+<blockquote>
+<p>Using whitebind as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  whitebind=127.0.0.1:9050
+</code></pre>
+<p><code>whitelist</code> binds the daemon to a given address and whitelists peers connecting to it.</p>
+
+<p>Use [host]:port notation for IPv6</p>
+<h2 id='addnode'>addnode</h2>
+<blockquote>
+<p>Using addnode as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  addnode=69.164.218.197
+</code></pre>
+<p><code>addnode</code> tells the daemon which nodes are trusted to act as seed nodes. After connecting to a node via <code>addnode</code>, the trusted node will send your node the list of all nodes that it is connected to, and your node will then connect to these additional nodes until <a href="##%20maxconnections">the max limit</a> is reached.</p>
+
+<p>This contrasts from <a href="##%20connect">the <code>connect</code> runtime parameter</a>, as the latter does not attempt to connect your node to additional nodes.</p>
+
+<p>If you are behind a firewall or are having issues connecting to the network, <code>addnode</code> is a stronger option.</p>
+
+<p>On the other hand, if you want to connect only to designated and trusted nodes, <code>connect</code> is a stronger option.</p>
+
+<p>If you run multiple nodes that are connected via a LAN, it is not necessary for each node to open multiple connections. Instead, use <code>connect</code> to connect all to one primary node, and then use <code>addnode</code> on the primary node to connect to the network.</p>
+
+<p>The p2p port must not be blocked by a firewall. If the computers do not have public IP addresses, you will need to port-forward the p2p port on both computers and append the forwarded port to the IP.</p>
+
+<p>For example:</p>
+
+<p><code>./komodod -ac_name=EXAMPLECHAIN -ac_supply=1000000 -addnode=&lt;IP of the second node&gt;:8096</code></p>
+<h2 id='connect'>connect</h2>
+<blockquote>
+<p>Using connect as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>connect=69.164.218.197
+</code></pre>
+<p><code>connect</code> connects the <code>komodod</code> server to a trusted peer node, but not to request or add any additional nodes.</p>
+
+<p>Please refer to <a href="##%20addnode">the <code>addnode</code> parameter</a> entry for more information.</p>
+<h2 id='gen'>gen</h2>
+<blockquote>
+<p>Using gen as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -gen
+</code></pre>
+<blockquote>
+<p>Using gen as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>gen=0
+</code></pre>
+<p><code>gen</code> instructs the daemon to attempt to generate new blocks, and thereby mine new coins.</p>
+
+<p>See also <a href="##%20setgenerate"><code>setgenerate</code></a>.</p>
+<h2 id='listen'>listen</h2>
+<blockquote>
+<p>Using listen as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -listen=1
+</code></pre>
+<blockquote>
+<p>Using listen as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>listen=1
+</code></pre>
+<p><code>listen</code> instructs the daemon to listen for RPC calls on the network. It is enabled by default, except when <code>connect</code> is used.</p>
+<h2 id='maxconnections'>maxconnections</h2>
+<p><code>maxconnections</code> sets the maximum number of inbound and outbound connections.</p>
+
+<blockquote>
+<p>Using maxconnections as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -maxconnections=NUMBER
+</code></pre>
+<blockquote>
+<p>Using maxconnections as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>maxconnections=NUMBER
+</code></pre><h2 id='server'>server</h2>
+<blockquote>
+<p>Using server as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -server=1
+</code></pre>
+<blockquote>
+<p>Using server as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  server=1
+</code></pre>
+<p><code>server</code> instructs the daemon to accept json-rpc commands. It is enabled by default.</p>
+<h2 id='rpcbind'>rpcbind</h2>
+<blockquote>
+<p>Using rpcbind as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -rpcbind=127.0.0.1:9704
+</code></pre>
+<blockquote>
+<p>Using rpcbind as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  rpcbind=127.0.0.1:9704
+</code></pre>
+<p><code>rpcbind</code> instructs the daemon to listen for json-rpc connections.</p>
+
+<p>Use [host]:port notation for IPv6.</p>
+
+<p>This option can be specified multiple times.</p>
+
+<p>The default setting is to bind to all interfaces.</p>
+<h2 id='rpcclienttimeout'>rpcclienttimeout</h2>
+<blockquote>
+<p>Using rpcclienttimeout as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -rpcclienttimeout=SECONDS
+</code></pre>
+<blockquote>
+<p>Using rpcclienttimeout as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>rpcclientttimeout=SECONDS
+</code></pre>
+<p><code>rpcclienttimeout</code> indicates the number of seconds to wait for an rpc command to complete before killing the process.</p>
+<h2 id='rpcallowip'>rpcallowip</h2>
+<blockquote>
+<p>Using rpcallowip as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  rpcallowip=10.1.1.34/255.255.255.0
+  rpcallowip=1.2.3.4/24
+  rpcallowip=2001:db8:85a3:0:0:8a2e:370:7334/96
+</code></pre>
+<p><code>rpcallowip</code> tells the daemon which ip addresses are acceptable for receiving RPC commands.</p>
+
+<p>By default, only RPC connections from localhost are allowed.</p>
+
+<p>Specify as many <code>rpcallowip=</code> settings as you like to allow connections from other hosts, either as a single IPv4/IPv6 or with a subnet specification.</p>
+
+<aside class="notice">
+Opening up the RPC port to hosts outside your local trusted network is NOT RECOMMENDED. Because the rpcpassword is transmitted over the network unencrypted, and also because anyone that can authenticate on the RPC port can steal your keys and take over the account running `komodod`.
+</aside>
+
+<p><a href="https://github.com/zcash/zcash/issues/1497">For more information click here</a>.</p>
+<h2 id='rpcport'>rpcport</h2>
+<blockquote>
+<p>Using rpcport as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  rpcport=8232
+</code></pre>
+<p><code>rpcport</code> tells the daemon to listen for RPC connections on the indicated TCP port.</p>
+<h2 id='rpcconnect'>rpcconnect</h2>
+<blockquote>
+<p>Using rpcconnect as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>rpcconnect=127.0.0.1
+</code></pre>
+<p><code>rpcconnect</code> allows the user to connect to <code>komodod</code> and send RPC commands from a host. By default, it is set to localhost. We DO NOT RECOMMEND that the average user set this value to anything other than the localhost, as it can grant access to a foreign party, who are then able to take control over <code>komodod</code> and all funds in your <code>wallet.dat</code> file.</p>
+<h2 id='sendfreetransactions'>sendfreetransactions</h2>
+<blockquote>
+<p>Using sendfreetransactions as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  sendfreetransactions=0
+</code></pre>
+<p><code>sendfreetransactions</code> instructs the daemon to send transactions as zero-fee transactions if possible. The default value is 0.</p>
+<h2 id='genproclimit'>genproclimit</h2>
+<blockquote>
+<p>Using genproclimit as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  genproclimit=1
+</code></pre>
+<p><code>genproclimit</code> sets the number of threads to be used for mining. To initiate all cores, use the value <code>-1</code>.</p>
+<h2 id='keypool'>keypool</h2>
+<blockquote>
+<p>Using keypool as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>keypool=100
+</code></pre>
+<p><code>keypool</code> instructs the daemon to pre-generate a certain number of public/private key pairs. This can facilitate <code>wallet.dat</code> backups being valid for both prior transactions and several dozen future transactions.</p>
+<h2 id='rewind'>rewind</h2>
+<blockquote>
+<p>Using rewind as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>komodod -rewind=777777
+</code></pre>
+<p><code>rewind</code> rewinds the chain to specific block height. This is useful for creating snapshots at a given block height.</p>
+<h2 id='stopat'>stopat</h2>
+<blockquote>
+<p>Using stopat as a runtime parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  komodod -stopat=1000000
+</code></pre>
+<p><code>stopat</code> stops the chain at a specific block height. This is useful for creating snapshots at a given block height.</p>
+<h2 id='pubkey'>pubkey</h2>
+<blockquote>
+<p>Using pubkey as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>pubkey=027dc7b5cfb5efca96674b45e9fda18df069d040b9fd9ff32c35df56005e330392
+</code></pre>
+<blockquote>
+<p>Using pubkey as a startup parameter:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>-pubkey=027dc7b5cfb5efca96674b45e9fda18df069d040b9fd9ff32c35df56005e330392
+</code></pre>
+<p><code>pubkey</code> sets an address to use as a change address for all transactions. This value must be set to a 33 byte pubkey. All mined coins will also be sent to this address. We recommend that the user ensure they own the relevant <code>privkey</code> of their chosen <code>pubkey</code>, lest their funds be sent to a <code>pubkey</code> they do not own or control.</p>
+
+<p>The <code>pubkey</code> parameter is required for all CryptoConditions (CC) smart-contract enabled chains. All smart-contract transactions will utilize the <code>pubkey</code> as an integral property.</p>
+<h2 id='exchange'>exchange</h2>
+<blockquote>
+<p>Using exchange as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>exchange=1
+</code></pre>
+<p><code>exchange</code> forfeits all user rewards to miners. Set this to explicitly not claim user rewards.</p>
+<h2 id='donation'>donation</h2>
+<blockquote>
+<p>Using donation as a default value in the coin&#39;s .conf file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>donation=027dc7b5cfb5efca96674b45e9fda18df069d040b9fd9ff32c35df56005e330392
+</code></pre>
+<p><code>donation</code> donates all user rewards to a specific address. This value must be set to a 33 byte pubkey.</p>
+<h2 id='exportdir'>exportdir</h2>
+<blockquote>
+<p>Using exportdir as a default value in the coin&#39;s <code>.conf</code> file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  exportdir=/home/myusername/mydirectory
+</code></pre>
+<p><code>exportdir</code> tells the coin daemon where to store your export directory.</p>
+<h1 id='address-index'>Address Index</h1>
+<p>The following RPC calls interact with the <code>komodod</code> software, and are made available through the <code>komodo-cli</code> software.</p>
+<h2 id='getaddressbalance'>getaddressbalance</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getaddressbalance '{"addresses":["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}'
+
+response:
+
+{
+  "balance": 40000,
+  "received": 1011916229
+}
+</code></pre>
+<blockquote>
+<p>You can find the rpcuser, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "balance": 450010000,
+    "received": 1711916229
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p><strong>getaddressbalance &#39;{ &quot;addresses&quot; : [ &quot;address&quot; <em>( , ... )</em> ] }&#39;</strong></p>
+
+<p>The <code>getaddressbalance</code> method returns the confirmed balance for an address, or addresses. It requires <a href="##%20addressindex"><code>addressindex</code></a> to be enabled.</p>
+<h3 id='arguments'>Arguments:</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>{</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>&quot;addresses&quot;</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>[</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>, ...</td>
+<td></td>
+<td>accepts multiple entries</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>]</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>&quot;balance&quot;</td>
+<td>(number)</td>
+<td>the current confirmed balance of satoshis</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>&quot;received&quot;</td>
+<td>(number)</td>
+<td>the total confirmed number of satoshis received (including change)</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='getaddressdeltas'>getaddressdeltas</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getaddressdeltas '{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}'
+
+response:
+
+[
+  {
+    "satoshis": 1011876229,
+    "txid": "39c61e8ea769ba1fc971cb7dadc531f25a2528d01a4244f379043248b6c51cc1",
+    "index": 0,
+    "blockindex": 0,
+    "height": 1,
+    "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"
+  }
+]
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getaddressdeltas '{"addresses":["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"],"start":1,"end":200,"chainInfo":true}'
+
+response:
+
+{
+  "deltas": [
+    {
+      "satoshis": 1011876229,
+      "txid": "39c61e8ea769ba1fc971cb7dadc531f25a2528d01a4244f379043248b6c51cc1",
+      "index": 0,
+      "blockindex": 0,
+      "height": 1,
+      "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"
+    }
+  ],
+  "start": {
+    "hash": "022df4cd1b0bdf548fedc48f27c6367536a560857f61f9bec4b35179c8a45734",
+    "height": 1
+  },
+  "end": {
+    "hash": "001fd35407abd8f4e2ec9734ce6f91d820ff553efcb9c39d657afed84da84963",
+    "height": 200
+  }
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": [
+    {
+      "satoshis": 1011876229,
+      "txid": "39c61e8ea769ba1fc971cb7dadc531f25a2528d01a4244f379043248b6c51cc1",
+      "index": 0,
+      "blockindex": 0,
+      "height": 1,
+      "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"
+    }
+  ],
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"],"start":1,"end":200,"chainInfo":true}]}' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "deltas": [
+      {
+        "satoshis": 1011876229,
+        "txid": "39c61e8ea769ba1fc971cb7dadc531f25a2528d01a4244f379043248b6c51cc1",
+        "index": 0,
+        "blockindex": 0,
+        "height": 1,
+        "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"
+      }
+    ],
+    "start": {
+      "hash": "022df4cd1b0bdf548fedc48f27c6367536a560857f61f9bec4b35179c8a45734",
+      "height": 1
+    },
+    "end": {
+      "hash": "001fd35407abd8f4e2ec9734ce6f91d820ff553efcb9c39d657afed84da84963",
+      "height": 200
+    }
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p><strong>getaddressdeltas &#39;{ &quot;addresses&quot; : [ &quot;address&quot; <em>(, ... )</em> ] }&#39;</strong></p>
+
+<p><strong>getaddressdeltas &#39;{ &quot;addresses&quot; : [ &quot;address&quot; <em>(, ... )</em> ] , &quot;start&quot;: start, &quot;end&quot;: end, &quot;chainInfo&quot;: boolean }&#39;</strong></p>
+
+<p>The <code>getaddressdeltas</code> method returns all confirmed balance changes of an address. The user can optionally limit the response to a given interval of blocks. The method requires <a href="##%20addressindex"><code>addressindex</code></a> to be enabled.</p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>&quot;addresses&quot;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>, ...</td>
+<td></td>
+<td>accepts multiple entries</td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;start&quot;</td>
+<td>(number)</td>
+<td>the start block height</td>
+</tr>
+<tr>
+<td>&quot;end&quot;</td>
+<td>(number)</td>
+<td>the end block height</td>
+</tr>
+<tr>
+<td>&quot;chainInfo&quot;</td>
+<td>(boolean)</td>
+<td>include chain info in results (only applies if start and end specified)</td>
 </tr>
 </tbody></table>
 
+<p>}</p>
+<h3 id='response-2'>Response</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;satoshis&quot;</td>
+<td>(number)</td>
+<td>the difference of satoshis</td>
+</tr>
+<tr>
+<td>&quot;txid&quot;</td>
+<td>(string)</td>
+<td>the related transaction id</td>
+</tr>
+<tr>
+<td>&quot;index&quot;</td>
+<td>(number)</td>
+<td>the related input or output index</td>
+</tr>
+<tr>
+<td>&quot;height&quot;</td>
+<td>(number)</td>
+<td>the block height</td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='getaddressmempool'>getaddressmempool</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getaddressmempool '{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}'
+
+response:
+
+[
+  {
+    "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb",
+    "txid": "55c9830c0b2efcbbbac4fb813ff0d85722c6d720a748459287b60ef96cdb6732",
+    "index": 1,
+    "satoshis": 200000000,
+    "timestamp": 1536356143
+  }
+]
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressmempool", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": [
+    {
+      "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb",
+      "txid": "708d8b67ea1f1b0a534515088911e90e77d623cddf901633e24cbb5b4c6f793c",
+      "index": 0,
+      "satoshis": -50000000,
+      "timestamp": 1536603876,
+      "prevtxid": "17474b73ec5a985c78a46435a021a1ad3ebd5609724ffd23d9c787c30f661342",
+      "prevout": 1
+    }
+  ],
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p><strong>getaddressmempool &#39;{ &quot;addresses&quot; : [ &quot;address&quot; <em>(, ... )</em> ] }&#39;</strong></p>
+
+<p>The <code>getaddressmempool</code> method returns all mempool deltas for an address, or addresses. It requires <a href="##%20addressindex"><code>addressindex</code></a> to be enabled.</p>
+<h3 id='arguments-3'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;addresses&quot;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>, ...</td>
+<td></td>
+<td>accepts multiple entries</td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>&quot;txid&quot;</td>
+<td>(string)</td>
+<td>the related txid</td>
+</tr>
+<tr>
+<td>&quot;index&quot;</td>
+<td>(number)</td>
+<td>the related input or output index</td>
+</tr>
+<tr>
+<td>&quot;satoshis&quot;</td>
+<td>(number)</td>
+<td>the difference of satoshis</td>
+</tr>
+<tr>
+<td>&quot;timestamp&quot;</td>
+<td>(number)</td>
+<td>the time the transaction entered the mempool (seconds)</td>
+</tr>
+<tr>
+<td>&quot;prevtxid&quot;</td>
+<td>(string)</td>
+<td>the previous txid (if spending)</td>
+</tr>
+<tr>
+<td>&quot;prevout&quot;</td>
+<td>(string)</td>
+<td>the previous transaction output index (if spending)</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='getaddresstxids'>getaddresstxids</h2><pre class="highlight plaintext"><code>command:
+
+    komodo-cli getaddresstxids '{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb","RQUAkqRiRMqxcNrB29B4duTK4qkqfV9HVJ"]}'
+
+  response:
+  [
+    "39c61e8ea769ba1fc971cb7dadc531f25a2528d01a4244f379043248b6c51cc1",
+    "800e4331018d02458ff4f2a7722f0508b810f7fcf53bc1c5ac85aec4e5fa706b",
+    "2a3c3664851370ff762b47d735cc661e3dbce4cf36b6c1b74799f3b1c847bd52",
+    "275f8383d85c0873c91ebfea3917d4136c89f43526da053177922d6c036634af"
+  ]
+
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddresstxids", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": [
+    "39c61e8ea769ba1fc971cb7dadc531f25a2528d01a4244f379043248b6c51cc1",
+    "800e4331018d02458ff4f2a7722f0508b810f7fcf53bc1c5ac85aec4e5fa706b",
+    "2a3c3664851370ff762b47d735cc661e3dbce4cf36b6c1b74799f3b1c847bd52"
+  ],
+  "error": null,
+  "id": "curltest"
+}
+
+</code></pre>
+<p><strong>getaddresstxids &#39;{ &quot;addresses&quot; : [ &quot;address&quot; <em>(, ... )</em> ] }&#39;</strong></p>
+
+<p>The <code>getaddresstxids</code> method returns the txids for an address, or addresses. It requires <a href="##%20addressindex"><code>addressindex</code></a> to be enabled.</p>
+<h3 id='arguments-4'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;addresses&quot;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>, ...</td>
+<td></td>
+<td>accepts multiple entries</td>
+</tr>
+<tr>
+<td>],</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;start&quot;</td>
+<td>(number)</td>
+<td>the start block height</td>
+</tr>
+<tr>
+<td>&quot;end&quot;</td>
+<td>(number)</td>
+<td>the end block height</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;transaction_id&quot;</td>
+<td>(string)</td>
+<td>the transaction id</td>
+</tr>
+<tr>
+<td>, ...</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='getaddressutxos'>getaddressutxos</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getaddressutxos '{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}'
+
+response:
+
+[
+  {
+    "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb",
+    "txid": "2a3c3664851370ff762b47d735cc661e3dbce4cf36b6c1b74799f3b1c847bd52",
+    "outputIndex": 0,
+    "script": "2102e0d9ea73a391400ed2cb090e029d3f03eda0efaf371da11f436c076d817025e4ac",
+    "satoshis": 10000,
+    "height": 3
+  }
+]
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getaddressutxos '{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"], "chainInfo": true}'
+
+
+response:
+
+{
+  "utxos": [
+    {
+      "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb",
+      "txid": "2a3c3664851370ff762b47d735cc661e3dbce4cf36b6c1b74799f3b1c847bd52",
+      "outputIndex": 0,
+      "script": "2102e0d9ea73a391400ed2cb090e029d3f03eda0efaf371da11f436c076d817025e4ac",
+      "satoshis": 10000,
+      "height": 3
+    }
+  ],
+  "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+  "height": 398
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressutxos", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": [
+    {
+      "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb",
+      "txid": "2a3c3664851370ff762b47d735cc661e3dbce4cf36b6c1b74799f3b1c847bd52",
+      "outputIndex": 0,
+      "script": "2102e0d9ea73a391400ed2cb090e029d3f03eda0efaf371da11f436c076d817025e4ac",
+      "satoshis": 10000,
+      "height": 3
+    }
+  ],
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressutxos", "params": [{"addresses": ["RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb"], "chainInfo": true}] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "utxos": [
+      {
+        "address": "RTTg3izdeVnqkTTxjzsPFrdUQexgqCy1qb",
+        "txid": "2a3c3664851370ff762b47d735cc661e3dbce4cf36b6c1b74799f3b1c847bd52",
+        "outputIndex": 0,
+        "script": "2102e0d9ea73a391400ed2cb090e029d3f03eda0efaf371da11f436c076d817025e4ac",
+        "satoshis": 10000,
+        "height": 3
+      }
+    ],
+    "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+    "height": 398
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p><strong>getaddressutxos &#39;{ &quot;addresses&quot; : [ &quot;address&quot; <em>(, ... )</em> ] }&#39;</strong></p>
+
+<p>The <code>getaddressutxos</code> method returns all unspent outputs for an address. It requires <a href="##%20addressindex"><code>addressindex</code></a> to be enabled.</p>
+<h3 id='arguments-5'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;addresses&quot;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>, ...</td>
+<td></td>
+<td>accepts multiple entries</td>
+</tr>
+<tr>
+<td>],</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;chainInfo&quot;</td>
+<td>(boolean)</td>
+<td>include chain info with results</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;address&quot;</td>
+<td>(string)</td>
+<td>the address</td>
+</tr>
+<tr>
+<td>&quot;txid&quot;</td>
+<td>(string)</td>
+<td>the output txid</td>
+</tr>
+<tr>
+<td>&quot;height&quot;</td>
+<td>(number)</td>
+<td>the block height</td>
+</tr>
+<tr>
+<td>&quot;outputIndex&quot;</td>
+<td>(number)</td>
+<td>the output index</td>
+</tr>
+<tr>
+<td>&quot;script&quot;</td>
+<td>(string)</td>
+<td>the script hex encoded</td>
+</tr>
+<tr>
+<td>&quot;satoshis&quot;</td>
+<td>(number)</td>
+<td>the number of satoshis of the output</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='blockchain'>Blockchain</h1>
+<p>The following RPC calls interact with the <code>komodod</code> software, and are made available through the <code>komodo-cli</code> software.</p>
+<h2 id='getbestblockhash'>getbestblockhash</h2><pre class="highlight plaintext"><code>  command:
+
+  komodo-cli getbestblockhash
+
+  response:
+
+  0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbestblockhash", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+    "error": null,
+    "id": "curltest"
+  }
+</code></pre>
+<p><strong>getbestblockhash</strong></p>
+
+<p>The <code>getbestblockhash</code> method returns the hash of the best (tip) block in the longest block chain.</p>
+<h3 id='arguments'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;hex&quot;</td>
+<td>(string)</td>
+<td>the block hash, hex encoded</td>
+</tr>
+</tbody></table>
+<h2 id='getblock'>getblock</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblock "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
+
+response:
+
+{
+  "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+  "confirmations": 1,
+  "size": 278,
+  "height": 398,
+  "version": 4,
+  "merkleroot": "d6e8292d85181a177c21497a7e636fc4f1eef1fbd2887b3a19e1d72134429668",
+  "segid": -2,
+  "tx": [
+    "d6e8292d85181a177c21497a7e636fc4f1eef1fbd2887b3a19e1d72134429668"
+  ],
+  "time": 1536603968,
+  "nonce": "00002474e66d5ef243d7b0a8eec32983492daf29e0b0887bd67b2107d1000004",
+  "solution": "30a5e9153392b643d139cf205b270d55cb7d3b4779fd7a3666bdb744ef221c966fde1324",
+  "bits": "200f0ef8",
+  "difficulty": 1.000023305960651,
+  "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+  "anchor": "59d2cde5e65c1414c32ba54f0fe4bdb3d67618125286e6a191317917c812c6d7",
+  "valuePools": [
+    {
+      "id": "sprout",
+      "monitored": true,
+      "chainValue": 0.00000000,
+      "chainValueZat": 0,
+      "valueDelta": 0.00000000,
+      "valueDeltaZat": 0
+    }
+  ],
+  "previousblockhash": "09f9b547842b38a7748c8633eedb609b269138fdb3f2f75570fcb0d653fe42f4"
+}
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblock "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084" false
+
+response:
+
+04000000f442fe53d6b0fc7055f7f2b3fd3891269b60dbee33868c74a7382b8447b5f9096896423421d7e1193a7b88d2fbf1eef1c46f637e7a49217c171a18852d29e8d6000000000000000000000000000000000000000000000000000000000000000040b7965bf80e0f20040000d107217bd67b88b0e029af2d498329c3eea8b0d743f25e6de6742400002430a5e9153392b643d139cf205b270d55cb7d3b4779fd7a3666bdb744ef221c966fde13240101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff05028e010101ffffffff0110270000000000002321033097c6f4b12bd13a2e39b686b3a2fc30fe55a1d51221d857421e40564d5e237cac3fb7965b
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+    "confirmations": 1,
+    "size": 278,
+    "height": 398,
+    "version": 4,
+    "merkleroot": "d6e8292d85181a177c21497a7e636fc4f1eef1fbd2887b3a19e1d72134429668",
+    "segid": -2,
+    "tx": [
+      "d6e8292d85181a177c21497a7e636fc4f1eef1fbd2887b3a19e1d72134429668"
+    ],
+    "time": 1536603968,
+    "nonce": "00002474e66d5ef243d7b0a8eec32983492daf29e0b0887bd67b2107d1000004",
+    "solution": "30a5e9153392b643d139cf205b270d55cb7d3b4779fd7a3666bdb744ef221c966fde1324",
+    "bits": "200f0ef8",
+    "difficulty": 1.000023305960651,
+    "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+    "anchor": "59d2cde5e65c1414c32ba54f0fe4bdb3d67618125286e6a191317917c812c6d7",
+    "valuePools": [
+      {
+        "id": "sprout",
+        "monitored": true,
+        "chainValue": 0,
+        "chainValueZat": 0,
+        "valueDelta": 0,
+        "valueDeltaZat": 0
+      }
+    ],
+    "previousblockhash": "09f9b547842b38a7748c8633eedb609b269138fdb3f2f75570fcb0d653fe42f4"
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09", false] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": "04000000f442fe53d6b0fc7055f7f2b3fd3891269b60dbee33868c74a7382b8447b5f9096896423421d7e1193a7b88d2fbf1eef1c46f637e7a49217c171a18852d29e8d6000000000000000000000000000000000000000000000000000000000000000040b7965bf80e0f20040000d107217bd67b88b0e029af2d498329c3eea8b0d743f25e6de6742400002430a5e9153392b643d139cf205b270d55cb7d3b4779fd7a3666bdb744ef221c966fde13240101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff05028e010101ffffffff0110270000000000002321033097c6f4b12bd13a2e39b686b3a2fc30fe55a1d51221d857421e40564d5e237cac3fb7965b",
+  "error": null,
+  "id": "curltest"
+}
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblock 120
+
+response:
+
+{
+  "hash": "0939408360b273fd681bbe5823999655fd5a7240303cdcbf952afe252246cc13",
+  "confirmations": 279,
+  "size": 277,
+  "height": 120,
+  "version": 4,
+  "merkleroot": "4781cefbf7e14f6d7cdf89ae972391ae59b5776d1ed51204e94e65adf3ca6331",
+  "segid": -2,
+  "tx": [
+    "4781cefbf7e14f6d7cdf89ae972391ae59b5776d1ed51204e94e65adf3ca6331"
+  ],
+  "time": 1536347890,
+  "nonce": "000054c5822bb572319a67a89a3f511cf8caf8cd8ed6b7739c0b044b62ea000b",
+  "solution": "03fc1abba5f415b1c422942835d46c7ba3e94665964da4c31e236c6cf9b3dfe6ffb65db1",
+  "bits": "200f0f08",
+  "difficulty": 1.000007093003461,
+  "chainwork": "0000000000000000000000000000000000000000000000000000000000000809",
+  "anchor": "59d2cde5e65c1414c32ba54f0fe4bdb3d67618125286e6a191317917c812c6d7",
+  "valuePools": [
+    {
+      "id": "sprout",
+      "monitored": true,
+      "chainValue": 0.00000000,
+      "chainValueZat": 0,
+      "valueDelta": 0.00000000,
+      "valueDeltaZat": 0
+    }
+  ],
+  "previousblockhash": "01d1bfef50e079c53b36463fdf0ae55dc26b2205cd5f39c2bd030d19c2375e28",
+  "nextblockhash": "0438bfda6a2706a622df7808fa5f4f32ac2e5d3039895ff8cb080d7e8e231188"
+}
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblock 120 false
+
+response:
+
+04000000285e37c2190d03bdc2395fcd05226bc25de50adf3f46363bc579e050efbfd1013163caf3ad654ee90412d51e6d77b559ae912397ae89df7c6d4fe1f7fbce81470000000000000000000000000000000000000000000000000000000000000000f2ce925b080f0f200b00ea624b040b9c73b7d68ecdf8caf81c513f9aa8679a3172b52b82c55400002403fc1abba5f415b1c422942835d46c7ba3e94665964da4c31e236c6cf9b3dfe6ffb65db10101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0401780101ffffffff011027000000000000232103c0259e1a166e53f6ccf094ce37c0843d4a013622603bc301b4eb0f89c7cce823acf1ce925b
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["120"] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "hash": "0939408360b273fd681bbe5823999655fd5a7240303cdcbf952afe252246cc13",
+    "confirmations": 279,
+    "size": 277,
+    "height": 120,
+    "version": 4,
+    "merkleroot": "4781cefbf7e14f6d7cdf89ae972391ae59b5776d1ed51204e94e65adf3ca6331",
+    "segid": -2,
+    "tx": [
+      "4781cefbf7e14f6d7cdf89ae972391ae59b5776d1ed51204e94e65adf3ca6331"
+    ],
+    "time": 1536347890,
+    "nonce": "000054c5822bb572319a67a89a3f511cf8caf8cd8ed6b7739c0b044b62ea000b",
+    "solution": "03fc1abba5f415b1c422942835d46c7ba3e94665964da4c31e236c6cf9b3dfe6ffb65db1",
+    "bits": "200f0f08",
+    "difficulty": 1.000007093003461,
+    "chainwork": "0000000000000000000000000000000000000000000000000000000000000809",
+    "anchor": "59d2cde5e65c1414c32ba54f0fe4bdb3d67618125286e6a191317917c812c6d7",
+    "valuePools": [
+      {
+        "id": "sprout",
+        "monitored": true,
+        "chainValue": 0,
+        "chainValueZat": 0,
+        "valueDelta": 0,
+        "valueDeltaZat": 0
+      }
+    ],
+    "previousblockhash": "01d1bfef50e079c53b36463fdf0ae55dc26b2205cd5f39c2bd030d19c2375e28",
+    "nextblockhash": "0438bfda6a2706a622df7808fa5f4f32ac2e5d3039895ff8cb080d7e8e231188"
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["120", false] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": "04000000285e37c2190d03bdc2395fcd05226bc25de50adf3f46363bc579e050efbfd1013163caf3ad654ee90412d51e6d77b559ae912397ae89df7c6d4fe1f7fbce81470000000000000000000000000000000000000000000000000000000000000000f2ce925b080f0f200b00ea624b040b9c73b7d68ecdf8caf81c513f9aa8679a3172b52b82c55400002403fc1abba5f415b1c422942835d46c7ba3e94665964da4c31e236c6cf9b3dfe6ffb65db10101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0401780101ffffffff011027000000000000232103c0259e1a166e53f6ccf094ce37c0843d4a013622603bc301b4eb0f89c7cce823acf1ce925b",
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p><strong>getblock hash|height ( verbose )</strong></p>
+
+<p>The <code>getblock</code> method returns the block&#39;s relevant state information.</p>
+
+<p>The verbose input is optional. The default value is true, and it will return a json object with information about the indicated block. If verbose is <code>false</code>, the command returns a string that is serialized hex-encoded data for the indicated block.</p>
+<h3 id='arguments-2'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;hash</td>
+<td>height&quot;</td>
+<td>(string, required)</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>(boolean, optional, default=true)</td>
+<td>true returns a json object, false returns hex-encoded data</td>
+</tr>
+</tbody></table>
+<h3 id='response-verbose-true'>Response (verbose = true):</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;hash&quot;</td>
+<td>(string)</td>
+<td>the block hash (same as provided hash)</td>
+</tr>
+<tr>
+<td>&quot;confirmations&quot;</td>
+<td>(numeric)</td>
+<td>the number of confirmations, or -1 if the block is not on the main chain</td>
+</tr>
+<tr>
+<td>&quot;size&quot;</td>
+<td>(numeric)</td>
+<td>the block size</td>
+</tr>
+<tr>
+<td>&quot;height&quot;</td>
+<td>(numeric)</td>
+<td>the block height or index (same as provided height)</td>
+</tr>
+<tr>
+<td>&quot;version&quot;</td>
+<td>(numeric)</td>
+<td>the block version</td>
+</tr>
+<tr>
+<td>&quot;merkleroot&quot;</td>
+<td>(string)</td>
+<td>the merkle root</td>
+</tr>
+<tr>
+<td>&quot;tx&quot;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td>(array of string)</td>
+<td>the transaction ids</td>
+</tr>
+<tr>
+<td>&quot;transaction_id&quot;</td>
+<td>(string)</td>
+<td>the transaction id</td>
+</tr>
+<tr>
+<td>, ...</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;time&quot;</td>
+<td>(numeric)</td>
+<td>the block time in seconds since epoch (Jan 1 1970 GMT)</td>
+</tr>
+<tr>
+<td>&quot;nonce&quot;</td>
+<td>(numeric)</td>
+<td>the nonce</td>
+</tr>
+<tr>
+<td>&quot;bits&quot;</td>
+<td>(string)</td>
+<td>the bits</td>
+</tr>
+<tr>
+<td>&quot;difficulty&quot;</td>
+<td>(numeric)</td>
+<td>the difficulty</td>
+</tr>
+<tr>
+<td>&quot;previousblockhash&quot;</td>
+<td>(string)</td>
+<td>the hash of the previous block</td>
+</tr>
+<tr>
+<td>&quot;nextblockhash&quot;</td>
+<td>(string)</td>
+<td>the hash of the next block</td>
+</tr>
+</tbody></table>
+
+<p>}</p>
+<h3 id='response-2'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;data&quot;</td>
+<td>(string)</td>
+<td>a string that is serialized, hex-encoded data for the indicated block</td>
+</tr>
+</tbody></table>
+<h2 id='getblockchaininfo'>getblockchaininfo</h2>
+<p><strong>getblockchaininfo</strong></p>
+
+<p>The <code>getblockchaininfo</code> method returns a json object containing state information about blockchain processing.</p>
+
+<aside class="notice">
+When the chain tip is at the last block before a network upgrade activation, the `consensus.chaintipc` value is not equal to the `consensus.nextblock` value.
+</aside>
+<h3 id='arguments-3'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;chain&quot;</td>
+<td>(string)</td>
+<td>current network name as defined in BIP70 (main, test, regtest)</td>
+</tr>
+<tr>
+<td>&quot;blocks&quot;</td>
+<td>(numeric)</td>
+<td>the current number of blocks processed in the server</td>
+</tr>
+<tr>
+<td>&quot;headers&quot;</td>
+<td>(numeric)</td>
+<td>the current number of headers we have validated</td>
+</tr>
+<tr>
+<td>&quot;bestblockhash&quot;</td>
+<td>(string)</td>
+<td>the hash of the currently best block</td>
+</tr>
+<tr>
+<td>&quot;difficulty&quot;</td>
+<td>(numeric)</td>
+<td>the current difficulty</td>
+</tr>
+<tr>
+<td>&quot;verificationprogress&quot;</td>
+<td>(numeric)</td>
+<td>estimate of verification progress [0..1]</td>
+</tr>
+<tr>
+<td>&quot;chainwork&quot;</td>
+<td>(string)</td>
+<td>total amount of work in active chain, in hexadecimal</td>
+</tr>
+<tr>
+<td>&quot;commitments&quot;</td>
+<td>(numeric)</td>
+<td>the current number of note commitments in the commitment tree</td>
+</tr>
+<tr>
+<td>&quot;softforks&quot;: [</td>
+<td>(array)</td>
+<td>status of softforks in progress</td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;id&quot;</td>
+<td>(string)</td>
+<td>name of softfork</td>
+</tr>
+<tr>
+<td>&quot;version&quot;</td>
+<td>(numeric)</td>
+<td>block version</td>
+</tr>
+<tr>
+<td>&quot;enforce&quot;: {</td>
+<td>(object)</td>
+<td>progress toward enforcing the softfork rules for new-version blocks</td>
+</tr>
+<tr>
+<td>&quot;status&quot;</td>
+<td>(boolean)</td>
+<td>true if threshold reached</td>
+</tr>
+<tr>
+<td>&quot;found&quot;</td>
+<td>(numeric)</td>
+<td>number of blocks with the new version found</td>
+</tr>
+<tr>
+<td>&quot;required&quot;</td>
+<td>(numeric)</td>
+<td>number of blocks required to trigger</td>
+</tr>
+<tr>
+<td>&quot;window&quot;</td>
+<td>(numeric)</td>
+<td>maximum size of examined window of recent blocks</td>
+</tr>
+<tr>
+<td>},</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;reject&quot;: {</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>...</td>
+<td>(object)</td>
+<td>progress toward rejecting pre-softfork blocks (same fields as &quot;enforce&quot;)</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>}, ...</td>
+<td>accepts multiple entries</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>],
+    &quot;upgrades&quot;: {|(object)|status of network upgrades
+      &quot;xxxxxxxxx_string&quot;: {|(string)|branch ID of the upgrade
+          &quot;name&quot;|(string)|name of upgrade
+          &quot;activationheight&quot;|(numeric)|block height of activation
+          &quot;status&quot;|(string)|status of upgrade
+          &quot;info&quot;|(string)|additional information about upgrade
+      }, ...|accepts multiple entries
+    },| |
+    &quot;consensus&quot;: {|(object)|branch IDs of the current and upcoming consensus rules
+     &quot;chaintip&quot;|(string)|branch ID used to validate the current chain tip
+     &quot;nextblock&quot;|(string)|branch ID that the next block will be validated under
+    }| |
+  }| |</p>
+<pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockchaininfo
+
+response:
+
+{
+  "chain": "regtest",
+  "blocks": 398,
+  "headers": 398,
+  "bestblockhash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+  "difficulty": 1.000023305960651,
+  "verificationprogress": 1,
+  "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+  "pruned": false,
+  "commitments": 0,
+  "valuePools": [
+    {
+      "id": "sprout",
+      "monitored": true,
+      "chainValue": 0.00000000,
+      "chainValueZat": 0
+    }
+  ],
+  "softforks": [
+    {
+      "id": "bip34",
+      "version": 2,
+      "enforce": {
+        "status": false,
+        "found": 399,
+        "required": 750,
+        "window": 1000
+      },
+      "reject": {
+        "status": false,
+        "found": 399,
+        "required": 950,
+        "window": 1000
+      }
+    }
+  ],
+  "upgrades": {
+  },
+  "consensus": {
+    "chaintip": "00000000",
+    "nextblock": "00000000"
+  }
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "chain": "regtest",
+    "blocks": 398,
+    "headers": 398,
+    "bestblockhash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+    "difficulty": 1.000023305960651,
+    "verificationprogress": 1,
+    "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+    "pruned": false,
+    "commitments": 0,
+    "valuePools": [
+      {
+        "id": "sprout",
+        "monitored": true,
+        "chainValue": 0,
+        "chainValueZat": 0
+      }
+    ],
+    "softforks": [
+      {
+        "id": "bip34",
+        "version": 2,
+        "enforce": {
+          "status": false,
+          "found": 399,
+          "required": 750,
+          "window": 1000
+        },
+        "reject": {
+          "status": false,
+          "found": 399,
+          "required": 950,
+          "window": 1000
+        }
+      }
+    ],
+    "upgrades": {},
+    "consensus": {
+      "chaintip": "00000000",
+      "nextblock": "00000000"
+    }
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p>getblockcount</p>
+
+<p><strong>getblockcount</strong></p>
+
+<p>The <code>getblockcount</code> method returns the number of blocks in the best valid block chain.</p>
+<h3 id='arguments-4'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>(numeric)</td>
+<td>the current block count</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockcount
+
+response:
+
+398
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": 398,
+  "error": null,
+  "id": "curltest"
+}
+</code></pre><h2 id='getblockhash'>getblockhash</h2><pre class="highlight plaintext"><code>  command:
+
+  komodo-cli getblockhash 100
+
+  response:
+
+  08674c7a6ab6c40000d45e2094f2cafc6575bfcfdd1ce90fa0060fa573803024
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  command:
+
+    curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhash", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": "08674c7a6ab6c40000d45e2094f2cafc6575bfcfdd1ce90fa0060fa573803024",
+    "error": null,
+    "id": "curltest"
+  }
+</code></pre>
+<p><strong>getblockhash index</strong></p>
+
+<p>The <code>getblockhash</code> method returns the hash of the indicated block index, according to the best blockchain at the time provided.</p>
+<h3 id='arguments-5'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>index</td>
+<td>(numeric, required)</td>
+<td>the block index</td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;hash&quot;</td>
+<td>(string)</td>
+<td>the block hash</td>
+</tr>
+</tbody></table>
+<h2 id='getblockhashes'>getblockhashes</h2>
+<p><strong>getblockhashes high low &#39;{&quot;noOrphans&quot;: bool, &quot;logicalTimes&quot;: bool}&#39;</strong></p>
+
+<p>The <code>getblockhashes</code> method returns an array of hashes of blocks within the timestamp range provided.</p>
+<h3 id='arguments-6'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>high</td>
+<td>(numeric, required)</td>
+<td>the newer block timestamp</td>
+</tr>
+<tr>
+<td>low</td>
+<td>(numeric, required)</td>
+<td>the older block timestamp</td>
+</tr>
+<tr>
+<td>options</td>
+<td>(string, required)</td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;noOrphans&quot;</td>
+<td>(boolean)</td>
+<td>will only include blocks on the main chain</td>
+</tr>
+<tr>
+<td>&quot;logicalTimes&quot;</td>
+<td>(boolean)</td>
+<td>will include logical timestamps with hashes</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-6'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;hash&quot;</td>
+<td>(string)</td>
+<td>the block hash</td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;blockhash&quot;</td>
+<td>(string)</td>
+<td>the block hash</td>
+</tr>
+<tr>
+<td>&quot;logicalts&quot;</td>
+<td>(numeric)</td>
+<td>the logical timestamp</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockhashes 1231614698 1231024505
+
+response:
+
+</code></pre><pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhashes", "params": [1231614698, 1231024505] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+</code></pre><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockhashes 1231614698 1231024505 '{"noOrphans":false, "logicalTimes":true}'
+
+response:
+
+</code></pre><h2 id='getblockheader'>getblockheader</h2><pre class="highlight plaintext"><code>command:
+
+komodo-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
+
+response:
+
+{
+  "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+  "confirmations": 1,
+  "height": 398,
+  "version": 4,
+  "merkleroot": "d6e8292d85181a177c21497a7e636fc4f1eef1fbd2887b3a19e1d72134429668",
+  "time": 1536603968,
+  "nonce": "00002474e66d5ef243d7b0a8eec32983492daf29e0b0887bd67b2107d1000004",
+  "solution": "30a5e9153392b643d139cf205b270d55cb7d3b4779fd7a3666bdb744ef221c966fde1324",
+  "bits": "200f0ef8",
+  "difficulty": 1.000023305960651,
+  "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+  "segid": -2,
+  "previousblockhash": "09f9b547842b38a7748c8633eedb609b269138fdb3f2f75570fcb0d653fe42f4"
+}
+</code></pre>
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>command:
+
+curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockheader", "params": ["0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084"] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+response:
+
+{
+  "result": {
+    "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+    "confirmations": 1,
+    "height": 398,
+    "version": 4,
+    "merkleroot": "d6e8292d85181a177c21497a7e636fc4f1eef1fbd2887b3a19e1d72134429668",
+    "time": 1536603968,
+    "nonce": "00002474e66d5ef243d7b0a8eec32983492daf29e0b0887bd67b2107d1000004",
+    "solution": "30a5e9153392b643d139cf205b270d55cb7d3b4779fd7a3666bdb744ef221c966fde1324",
+    "bits": "200f0ef8",
+    "difficulty": 1.000023305960651,
+    "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
+    "segid": -2,
+    "previousblockhash": "09f9b547842b38a7748c8633eedb609b269138fdb3f2f75570fcb0d653fe42f4"
+  },
+  "error": null,
+  "id": "curltest"
+}
+</code></pre>
+<p><strong>getblockheader &quot;hash&quot; ( verbose )</strong></p>
+
+<p>The <code>getblockheader</code> method returns information about the indicated block.</p>
+
+<p>The verbose input is optional. If verbose is false, the method returns a string that is serialized, hex-encoded data for the indicated blockheader. If verbose is true, the method returns a json object with information about the indicated blockheader.</p>
+<h3 id='arguments-7'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;hash&quot;</td>
+<td>(string, required)</td>
+<td>the block hash</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>(boolean, optional, default=true)</td>
+<td>true returns a json object, false returns hex-encoded data</td>
+</tr>
+</tbody></table>
+<h3 id='response-verbose-true-2'>Response (verbose = <code>true</code>):</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;hash&quot;</td>
+<td>(string)</td>
+<td>the block hash (same as provided)</td>
+</tr>
+<tr>
+<td>&quot;confirmations&quot;</td>
+<td>(numeric)</td>
+<td>the number of confirmations, or -1 if the block is not on the main chain</td>
+</tr>
+<tr>
+<td>&quot;height&quot;</td>
+<td>(numeric)</td>
+<td>the block height or index</td>
+</tr>
+<tr>
+<td>&quot;version&quot;</td>
+<td>(numeric)</td>
+<td>the block version</td>
+</tr>
+<tr>
+<td>&quot;merkleroot&quot;</td>
+<td>(string)</td>
+<td>the merkle root</td>
+</tr>
+<tr>
+<td>&quot;time&quot;</td>
+<td>(numeric)</td>
+<td>the block time in seconds since epoch (Jan 1 1970 GMT)</td>
+</tr>
+<tr>
+<td>&quot;nonce&quot;</td>
+<td>(numeric)</td>
+<td>the nonce</td>
+</tr>
+<tr>
+<td>&quot;bits&quot;</td>
+<td>(string)</td>
+<td>the bits</td>
+</tr>
+<tr>
+<td>&quot;difficulty&quot;</td>
+<td>(numeric)</td>
+<td>the difficulty</td>
+</tr>
+<tr>
+<td>&quot;previousblockhash&quot;</td>
+<td>(string)</td>
+<td>the hash of the previous block</td>
+</tr>
+<tr>
+<td>&quot;nextblockhash&quot;</td>
+<td>(string)</td>
+<td>the hash of the next block</td>
+</tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-verbose-false'>Response (verbose = <code>false</code>):</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;data&quot;</td>
+<td>(string)</td>
+<td>a string that is serialized hex-encoded data for the indicated block</td>
+</tr>
+</tbody></table>
+<h2 id='getchaintips'>getchaintips</h2>
+<p>getchaintips</p>
+
+<p>The <code>getchaintips</code> method returns information about all known tips in the block tree, including the main chain and any orphaned branches.</p>
+<h3 id='arguments-8'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>(none)</p>
+<h3 id='response-7'>Response:</h3>
+<p>Structure|Type|Description
+---------|----|-----------  [
+      {
+        &quot;height&quot;              (numeric)    height of the chain tip
+        &quot;hash&quot;                (string)     block hash of the tip
+        &quot;branchlen&quot;           (numeric)    zero for main chain
+        &quot;status&quot;              (string)     &quot;active&quot; for the main chain
+      },
+      {
+        &quot;height&quot;              (numeric)    height of the branch tip
+        &quot;hash&quot;                (string)     blockhash of the branch tip
+        &quot;branchlen&quot;           (numeric)    length of branch connecting the tip to the main chain
+        &quot;status&quot;              (string)     status of the chain
+      }
+    ]</p>
+
+<p>Possible values for status:</p>
+
+<p>&quot;invalid&quot;               this branch contains at least one invalid block
+     &quot;headers-only&quot;          not all blocks for this branch are available, but the headers are valid
+     &quot;valid-headers&quot;         all blocks are available for this branch, but they were never fully validated
+    &quot;valid-fork&quot;            this branch is not part of the active chain, but is fully validated
+    &quot;active&quot;                this is the tip of the active main chain, which is certainly valid</p>
+
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  command:
+
+    komodo-cli getchaintips
+
+  response:
+
+  [
+    {
+      "height": 398,
+      "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+      "branchlen": 0,
+      "status": "active"
+    }
+  ]
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getchaintips", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": [
+      {
+        "height": 398,
+        "hash": "0dd66ee1f151c38f73843378c08715ee3f4d3cf2888783e2846b81c057987084",
+        "branchlen": 0,
+        "status": "active"
+      }
+    ],
+    "error": null,
+    "id": "curltest"
+  }
+
+getdifficulty
+-------------
+
+  getdifficulty
+
+The `getdifficulty` method returns the proof-of-work difficulty as a multiple of the minimum difficulty.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+  (none)
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  number            (numeric)  the proof-of-work difficulty as a multiple of the minimum difficulty
+
+&gt; You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
+
+</code></pre>
+<p>command:</p>
+
+<p>komodo-cli getdifficulty</p>
+
+<p>response:</p>
+
+<p>1.000023305960651</p>
+<pre class="highlight plaintext"><code>
+</code></pre>
+<p>command:</p>
+
+<p>curl --user myrpcuser:myrpcpassword --data-binary &#39;{&quot;jsonrpc&quot;: &quot;1.0&quot;, &quot;id&quot;:&quot;curltest&quot;, &quot;method&quot;: &quot;getdifficulty&quot;, &quot;params&quot;: [] }&#39; -H &#39;content-type: text/plain;&#39; http://127.0.0.1:myrpcport/</p>
+
+<p>response:</p>
+
+<p>{
+    &quot;result&quot;: 1.000023305960651,
+    &quot;error&quot;: null,
+    &quot;id&quot;: &quot;curltest&quot;
+  }</p>
+<h2 id='getmempoolinfo'>getmempoolinfo</h2>
+<p>getmempoolinfo</p>
+
+<p>The <code>getmempoolinfo</code> method returns details on the active state of the transaction memory pool.</p>
+<h3 id='arguments-9'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>(none)</p>
+<h3 id='response-8'>Response:</h3>
+<p>Structure|Type|Description
+---------|----|-----------  {
+      &quot;size&quot;                (numeric)    current tx count
+      &quot;bytes&quot;               (numeric)    sum of all tx sizes
+      &quot;usage&quot;               (numeric)    total memory usage for the mempool
+    }</p>
+
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>  command:
+
+    komodo-cli getmempoolinfo
+
+  response:
+
+  {
+    "size": 1,
+    "bytes": 226,
+    "usage": 896
+  }
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": {
+      "size": 1,
+      "bytes": 226,
+      "usage": 896
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+getrawmempool
+-------------
+
+  getrawmempool ( verbose )
+
+The `getrawmempool` method returns all transaction ids in the memory pool as a json array of transaction ids.
+
+The verbose input is optional and is false by default. When it is true, the method instead returns a json object with various related data.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+    verbose               (boolean, optional, default=false)     true for a json object, false for a json array of transaction ids
+
+Response (verbose = `false` ):
+
+    [
+      "transaction_id"                (string)    the transaction id
+      , ...
+    ]
+
+Response (verbose = `true` ):
+
+    {
+      "transaction_id" : {
+        "size"                       (numeric)   transaction size in bytes
+        "fee"                        (numeric)   transaction fee
+        "time"                       (numeric)   local time transaction entered pool in seconds since 1 Jan 1970 GMT
+        "height"                     (numeric)   block height when transaction entered pool
+        "startingpriority"           (numeric)   priority when transaction entered pool
+        "currentpriority"            (numeric)   transaction priority now
+        "depends": [                 (array)     unconfirmed transactions used as inputs for this transaction
+        "transaction_id"            (string)    parent transaction id
+           , ...
+      ]
+      }, ...
+    }
+
+&gt; You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
+
+</code></pre>
+<p>command:</p>
+
+<p>komodo-cli getrawmempool true</p>
+
+<p>response:</p>
+
+<p>{
+    &quot;44760f145303cae081819c6e54665d6716c98e97691603b4edf133b8180e6048&quot;: {
+      &quot;size&quot;: 488,
+      &quot;fee&quot;: 0.00011462,
+      &quot;time&quot;: 1536618366,
+      &quot;height&quot;: 448,
+      &quot;startingpriority&quot;: 20910198.65384615,
+      &quot;currentpriority&quot;: 20910198.65384615,
+      &quot;depends&quot;: [
+      ]
+    }
+  }
+```</p>
+<pre class="highlight plaintext"><code>  command:
+
+    curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawmempool", "params": [true] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": {
+      "44760f145303cae081819c6e54665d6716c98e97691603b4edf133b8180e6048": {
+        "size": 488,
+        "fee": 0.00011462,
+        "time": 1536618366,
+        "height": 448,
+        "startingpriority": 20910198.65384615,
+        "currentpriority": 20910198.65384615,
+        "depends": []
+      }
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+getspentinfo
+------------
+
+  getspentinfo '{"txid": "txid_string", "index", block_height_number}'
+
+The `getspentinfo` method returns the transaction id and index where an output is spent.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+    {
+      "txid"            (string)     the hex string of the txid
+      "index"           (number)     the start block height
+    }
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  {
+      "txid"            (string)     the transaction id
+      "index"           (number)     the spending input index
+      , ...
+    }
+
+&gt; You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
+
+</code></pre>
+<p>command:</p>
+
+<p>komodo-cli getspentinfo &#39;{&quot;txid&quot;: &quot;41ec75822318373bd00513efe7c708e745ab370db08ef4e0bd2ba4882ea77b40&quot;, &quot;index&quot;: 0}&#39;</p>
+
+<p>response:</p>
+
+<p>curl --user myrpcuser:myrpcpassword --data-binary &#39;{&quot;jsonrpc&quot;: &quot;1.0&quot;, &quot;id&quot;:&quot;curltest&quot;, &quot;method&quot;: &quot;getspentinfo&quot;, &quot;params&quot;: [{&quot;txid&quot;: &quot;41ec75822318373bd00513efe7c708e745ab370db08ef4e0bd2ba4882ea77b40&quot;, &quot;index&quot;: 0}] }&#39; -H &#39;content-type: text/plain;&#39; http://127.0.0.1:myrpcport/</p>
+<h2 id='gettxout'>gettxout</h2>
+<p>gettxout &quot;txid_string&quot; vout_number ( includemempool_bool )</p>
+
+<p>The <code>gettxout</code> method returns details about an unspent transaction output.</p>
+<h3 id='arguments-10'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>&quot;txid&quot;                      (string, required)     the transaction id
+    vout                        (numeric, required)    vout value
+    includemempool              (boolean, optional)    whether to include the mempool</p>
+<h3 id='response-9'>Response:</h3>
+<p>Structure|Type|Description
+---------|----|-----------  {
+      &quot;bestblock&quot;               (string)               the block hash
+      &quot;confirmations&quot;           (numeric)              the number of confirmations
+      &quot;value&quot;                   (numeric)              the transaction value
+    &quot;scriptPubKey&quot;: {
+         &quot;asm&quot;                  (string)
+         &quot;hex&quot;                  (string)
+         &quot;reqSigs&quot;              (numeric)              number of required signatures
+         &quot;type&quot;                 (string)               the type, e.g. pubkeyhash
+         &quot;addresses&quot; : [        (array of strings)     array of addresses
+            &quot;address&quot;      (string)               address on blockchain
+            , ...
+         ]
+    },
+    &quot;version&quot;                 (numeric)              the version
+    &quot;coinbase&quot;                (boolean)              coinbase or not
+    }</p>
+
+<p>Examples:</p>
+
+<p>command:</p>
+
+<p>komodo-cli gettxout &quot;txid&quot; 1</p>
+
+<p>response:</p>
+
+<p>{
+    &quot;bestblock&quot;: &quot;0e398d8d00f7846f28b47a6c0da16b14002441f5a5340b6d492060c698bdd84c&quot;,
+    &quot;confirmations&quot;: 252,
+    &quot;value&quot;: 0.00010000,
+    &quot;scriptPubKey&quot;: {
+      &quot;asm&quot;: &quot;03c0259e1a166e53f6ccf094ce37c0843d4a013622603bc301b4eb0f89c7cce823 OP_CHECKSIG&quot;,
+      &quot;hex&quot;: &quot;2103c0259e1a166e53f6ccf094ce37c0843d4a013622603bc301b4eb0f89c7cce823ac&quot;,
+      &quot;reqSigs&quot;: 1,
+      &quot;type&quot;: &quot;pubkey&quot;,
+      &quot;addresses&quot;: [
+        &quot;RM1mKzZDEr462UBqVjXSKXR3F83yMpG3Ue&quot;
+      ]
+    },
+    &quot;version&quot;: 1,
+    &quot;coinbase&quot;: true
+  }
+```</p>
+<pre class="highlight plaintext"><code>  command:
+
+    curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxout", "params": ["txid", 1] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": {
+      "bestblock": "0e398d8d00f7846f28b47a6c0da16b14002441f5a5340b6d492060c698bdd84c",
+      "confirmations": 252,
+      "value": 0.0001,
+      "scriptPubKey": {
+        "asm": "03c0259e1a166e53f6ccf094ce37c0843d4a013622603bc301b4eb0f89c7cce823 OP_CHECKSIG",
+        "hex": "2103c0259e1a166e53f6ccf094ce37c0843d4a013622603bc301b4eb0f89c7cce823ac",
+        "reqSigs": 1,
+        "type": "pubkey",
+        "addresses": [
+          "RM1mKzZDEr462UBqVjXSKXR3F83yMpG3Ue"
+        ]
+      },
+      "version": 1,
+      "coinbase": true
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+gettxoutproof
+-------------
+
+  gettxoutproof '["transaction_id", ... ]' ( "blockhash_string" )
+
+The `gettxoutproof` method returns a hex-encoded proof showing that the indicated transaction was included in a block.
+
+**NOTE:** The `gettxoutproof` method relies on the ===link=== `txindex` runtime parameter. This parameter is enabled by default on all KMD-based blockchains, and should never be disabled.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+  [
+    "txid"                 (string)               a transaction hash
+    , ...                     accepts multiple entries
+  ]
+    "blockhash"              (string, optional)     if specified, looks for the relevant txid in this block
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  "data"                          (string)               a string that is a serialized, hex-encoded data for the proof
+
+&gt; You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
+
+</code></pre>
+<p>command:</p>
+
+<p>komodo-cli gettxoutproof &#39;[&quot;c71f4a2ebf87bdd588e3aa168917933ee4be1661245ebf52d5708a8339cf9d7a&quot;]&#39; &quot;0a28e2fb630b282138bf23bb79f597b11acff6f57c8d9c1c10fa54770035c813&quot;</p>
+
+<p>response:</p>
+
+<p>040000004cd8bd98c66020496d0b34a5f5412400146ba10d6c7ab4286f84f7008d8d390e9ca9575183f60906e293e9766997396bec59f1c0b966085de3d17f8ac3c9d5280000000000000000000000000000000000000000000000000000000000000000da05975bf50e0f202d004b81fcc388cfd411d8c7c59a548e070b5affe938ce8ce830f10b298b00002402939a9a31df1305b40d26d9748283b102c708258717248d0d63f01d2957d8e3dcf56f6e03000000022e4babc29707fbdd8da2e4277b7c8b8b09e837f409eb047c936904d75fc8e6267a9dcf39838a70d552bf5e246116bee43e93178916aae388d5bd87bf2e4a1fc7010d</p>
+<h2 id='gettxoutsetinfo'>gettxoutsetinfo</h2>
+<p>gettxoutsetinfo</p>
+
+<p>The <code>gettxoutsetinfo</code> method returns statistics about the unspent transaction output set.</p>
+
+<ul>
+<li>Note this call may take a long time to complete, depending on the state of your blockchain.</li>
+</ul>
+
+<p>Arguments</p>
+
+<p>(none)</p>
+<h3 id='response-10'>Response:</h3>
+<p>Structure|Type|Description
+---------|----|-----------  {
+      &quot;height&quot;                (numeric)        the current block height (index)
+      &quot;bestblock&quot;             (string)         the best block hash hex
+      &quot;transactions&quot;          (numeric)        the number of transactions
+      &quot;txouts&quot;                (numeric)        the number of output transactions
+      &quot;bytes_serialized&quot;      (numeric)        the serialized size
+      &quot;hash_serialized&quot;       (string)         the serialized hash
+      &quot;total_amount&quot;          (numeric)        the total amount
+    }</p>
+
+<blockquote>
+<p>You can find your rpcusername, rpcpassword, and rpcport in the coin&#39;s .conf file.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    command:
+
+  komodo-cli gettxoutsetinfo
+
+  response:
+
+  {
+    "height": 459,
+    "bestblock": "0a28e2fb630b282138bf23bb79f597b11acff6f57c8d9c1c10fa54770035c813",
+    "transactions": 258,
+    "txouts": 261,
+    "bytes_serialized": 18051,
+    "hash_serialized": "fdd2039fa21400be0928b26dfe534f543dc5090989bcbd97fdc81b30ce7dca3a",
+    "total_amount": 10.16456229
+  }
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": {
+      "height": 459,
+      "bestblock": "0a28e2fb630b282138bf23bb79f597b11acff6f57c8d9c1c10fa54770035c813",
+      "transactions": 258,
+      "txouts": 261,
+      "bytes_serialized": 18051,
+      "hash_serialized": "fdd2039fa21400be0928b26dfe534f543dc5090989bcbd97fdc81b30ce7dca3a",
+      "total_amount": 10.16456229
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+kvsearch
+--------
+
+  kvsearch "key_string"
+
+The `kvsearch` method searches for a key stored via the ===link=== `kvupdate` command.
+
+ * Note: This feature is only available for asset chains.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+  key               (string, required)    search the chain for this key
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  {
+    "coin"            (string)              chain the key is stored on
+    "currentheight"   (numeric)             current height of the chain
+    "key"             (string)              key
+    "keylen"          (string)              length of the key
+    "owner"           (string)              hex string representing the owner of the key
+    "height"          (numeric)             height the key was stored at
+    "expiration"      (numeric)             height the key will expire
+    "flags": x        (numeric)             1 if the key was created with a password; 0 otherwise
+    "value"           (string)              stored value
+    "valuesize"       (string)              amount of characters stored
+  }
+
+Examples:
+
+  command:
+
+  komodo-cli kvsearch examplekey
+
+  response:
+
+  {
+    "coin": "MYCOIN",
+    "currentheight": 566,
+    "key": "examplekey",
+    "keylen": 10,
+    "owner": "1ff91604c6adb6ec550e7575fe9f1ca591704572e125f55bed03a21c242c31b7",
+    "height": 561,
+    "expiration": 2001,
+    "flags": 0,
+    "value": "examplevalue",
+    "valuesize": 12
+  }
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "kvsearch", "params": ["examplekey"] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": {
+      "coin": "MYCOIN",
+      "currentheight": 566,
+      "key": "examplekey",
+      "keylen": 10,
+      "owner": "1ff91604c6adb6ec550e7575fe9f1ca591704572e125f55bed03a21c242c31b7",
+      "height": 561,
+      "expiration": 2001,
+      "flags": 0,
+      "value": "examplevalue",
+      "valuesize": 12
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+
+kvupdate
+--------
+
+  kvupdate "key_string" "value_string" days "passphrase_string"
+
+The `kvupdate` method stores a key/value pair via OP_RETURN.
+
+This feature is available only for asset chains. The maximum value memory size is 8kB.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+  "key"                    (string, required)     key (should be unique)
+  "value"                  (string, required)     value
+  "days"                   (numeric, required)    amount of days before the key expires (1440 blocks/day); minimum 1 day
+  "passphrase"             (string, optional)     passphrase required to update this key
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  {
+    "coin"                 (string)               chain the key is stored on
+    "height"               (numeric)              height the key was stored at
+    "expiration"           (numeric)              height the key will expire
+    "flags"                (string)               amount of days the key will be stored
+    "key"                  (numeric)              stored key
+    "keylen"               (numeric)              length of the key
+    "value"                (numeric)              stored value
+    "valuesize"            (string)               length of the stored value
+    "fee"                  (string)               transaction fee paid to store the key
+    "txid"                 (string)               transaction id
+  }
+
+Examples:
+
+  command:
+
+  komodo-cli kvupdate "examplekey" "examplevalue" 2 "examplepassphrase"
+
+  response:
+
+  {
+    "coin": "MYCOIN",
+    "owner": "1ff91604c6adb6ec550e7575fe9f1ca591704572e125f55bed03a21c242c31b7",
+    "height": 566,
+    "expiration": 2006,
+    "flags": 3,
+    "key": "examplekey",
+    "keylen": 10,
+    "value": "examplevalue",
+    "valuesize": 12,
+    "fee": 0.001,
+    "txid": "2dc76f39188bb006931a2c924fdf66bc3baf149bf880fffad778cabd6ace5749"
+  }
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "kvupdate", "params": ["examplekey", "examplevalue", "2", "examplepassphrase"] }' -H 'content-type: text/plain;' http://127.0.0.1:9801
+
+  response:
+
+  {
+    "result": {
+      "coin": "MYCOIN",
+      "owner": "1ff91604c6adb6ec550e7575fe9f1ca591704572e125f55bed03a21c242c31b7",
+      "height": 566,
+      "expiration": 2006,
+      "flags": 3,
+      "key": "examplekey",
+      "keylen": 10,
+      "value": "examplevalue",
+      "valuesize": 12,
+      "fee": 0.001,
+      "txid": "9f44dc664882198b14e9a8c466d466efcdd070ccb6f57be8e2884aa11e7b2a30"
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+minerids
+--------
+
+  minerids height
+
+The `minerids` method returns information about the notary nodes and external miners at a specific block height. The response will calculate results according to the 2000 blocks proceeding the indicated "height" block.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+  heights                  (number)   the block height for the query
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  {
+    "mined": [
+      {
+        "notaryid"         (number)   the id of the specific notary node
+        "kmdaddress"       (string)   the KMD address of the notary node
+        "pubkey"           (string)   the public signing key of the notary node
+        "blocks"           (number)
+      }
+    ]
+  }
+
+Examples:
+
+
+  command:
+
+  komodo-cli minerids 1000000
+
+  response:
+
+  {
+    "mined": [
+      {
+        "notaryid": 0,
+        "KMDaddress": "RNJmgYaFF5DbnrNUX6pMYz9rcnDKC2tuAc",
+        "pubkey": "03b7621b44118017a16043f19b30cc8a4cfe068ac4e42417bae16ba460c80f3828",
+        "blocks": 22
+      }
+        ...    (63 responses omitted for brevity)
+      ,
+      {
+        "pubkey": "external miners",
+        "blocks": 541
+      }
+    ],
+    "numnotaries": 64
+  }
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "minerids", "params": ["1000000"] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": {
+      "mined": [
+        {
+          "notaryid": 0,
+          "KMDaddress": "RNJmgYaFF5DbnrNUX6pMYz9rcnDKC2tuAc",
+          "pubkey": "03b7621b44118017a16043f19b30cc8a4cfe068ac4e42417bae16ba460c80f3828",
+          "blocks": 22
+        }
+          ...    (63 responses omitted for brevity)
+        ,
+        {
+          "pubkey": "external miners",
+          "blocks": 541
+        }
+      ],
+      "numnotaries": 64
+    },
+    "error": null,
+    "id": "curltest"
+  }
+
+notaries height timestamp
+---------
+
+  notaries height timestamp
+
+  notaries height
+
+  notaries timestamp
+
+The `notaries` method returns the public key, BTC address, and KMD address for each Komodo notary node.
+
+Either or both of the height and timestamp parameters will suffice.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+                                      (at least one of the inputs must be provided)
+  height                 (number)     the block height desired for the query
+  timestamp              (number)     the timestamp of the block desired for the query
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  {
+    "notaries": [
+      {
+        "pubkey"         (string)       the public signing key of the indicated notary node, used on the KMD network to create notary-node authorized transactions
+        "BTCaddress"     (string)       the public BTC address the notary node uses on the BTC blockchain to create notarizations
+        "KMDaddress"     (string)       the public KMD address the notary node uses on the KMD blockchain to create notarizations
+      }
+      ,  ...                            property will return typically 64 objects
+    ],
+    "numnotaries"        (number)       the number of notary nodes; typically it is 64, but may vary on rare circumstances, such as during election seasons
+    "height"             (number)       the block height number at which the notary-node information applies
+    "timestamp"          (number)       the timestamp at which the notary-node information applies
+  }
+
+Examples:
+
+ * Note: Information about myrpcuser, myrpcpassword, and myrpcport can be found in the coin's .conf file.
+
+  command:
+
+  komodo-cli notaries 1536365515
+
+  response:
+
+  {
+    "notaries": [
+      {
+        "pubkey": "03b7621b44118017a16043f19b30cc8a4cfe068ac4e42417bae16ba460c80f3828",
+        "BTCaddress": "1E2ac2gxeFR2ir1H3vqETTperWkiXkwy99",
+        "KMDaddress": "RNJmgYaFF5DbnrNUX6pMYz9rcnDKC2tuAc"
+      },
+        ...  (63 responses omitted from the documentation for brevity)
+    ],
+    "numnotaries": 64,
+    "height": 1536365515,
+    "timestamp": 1536792974
+  }
+</code></pre><pre class="highlight plaintext"><code>  command:
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "notaries", "params": ["1000000"] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+  "result": {
+    "notaries": [
+      {
+        "pubkey": "03b7621b44118017a16043f19b30cc8a4cfe068ac4e42417bae16ba460c80f3828",
+        "BTCaddress": "1E2ac2gxeFR2ir1H3vqETTperWkiXkwy99",
+        "KMDaddress": "RNJmgYaFF5DbnrNUX6pMYz9rcnDKC2tuAc"
+      },
+        ...      (63 responses omitted from documentation for brevity)
+    ],
+    "numnotaries": 64,
+    "height": 1000000,
+    "timestamp": 1536365515
+  },
+  "error": null,
+  "id": "curltest"
+}
+
+verifychain
+-----------
+
+  verifychain ( checklevel numblocks )
+
+The `verifychain` method verifies the coin daemon's blockchain database.
+
+ * Note: depending on the state of your blockchain database and daemon, this call can take a prolonged period of time to complete.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+    checklevel          (numeric, optional, 0-4, default=3)        indicates the thoroughness of block verification
+    numblocks           (numeric, optional, default=288, 0=all)    indicates the number of blocks to verify
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  true|false          (boolean)                                  verification was successful or unsuccessful
+
+&gt; You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
+
+</code></pre>
+<p>command:</p>
+
+<p>komodo-cli verifychain</p>
+
+<p>response:</p>
+
+<p>true
+```</p>
+<pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:myrpcport/
+
+  response:
+
+  {
+    "result": true,
+    "error": null,
+    "id": "curltest"
+  }
+
+verifytxoutproof
+
+
+  verifytxoutproof "proof_string"
+
+The `verifytxoutproof` method verifies that a proof points to a transaction in a block. It returns the transaction to which the proof is committed, or it will throw an RPC error if the block is not in the current best chain.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+    "proof_string"            (string, required)       the hex-encoded proof generated by gettxoutproof
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  [
+    "txid"                  (string)         the transaction ids which the proof commits to; the array is empty if the proof is invalid
+  ]
+
+Examples:
+
+  command:
+
+  komodo-cli verifytxoutproof "040000004cd8bd98c66020496d0b34a5f5412400146ba10d6c7ab4286f84f7008d8d390e9ca9575183f60906e293e9766997396bec59f1c0b966085de3d17f8ac3c9d5280000000000000000000000000000000000000000000000000000000000000000da05975bf50e0f202d004b81fcc388cfd411d8c7c59a548e070b5affe938ce8ce830f10b298b00002402939a9a31df1305b40d26d9748283b102c708258717248d0d63f01d2957d8e3dcf56f6e03000000022e4babc29707fbdd8da2e4277b7c8b8b09e837f409eb047c936904d75fc8e6267a9dcf39838a70d552bf5e246116bee43e93178916aae388d5bd87bf2e4a1fc7010d"
+
+  response:
+
+  [
+    "c71f4a2ebf87bdd588e3aa168917933ee4be1661245ebf52d5708a8339cf9d7a"
+  ]
+</code></pre><pre class="highlight plaintext"><code>  command:
+
+  curl --user myrpcuser:myrpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifytxoutproof", "params": ["040000004cd8bd98c66020496d0b34a5f5412400146ba10d6c7ab4286f84f7008d8d390e9ca9575183f60906e293e9766997396bec59f1c0b966085de3d17f8ac3c9d5280000000000000000000000000000000000000000000000000000000000000000da05975bf50e0f202d004b81fcc388cfd411d8c7c59a548e070b5affe938ce8ce830f10b298b00002402939a9a31df1305b40d26d9748283b102c708258717248d0d63f01d2957d8e3dcf56f6e03000000022e4babc29707fbdd8da2e4277b7c8b8b09e837f409eb047c936904d75fc8e6267a9dcf39838a70d552bf5e246116bee43e93178916aae388d5bd87bf2e4a1fc7010d"] }' -H 'content-type: text/plain;' http://127.0.0.1:9801
+
+  response:
+
+  {
+    "result": [
+      "c71f4a2ebf87bdd588e3aa168917933ee4be1661245ebf52d5708a8339cf9d7a"
+    ],
+    "error": null,
+    "id": "curltest"
+  }
+</code></pre>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="C/C++">C/C++</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="(more coming)">(more coming)</a>
           </div>
       </div>
     </div>
