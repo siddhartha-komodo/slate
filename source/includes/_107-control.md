@@ -315,62 +315,6 @@ Structure|Type|Description
 
 ## getblockchaininfo
 
-**getblockchaininfo**
-
-The `getblockchaininfo` method returns a json object containing state information about blockchain processing.
-
-<aside class="notice">
-When the chain tip is at the last block before a network upgrade activation, the `consensus.chaintipc` value is not equal to the `consensus.nextblock` value.
-</aside>
-
-### Arguments:
-
-Structure|Type|Description
----------|----|-----------
-  (none)| |
-
-### Response:
-
-Structure|Type|Description
----------|----|-----------  
-{| |
-    "chain"|(string)|current network name as defined in BIP70 (main, test, regtest)
-    "blocks"|(numeric)|the current number of blocks processed in the server
-    "headers"|(numeric)|the current number of headers we have validated
-    "bestblockhash"|(string)|the hash of the currently best block
-    "difficulty"|(numeric)|the current difficulty
-    "verificationprogress"|(numeric)|estimate of verification progress [0..1]
-    "chainwork"|(string)|total amount of work in active chain, in hexadecimal
-    "commitments"|(numeric)|the current number of note commitments in the commitment tree
-    "softforks": [|(array)|status of softforks in progress
-      {| |
-        "id"|(string)|name of softfork
-        "version"|(numeric)|block version
-        "enforce": {|(object)|progress toward enforcing the softfork rules for new-version blocks
-          "status"|(boolean)|true if threshold reached
-          "found"|(numeric)|number of blocks with the new version found
-          "required"|(numeric)|number of blocks required to trigger
-          "window"|(numeric)|maximum size of examined window of recent blocks
-        },| |
-        "reject": {| |
-          ...|(object)|progress toward rejecting pre-softfork blocks (same fields as "enforce")
-        }| |
-      }, ...|accepts multiple entries
-    ],
-    "upgrades": {|(object)|status of network upgrades
-      "xxxxxxxxx_string": {|(string)|branch ID of the upgrade
-          "name"|(string)|name of upgrade
-          "activationheight"|(numeric)|block height of activation
-          "status"|(string)|status of upgrade
-          "info"|(string)|additional information about upgrade
-      }, ...|accepts multiple entries
-    },| |
-    "consensus": {|(object)|branch IDs of the current and upcoming consensus rules
-     "chaintip"|(string)|branch ID used to validate the current chain tip
-     "nextblock"|(string)|branch ID that the next block will be validated under
-    }| |
-  }| |
-
 ```
 command:
 
@@ -480,7 +424,63 @@ response:
 }
 ```
 
-getblockcount
+**getblockchaininfo**
+
+The `getblockchaininfo` method returns a json object containing state information about blockchain processing.
+
+<aside class="notice">
+When the chain tip is at the last block before a network upgrade activation, the `consensus.chaintipc` value is not equal to the `consensus.nextblock` value.
+</aside>
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+  (none)| |
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------  
+{| |
+    "chain"|(string)|current network name as defined in BIP70 (main, test, regtest)
+    "blocks"|(numeric)|the current number of blocks processed in the server
+    "headers"|(numeric)|the current number of headers we have validated
+    "bestblockhash"|(string)|the hash of the currently best block
+    "difficulty"|(numeric)|the current difficulty
+    "verificationprogress"|(numeric)|estimate of verification progress [0..1]
+    "chainwork"|(string)|total amount of work in active chain, in hexadecimal
+    "commitments"|(numeric)|the current number of note commitments in the commitment tree
+    "softforks": [|(array)|status of softforks in progress
+      {| |
+        "id"|(string)|name of softfork
+        "version"|(numeric)|block version
+        "enforce": {|(object)|progress toward enforcing the softfork rules for new-version blocks
+          "status"|(boolean)|true if threshold reached
+          "found"|(numeric)|number of blocks with the new version found
+          "required"|(numeric)|number of blocks required to trigger
+          "window"|(numeric)|maximum size of examined window of recent blocks
+        },| |
+        "reject": {| |
+          ...|(object)|progress toward rejecting pre-softfork blocks (same fields as "enforce")
+        }| |
+      }, ...| |accepts multiple entries
+    ],| |
+    "upgrades": {|(object)|status of network upgrades
+      "xxxxxxxxx_string": {|(string)|branch ID of the upgrade
+          "name"|(string)|name of upgrade
+          "activationheight"|(numeric)|block height of activation
+          "status"|(string)|status of upgrade
+          "info"|(string)|additional information about upgrade
+      }, ...|accepts multiple entries
+    },| |
+    "consensus": {|(object)|branch IDs of the current and upcoming consensus rules
+     "chaintip"|(string)|branch ID used to validate the current chain tip
+     "nextblock"|(string)|branch ID that the next block will be validated under
+    }| |
+  }| |
+
+## getblockcount
 
 **getblockcount**
 
