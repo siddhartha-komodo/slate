@@ -1,1 +1,0 @@
-true/false                                   |(boolean)                    |indicates whether the server is set to generate coins

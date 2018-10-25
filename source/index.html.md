@@ -19,7 +19,8 @@ includes:
   - 107-blockchain
   - 111-control
   - 115-disclosure
-  - 119-mining
+  - 119-generate
+  - 123-mining
 
 search: true
 ---
