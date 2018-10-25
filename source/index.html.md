@@ -16,7 +16,10 @@ includes:
   - 001-introduction
   - 010-common-runtime-parameters
   - 103-address-index
-  - 107-control
+  - 107-blockchain
+  - 111-control
+  - 115-disclosure
+  - 119-mining
 
 search: true
 ---

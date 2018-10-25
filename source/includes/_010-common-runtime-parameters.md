@@ -1,4 +1,4 @@
-# Settings, Parameters, & Maintenance
+# Settings, Parameters, Maintenance
 
 ## Accessing the Coin Daemon Remotely
 

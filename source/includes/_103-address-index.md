@@ -36,7 +36,7 @@ response:
 }
 ```
 
-**getaddressbalance '{ "addresses" : [ "address" *( , ... )* ] }'**
+**getaddressbalance '{ "addresses" : [ "address" ( , ... ) ] }'**
 
 The ``getaddressbalance`` method returns the confirmed balance for an address, or addresses. It requires [`addressindex`](## addressindex) to be enabled.
 
@@ -171,9 +171,9 @@ response:
 }
 ```
 
-**getaddressdeltas '{ "addresses" : [ "address" *(, ... )* ] }'**
+**getaddressdeltas '{ "addresses" : [ "address" (, ... ) ] }'**
 
-**getaddressdeltas '{ "addresses" : [ "address" *(, ... )* ] , "start": start, "end": end, "chainInfo": boolean }'**
+**getaddressdeltas '{ "addresses" : [ "address" (, ... ) ] , "start": start, "end": end, "chainInfo": boolean }'**
 
 The ``getaddressdeltas`` method returns all confirmed balance changes of an address. The user can optionally limit the response to a given interval of blocks. The method requires [`addressindex`](## addressindex) to be enabled.
 
@@ -190,7 +190,7 @@ Structure|Type|Description
   "start"|(number)|the start block height
   "end"|(number)|the end block height
   "chainInfo"|(boolean)|include chain info in results (only applies if start and end specified)
-}| | 
+}| |
 
 ### Response
 
@@ -252,7 +252,7 @@ response:
 }
 ```
 
-**getaddressmempool '{ "addresses" : [ "address" *(, ... )* ] }'**
+**getaddressmempool '{ "addresses" : [ "address" (, ... ) ] }'**
 
 The `getaddressmempool` method returns all mempool deltas for an address, or addresses. It requires [`addressindex`](## addressindex) to be enabled.
 
@@ -322,7 +322,7 @@ response:
 
 ```
 
-**getaddresstxids '{ "addresses" : [ "address" *(, ... )* ] }'**
+**getaddresstxids '{ "addresses" : [ "address" (, ... ) ] }'**
 
 The `getaddresstxids` method returns the txids for an address, or addresses. It requires [`addressindex`](## addressindex) to be enabled.
 
@@ -448,7 +448,7 @@ response:
 }
 ```
 
-**getaddressutxos '{ "addresses" : [ "address" *(, ... )* ] }'**
+**getaddressutxos '{ "addresses" : [ "address" (, ... ) ] }'**
 
 The `getaddressutxos` method returns all unspent outputs for an address. It requires [`addressindex`](## addressindex) to be enabled.
 
