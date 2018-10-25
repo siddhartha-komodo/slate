@@ -461,7 +461,7 @@ Structure|Type|Description
           "required"|(numeric)|number of blocks required to trigger
           "window"|(numeric)|maximum size of examined window of recent blocks
         },| |
-        "reject": {| |
+        "reject": {| | 
           ...|(object)|progress toward rejecting pre-softfork blocks (same fields as "enforce")
         }| |
       }, ...| |accepts multiple entries
