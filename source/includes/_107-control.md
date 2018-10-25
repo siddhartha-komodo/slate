@@ -461,7 +461,7 @@ Structure|Type|Description
           "required"|(numeric)|number of blocks required to trigger
           "window"|(numeric)|maximum size of examined window of recent blocks
         },| |
-        "reject": {| | 
+        "reject": {| |
           ...|(object)|progress toward rejecting pre-softfork blocks (same fields as "enforce")
         }| |
       }, ...| |accepts multiple entries
@@ -570,38 +570,6 @@ Structure|Type|Description
 
 ## getblockhashes
 
-**getblockhashes high low '{"noOrphans": bool, "logicalTimes": bool}'**
-
-The `getblockhashes` method returns an array of hashes of blocks within the timestamp range provided.
-
-### Arguments:
-
-Structure|Type|Description
----------|----|-----------
-high|(numeric, required)|the newer block timestamp
-low|(numeric, required)|the older block timestamp
-options|(string, required)|
-{| |
-  "noOrphans"|(boolean)|will only include blocks on the main chain
-  "logicalTimes"|(boolean)|will include logical timestamps with hashes
-}| |
-
-### Response:
-
-Structure|Type|Description
----------|----|-----------
-[| |
-  "hash"|(string)|the block hash
-]| |
-[| |
-  {| |
-    "blockhash"|(string)|the block hash
-    "logicalts"|(numeric)|the logical timestamp
-  }| |
-]| |
-
-> You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
-
 ```
 command:
 
@@ -610,6 +578,8 @@ komodo-cli getblockhashes 1231614698 1231024505
 response:
 
 ```
+
+> You can find your rpcusername, rpcpassword, and rpcport in the coin's .conf file.
 
 ```
 command:
@@ -628,6 +598,36 @@ komodo-cli getblockhashes 1231614698 1231024505 '{"noOrphans":false, "logicalTim
 response:
 
 ```
+
+**getblockhashes high low '{"noOrphans": bool, "logicalTimes": bool}'**
+
+The `getblockhashes` method returns an array of hashes of blocks within the timestamp range provided.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+high|(numeric, required)|the newer block timestamp
+low|(numeric, required)|the older block timestamp
+options|(string, required)| 
+{| |
+  "noOrphans"|(boolean)|will only include blocks on the main chain
+  "logicalTimes"|(boolean)|will include logical timestamps with hashes
+}| |
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------
+[| |
+  "hash"|(string)|the block hash
+]| |
+[| |
+  {| |
+    "blockhash"|(string)|the block hash
+    "logicalts"|(numeric)|the logical timestamp
+  }| |
+]| |
 
 ## getblockheader
 
