@@ -1,7 +1,7 @@
 {                                            |                             |
-"isvalid"                                    |(boolean)                    |indicates whether the address is valid; if not, this is the only property returned
-"address"                                    |(string)                     |the z address validated
-"ismine"                                     |(boolean)                    |indicates if the address is yours or not
-"payingkey"                                  |(string)                     |the hex value of the paying key, a_pk
-"transmissionkey"                            |(string)                     |the hex value of the transmission key, pk_enc
+"remainingUTXOs"                             |(numeric)                    |number of coinbase utxos still available for shielding
+"remainingValue"                             |(numeric)                    |value of coinbase utxos still available for shielding
+"shieldingUTXOs"                             |(numeric)                    |number of coinbase utxos being shielded
+"shieldingValue"                             |(numeric)                    |value of coinbase utxos being shielded
+"opid"                                       |(string)                     |an operationid to pass to z_getoperationstatus to get the result of the operation
 }                                            |                             |
