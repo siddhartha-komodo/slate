@@ -803,13 +803,9 @@
 
 <p>If you find any bugs or if you have any questions, please reach out by <a href="https://support.komodoplatform.com/support/home">submitting a ticket</a>, or by speaking to us directly on <a href="https://komodoplatform.com/discord">our Discord channel</a>.</p>
 <h2 id='installing-basic-komodo-software'>Installing Basic Komodo Software</h2>
-<p>To install the Komodo daemon, <code>komodod</code>, and its necessary counterpart, <code>komodo-cli</code>, the simplest method is to <a href="https://github.com/KomodoPlatform/komodo/releases">download and install a packaged version</a>.</p>
+<p>To install the Komodo daemon, <code>komodod</code>, and its necessary counterpart, <code>komodo-cli</code>, the simplest method is to <a href="https://github.com/KomodoPlatform/komodo/releases">download and unzip pre-compiled executables</a>. Once unpacked, the executables do not require installation. Simply find <code>komodod</code> and <code>komodo-cli</code> in the directory where you unzipped the files.</p>
 
-<p>Once installed, you should find <code>komodod</code> and <code>komodo-cli</code> in the following directory structure:</p>
-
-<p><code>LOCATION_OF_AGAMA_INSTALLATION/komodo/src/</code></p>
-
-<p>You may also build <code>komodod</code> and <code>komodo-cli</code> from source, when you are ready to keep abreast of the latest features and updates. This is not necessary during the testing phase, but is considered the best practice for a blockchain in a production setting. Building from source enables you to receive security patches the moment they are pushed to the <code>komodod</code> source.</p>
+<p>You may also build <code>komodod</code> and <code>komodo-cli</code> from source. This is not required, but it is considered the best practice. Building from source enables you to receive the latest patches and security upgrades the moment they are pushed to the <code>komodod</code> source.</p>
 
 <p>You will find <a href="https://docs.komodoplatform.com/komodo/install-Komodo-manually.html">a walkthrough on building from source here</a>.</p>
 <h2 id='interacting-with-komodo-chains'>Interacting with Komodo Chains</h2>
@@ -817,15 +813,15 @@
 
 <p>The first is the coin daemon itself, <code>komodod</code>. This is initiated by calling it from the command line and including any desired runtime parameters. When initiating any Komodo-compatible blockchain other than the main KMD blockchain, the user should also include the <code>-ac_name=COINNAME</code> and <code>-ac_supply=COINSUPPLY</code> parameters.</p>
 
-<p>Once <a href="https://github.com/KomodoPlatform/komodo/releases">the <code>komodod</code> software is installed</a>, find the location you chose to install it, and <code>cd</code> into the <code>/komodod/src</code> subdirectory. There, you should see <code>komodod</code> and <code>komodo-cli</code>.</p>
+<p>Once the software is set up, change into the installation directory.</p>
 
 <aside class="notice">
-  If you are using windows, replace `./komodod` and `./komodo-cli` with `komodod.exe` and `komodo-cli.exe` for each step.
+  Note to Windows Users: If you are using windows, replace `./komodod` and `./komodo-cli` with `komodod.exe` and `komodo-cli.exe` for each step.
 </aside>
 
 <p>To launch the main KMD chain, execute:</p>
 
-<p><code>./komodod</code></p>
+<p><code>./komodod &amp;</code> or <code>./komodod -daemon</code></p>
 
 <p>After the daemon launches, you may interact with it using <code>komodo-cli</code> like so:</p>
 
@@ -849,23 +845,24 @@
 
 <p>Also, in the terminal you can call the Komodo documentation by executing:</p>
 
-<p><code>komodo-cli help</code></p>
+<p><code>./komodo-cli help</code></p>
 
 <p>To learn more via the terminal about a specific API command, execute:</p>
 
-<p><code>komodo-cli help API_COMMAND</code></p>
-
+<p><code>./komodo-cli help API_COMMAND</code></p>
+<pre class="highlight plaintext"><code>./komodo-cli help getnewaddress
+</code></pre>
 <p>For more information about creating and interacting with asset chains, please visit our <a href="#komodo-asset-chain-basics">asset-chain creation documentation</a>.</p>
 
 <p>Follow this link to find information on <a href="#accessing-the-coin-daemon-remotely">accessing the coin daemon remotely</a>.</p>
 
 <aside class="warning">
-  IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives the dPoW security service.
+  IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives the dPoW security service. Please reach out to us to receive this service.
 </aside>
 <h2 id='komodo-39-s-native-dex-barterdex'>Komodo&#39;s Native DEX: BarterDEX</h2>
 <p>Komodo offers built-in native decentralized-exchange (DEX) compatibility through our software, BarterDEX. This software is separate from <code>komodod</code> and <code>komodo-cli</code>.</p>
 
-<p>BarterDEX is a pioneer in atomic-swap based exchange methods, and via our open-source philosophy, anyone is welcome to use it without restriction. Through our atomic-swap technology the end-users utilizing BarterDEX maintain ownership of their private keys at all times. Therefore, the developers maintaining any cluster of traders utilizing the BarterDEX software are not acting in the capacity of escrow-service and trading providers, unlike other exchanges.</p>
+<p>BarterDEX is a pioneer in atomic-swap based exchange methods, and via our open-source philosophy, anyone is welcome to use it without restriction. Through our atomic-swap technology the end-users utilizing BarterDEX maintain ownership of their private keys at all times. Therefore, the developers maintaining any cluster of traders utilizing the BarterDEX software are not acting in the capacity of escrow-service or trading providers, unlike other exchanges.</p>
 
 <p>Because the BarterDEX software is separate from <code>komodod</code> and <code>komodo-cli</code>, at this time we do not include it in this API documentation. Rather, you may find <a href="https://docs.komodoplatform.com/barterDEX/barterDEX-API.html">API documentation for BarterDEX here</a>.</p>
 <h1 id='launch-settings-amp-maintenance'>Launch Settings &amp; Maintenance</h1>
