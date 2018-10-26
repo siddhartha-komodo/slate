@@ -1,5 +1,7 @@
 # Mining
 
+The following RPC calls interact with the `komodod` software, and are made available through the `komodo-cli` software.
+
 ## getblocksubsidy
 
 ```
@@ -145,7 +147,7 @@ response:
 The `getblocktemplate` method returns data that is necessary to construct a block.
 
 <aside class="notice">
-  See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
+  See <a href="https://en.bitcoin.it/wiki/BIP_0022">the Bitcoin wiki</a> for full specification.
 </aside>
 
 If the request parameters include a `mode` key, it is used to explicitly select between the default 'template' request or a 'proposal'.
@@ -326,8 +328,8 @@ Structure|Type|Description
 "currentblocktx"                             |(numeric)                    |the last block transaction
 "difficulty"                                 |(numeric)                    |the current difficulty
 "errors":                                    |                             |
-"generate"                                   |(boolean)                    |if the generation is on or off (see ===links=== getgenerate or setgenerate calls)
-"genproclimit"                               |(numeric)                    |the processor limit for generation; -1 if no generation (see ===links=== getgenerate or setgenerate calls)
+"generate"                                   |(boolean)                    |if the generation is on or off (see [getgenerate](#getgenerate) or [setgenerate](#setgenerate) calls)
+"genproclimit"                               |(numeric)                    |the processor limit for generation; -1 if no generation (see[getgenerate](#getgenerate) or [setgenerate](#setgenerate) calls)
 "localsolps"                                 |(numeric)                    |the average local solution rate (solutions per second) since this node was started
 "networksolps"                               |(numeric)                    |the estimated network solution rate (solutions per second)
 "pooledtx":                                  |                             |
@@ -364,7 +366,7 @@ response:
 ```
 
 <aside class="warning">
-  DEPRECATED: Use getnetworksolps instead.
+  DEPRECATED: Use <b>getnetworksolps</b> instead.
 </aside>
 
 **getnetworkhashps ( blocks height )**
@@ -464,7 +466,7 @@ result:
 The `prioritisetransaction` method instructs the daemon to accept the indicated transaction into mined blocks at a higher (or lower) priority. The transaction selection algorithm considers the transaction as it would have a higher priority.
 
 <aside class="notice">
-  This method is inherited from the original Bitcoin protocol, of which KMD is a fork (via Zcash). For more examples regarding this method, please see: https://bitcoincore.org/en/doc/0.16.1/rpc/mining/prioritisetransaction/
+  This method is inherited from the original Bitcoin protocol, of which KMD is a fork (via Zcash). For more examples regarding this method, please see <a href="https://bitcoincore.org/en/doc/0.16.1/rpc/mining/prioritisetransaction/">the linked documentation</a>.
 </aside>
 
 ### Arguments:
@@ -507,11 +509,11 @@ response:
 The `submitblock` method instructs the daemon to propose a new block to the network.
 
 <aside class="notice">
-  The `jsonparametersobject` parameter is currently ignored. See https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki for full specification
+  The <b>jsonparametersobject</b> parameter is currently ignored. See <a href="https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki">the linked documentation</a> for full specification details.
 </aside>
 
 <aside class="notice">
-  Note: for more information on `submitblock` parameters and results, see: https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki#block-submission
+  Note: for more information on <b>submitblock</b> parameters and results, see <a href="https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki#block-submission">the linked documentation</a>.
 </aside>
 
 ### Arguments:

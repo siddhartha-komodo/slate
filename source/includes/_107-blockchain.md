@@ -429,7 +429,7 @@ response:
 The `getblockchaininfo` method returns a json object containing state information about blockchain processing.
 
 <aside class="notice">
-When the chain tip is at the last block before a network upgrade activation, the `consensus.chaintipc` value is not equal to the `consensus.nextblock` value.
+  When the chain tip is at the last block before a network upgrade activation, the <b>consensus.chaintip</b> value is not equal to the <b>consensus.nextblock</b> value.
 </aside>
 
 ### Arguments:
@@ -1155,7 +1155,7 @@ response:
 The `gettxoutproof` method returns a hex-encoded proof showing that the indicated transaction was included in a block.
 
 <aside class="notice">
-The `gettxoutproof` method relies on the `txindex` runtime parameter. This parameter is enabled by default on all KMD-based blockchains, and should never be disabled.
+  The <b>gettxoutproof</b> method relies on the <b>txindex</b> runtime parameter. This parameter is enabled by default on all KMD-based blockchains, and should never be disabled.
 </aside>
 
 ### Arguments:
@@ -1223,7 +1223,7 @@ response:
 The `gettxoutsetinfo` method returns statistics about the unspent transaction output set.
 
 <aside class="notice">
-Note this call may take a long time to complete, depending on the state of your blockchain.
+  Note this call may take a long time to complete, depending on the state of your blockchain.
 </aside>
 
 ### Arguments:
@@ -1296,10 +1296,10 @@ response:
 
 **kvsearch "key_string"**
 
-The `kvsearch` method searches for a key stored via the [`kvupdate`](## kvupdate) command.
+The `kvsearch` method searches for a key stored via the [`kvupdate`](#kvupdate) command.
 
 <aside class="notice">
-This feature is only available for asset chains.
+  This feature is only available for asset chains.
 </aside>
 
 ### Arguments:
@@ -1382,7 +1382,7 @@ response:
 The `kvupdate` method stores a key/value pair via OP_RETURN.
 
 <aside class="notice">
-This feature is available only for asset chains. The maximum value memory size is 8kB.
+  This feature is available only for asset chains. The maximum value memory size is 8kB.
 </aside>
 
 ### Arguments:
@@ -1617,7 +1617,7 @@ response:
 The `verifychain` method verifies the coin daemon's blockchain database.
 
 <aside class="notice">
-Depending on the state of your blockchain database and daemon, this call can take a prolonged period of time to complete.
+  Depending on the state of your blockchain database and daemon, this call can take a prolonged period of time to complete.
 </aside>
 
 ### Arguments:

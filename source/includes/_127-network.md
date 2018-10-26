@@ -1,5 +1,7 @@
 # Network
 
+The following RPC calls interact with the `komodod` software, and are made available through the `komodo-cli` software.
+
 ## addnode
 
 ```  
@@ -32,7 +34,7 @@ The `addnode` method attempts to add or remove a node from the addnode list, or 
 
 Structure|Type|Description
 ---------|----|-----------
-"node"                                       |(string, required)           |the node (see ===link=== `getpeerinfo` for nodes)
+"node"                                       |(string, required)           |the node (see [`getpeerinfo`](#getpeerinfo) for nodes)
 "command"                                    |(string, required)           |'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
 
 ### Response:
@@ -115,7 +117,7 @@ Use `getpeerinfo` to determine the result.
 
 Structure|Type|Description
 ---------|----|-----------
-"node"                                       |(string, required)           |the node's address (see ===link=== `getpeerinfo` for nodes)
+"node"                                       |(string, required)           |the node's address (see [`getpeerinfo`](#getpeerinfo) for nodes)
 
 ### Response:
 
@@ -202,7 +204,7 @@ The `getaddednodeinfo` method returns information about the given added node, or
 If `dns` is set to `false`, only a list of added nodes is returned. Otherwise, connection information is also provided.
 
 <aside class="notice">
-  Nodes added via `onetry` are not listed here.
+  Nodes added via <b>onetry</b> are not listed here.
 </aside>
 
 ### Arguments:
@@ -332,7 +334,7 @@ Structure|Type|Description
 {                                            |                             |
 "version"                                    |(numeric)                    |the server version
 "subversion"                                 |(string)                     |the server sub-version string (i.e. "/MagicBean:x.y.z[-v]/")
-"deprecationheight"                          |(numeric)                    |the block height at which this version will deprecate and shut down (unless ===link?=== -disabledeprecation is set)
+"deprecationheight"                          |(numeric)                    |the block height at which this version will deprecate and shut down (unless [`disabledeprecation`](https://z.cash/blog/new-release-1-1-2/) is set)
 }                                            |                             |
 
 ## getnettotals
@@ -743,7 +745,7 @@ Results provided in `getpeerinfo`, `pingtime` and `pingwait` fields are decimal 
 The `ping` command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
 <aside class="notice">
-  Use `getpeerinfo` to see `ping` results.
+  Use <b>getpeerinfo</b> to see <b>ping</b> results.
 </aside>
 
 ### Arguments:
@@ -812,5 +814,5 @@ Structure|Type|Description
 (none)                                       |                             |
 
 <aside class="notice">
-  Use `listbanned` to view results.
+  Use <b>listbanned</b> to view results.
 </aside>

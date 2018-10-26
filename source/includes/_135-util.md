@@ -1,5 +1,7 @@
 # Util
 
+The following RPC calls interact with the `komodod` software, and are made available through the `komodo-cli` software.
+
 ## createmultisig
 
 ```
@@ -265,7 +267,7 @@ H1y0mn/wRv56r1bcfkbQtzjG6XeWSelAsyayBuCwEL9XGXs7ieU55dryt/cFWM9gnRFI7gS01AByuSqR
 The `verifymessage` method verifies a signed message.
 
 <aside class="notice">
-  See also `signmessage`
+  See also <b>signmessage</b>.
 </aside>
 
 ### Arguments:

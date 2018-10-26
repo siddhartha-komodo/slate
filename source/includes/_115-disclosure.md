@@ -1,5 +1,7 @@
 # Disclosure
 
+The following RPC calls interact with the `komodod` software, and are made available through the `komodo-cli` software.
+
 ## z_getpaymentdisclosure
 
 ```
@@ -25,8 +27,7 @@ response:
 ```
 
 <aside class="warning">
-**EXPERIMENTAL FEATURE**
-Payment disclosure is currently DISABLED. This call always fails.
+  EXPERIMENTAL FEATURE: Payment disclosure is currently DISABLED. This call always fails.
 </aside>
 
 **z_getpaymentdisclosure "transaction" "js_index" "output_index" ("message")**
@@ -77,8 +78,7 @@ response:
 The `z_validatepaymentdisclosure` method validates a payment disclosure.
 
 <aside class="warning">
-**EXPERIMENTAL FEATURE**
-Payment disclosure is currently DISABLED. This call always fails.
+  EXPERIMENTAL FEATURE: Payment disclosure is currently DISABLED. This call always fails.
 </aside>
 
 ### Arguments:

@@ -1,5 +1,7 @@
 # Generating
 
+The following RPC calls interact with the `komodod` software, and are made available through the `komodo-cli` software.
+
 ## generate
 
 ```
@@ -18,7 +20,7 @@ response:
 **generate numblocks**
 
 <aside class="notice">
-This function can only be used on a `-regtest` network (for testing purposes)
+  This function can only be used on a <b>regtest</b> network (for testing purposes).
 </aside>
 
 The `generate` method instructs the coin daemon to immediately mine the indicated number of blocks.
@@ -73,7 +75,7 @@ The `getgenerate` method returns a boolean value indicating the server's mining 
 The default value is false.
 
 <aside class="notice">
-  See also [`-gen`](## gen).
+  See also <b>gen</b>.
 </aside>
 
 ### Arguments:
@@ -146,10 +148,10 @@ response:
 
 The `setgenerate` method allows the user to set the `generate` property in the coin daemon to `true` or `false`, thus turning generation (mining) on or off.
 
-Generation is limited to [`genproclimit`](## genproclimit) processors. Set `genproclimit` to `-1` for unlimited.
+Generation is limited to [`genproclimit`](#genproclimit) processors. Set `genproclimit` to `-1` for unlimited.
 
 <aside class="notice">
-  See also the [`getgenerate`](## getgenerate) method to query the current setting, and [`genproclimit`](##genproclimit) for setting processor default parameters.
+  See also the <b>getgenerate</b> method to query the current setting, and <b>genproclimit</b> for setting processor default parameters.
 </aside>
 
 ### Arguments:

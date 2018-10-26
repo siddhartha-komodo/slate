@@ -64,7 +64,7 @@ For example, to launch the DEX asset chain, execute:
 `./komodod -pubkey=$pubkey -ac_name=DEX -ac_supply=999999 -addnode=78.47.196.146 $1 &`
 
 <aside class="notice">
-IMPORTANT: Always execute the launch command EXACTLY as indicated, and as the asset-chain's developers instruct. Failure to do so will cause the blockchain's internal settings to malfunction, and you will have to reinstall and re-sync to regain access to the blockchain's network.
+  IMPORTANT: Always execute the launch command EXACTLY as indicated, and as the asset-chain's developers instruct. Failure to do so will cause the blockchain's internal settings to malfunction, and you will have to reinstall and re-sync to regain access to the blockchain's network.
 </aside>
 
 To interact with the DEX daemon, use `komodo-cli` like so:
@@ -83,10 +83,10 @@ To learn more via the terminal about a specific API command, execute:
 
 For more information about creating and interacting with asset chains, please visit our [full asset-chain creation documentation here](https://docs.komodoplatform.com/komodo/create-Komodo-Assetchain.html).
 
-Follow this link to find information on [accessing the coin daemon remotely](## Accessing the Coin Daemon Remotely).
+Follow this link to find information on [accessing the coin daemon remotely](#accessing-the-coin-daemon-remotely).
 
 <aside class="warning">
-IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives our dPoW security services.
+  IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives the dPoW security service.
 </aside>
 
 ## Komodo's Native DEX: BarterDEX

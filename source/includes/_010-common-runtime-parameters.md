@@ -1,4 +1,6 @@
-# Settings, Parameters, Maintenance
+# Launch Settings & Maintenance
+
+The following parameters and walkthroughs primarily concern the `komodod` software.
 
 ## Accessing the Coin Daemon Remotely
 
@@ -57,7 +59,7 @@ To erase all synced blockchain data, the following files should be deleted from 
 
 ## Intro to Parameters and Settings
 
-The following is an abbreviated list of runtime parameters and settings that can be initiated in a [coin daemon's .conf file](## Accessing the Coin Daemon Remotely).
+The following is an abbreviated list of runtime parameters and settings that can be initiated in a [coin daemon's .conf file](#accessing-the-coin-daemon-remotely).
 
 These commands largely derive from the upstream Bitcoin software, `bitcoind`. (Komodo is a fork of Zcash, and Zcash is a privacy-centric fork of Bitcoin. Therefore essentially all commands available in both Bitcoin and Zcash are available in Komodo.)
 
@@ -79,10 +81,10 @@ komodod -addressindex=1
 
 `addressindex` instructs a KMD-based coin daemon to maintain an index of all addresses and balances.
 
-The user should [manually delete the blockchain data](## Manually Deleting Blockchain Data) before initiating this parameter.
+The user should [manually delete the blockchain data](#manually-deleting-blockchain-data) before initiating this parameter.
 
 <aside class="notice">
-[The `-reindex` parameter](### reindex) is not a viable alternative method for re-syncing the blockchain in this circumstance.
+  The <b>reindex</b> parameter is not a viable alternative method for re-syncing the blockchain in this circumstance.
 </aside>
 
 `addressindex` is enabled by default on any asset chain that utilizes the CryptoConditions (CC) smart-contract protocol.
@@ -104,7 +106,7 @@ The user should [manually delete the blockchain data](## Manually Deleting Block
 `reindex` instructs the daemon to re-index the currently synced blockchain data.
 
 <aside class="notice">
-Depending on the size and state of the chain you are re-indexing, this parameter may prolong the daemon launch time.
+  Depending on the size and state of the chain you are re-indexing, this parameter may prolong the daemon launch time.
 </aside>
 
 ## timestampindex
@@ -123,10 +125,10 @@ Depending on the size and state of the chain you are re-indexing, this parameter
 
 `timestampindex` instructs a KMD-based coin daemon to maintain a timestamp index for all blockhashes.
 
-The user should manually delete the blockchain data before initiating this parameter ===link to manual deletion instructions===.
+The user should [manually delete the blockchain data](#manually-deleting-blockchain-data) before initiating this parameter.
 
 <aside class="notice">
-[The `-reindex` parameter](### reindex) is NOT a viable alternative method for re-syncing the blockchain in this circumstance.
+  The <b>reindex</b> parameter is not a viable alternative method for re-syncing the blockchain in this circumstance.
 </aside>
 
 ## spentindex
@@ -145,12 +147,12 @@ The user should manually delete the blockchain data before initiating this param
 
 `spentindex` instructs a KMD-based coin daemon to maintain a full index of all spent transactions (txids).
 
-The user should [manually delete the blockchain data](## Manually Deleting Blockchain Data) before initiating this parameter.
+The user should [manually delete the blockchain data](#manually-deleting-blockchain-data) before initiating this parameter.
 
 `spentindex` is enabled by default on any asset chain that utilizes the CryptoConditions (CC) smart contract protocol.
 
 <aside class="notice">
-[The `-reindex` parameter](### reindex) is NOT a viable alternative method for re-syncing the blockchain in this circumstance.
+  The <b>reindex</b> parameter is not a viable alternative method for re-syncing the blockchain in this circumstance.
 </aside>
 
 ## regtest
@@ -253,9 +255,9 @@ Use [host]:port notation for IPv6
   addnode=69.164.218.197
 ```
 
-`addnode` tells the daemon which nodes are trusted to act as seed nodes. After connecting to a node via `addnode`, the trusted node will send your node the list of all nodes that it is connected to, and your node will then connect to these additional nodes until [the max limit](## maxconnections) is reached.
+`addnode` tells the daemon which nodes are trusted to act as seed nodes. After connecting to a node via `addnode`, the trusted node will send your node the list of all nodes that it is connected to, and your node will then connect to these additional nodes until [the max limit](#maxconnections) is reached.
 
-This contrasts from [the `connect` runtime parameter](## connect), as the latter does not attempt to connect your node to additional nodes.
+This contrasts from [the `connect` runtime parameter](#connect), as the latter does not attempt to connect your node to additional nodes.
 
 If you are behind a firewall or are having issues connecting to the network, `addnode` is a stronger option.
 
@@ -279,7 +281,7 @@ connect=69.164.218.197
 
 `connect` connects the `komodod` server to a trusted peer node, but not to request or add any additional nodes.
 
-Please refer to [the `addnode` parameter](## addnode) entry for more information.
+Please refer to [the `addnode` parameter](#addnode) entry for more information.
 
 ## gen
 
@@ -297,7 +299,7 @@ gen=0
 
 `gen` instructs the daemon to attempt to generate new blocks, and thereby mine new coins.
 
-See also [`setgenerate`](## setgenerate).
+See also [`setgenerate`](#setgenerate).
 
 ## listen
 
@@ -401,8 +403,8 @@ By default, only RPC connections from localhost are allowed.
 
 Specify as many `rpcallowip=` settings as you like to allow connections from other hosts, either as a single IPv4/IPv6 or with a subnet specification.
 
-<aside class="notice">
-Opening up the RPC port to hosts outside your local trusted network is NOT RECOMMENDED. Because the rpcpassword is transmitted over the network unencrypted, and also because anyone that can authenticate on the RPC port can steal your keys and take over the account running `komodod`.
+<aside class="warning">
+  Opening up the RPC port to hosts outside your local trusted network is NOT RECOMMENDED. The rpcpassword is transmitted over the network unencrypted. Anyone that can authenticate on the RPC port can steal your keys and take over the account running komodod.
 </aside>
 
 [For more information click here](https://github.com/zcash/zcash/issues/1497).

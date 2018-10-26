@@ -1,5 +1,7 @@
 # Rawtransactions
 
+The following RPC calls interact with the `komodod` software, and are made available through the `komodo-cli` software.
+
 ## createrawtransaction
 
 ```
@@ -352,11 +354,11 @@ a44feb2e788d0332e283d8ca69c6a20999944dccac93246cbf9b36d841b08c95
 The `fundrawtransaction` method adds inputs to a transaction until it has enough `in` value to meet its `out` value. This will not modify existing inputs, and will add one `change` output to the outputs.
 
 <aside class="notice>
-  Inputs which were signed may need to be resigned after completion since in/outputs have been added. To sign the inputs added, use `signrawtransaction`.
+  Inputs which were signed may need to be resigned after completion since in/outputs have been added. To sign the inputs added, use <b>signrawtransaction</b>.
 </aside>
 
 <aside class="notice">
-  This method comes from the BTC codebase, of which KMD is ultimately a fork (via Zcash). For full details, please see https://bitcoin.org/en/developer-reference#fundrawtransaction
+  This method comes from the BTC codebase, of which KMD is ultimately a fork (via Zcash). For full details, please see <a href="https://bitcoin.org/en/developer-reference#fundrawtransaction">the linked documentation</a>.
 </aside>
 
 ### Arguments:
@@ -494,7 +496,7 @@ The `getrawtransaction` method returns the raw transaction data.
 If `verbose=0`, the method returns a string that is serialized, hex-encoded data for `transaction_id`. If `verbose` is non-zero, the method returns an object with information about `transaction_id`.
 
 <aside class="notice">
-  This method relies on the `txindex` runtime parameter, which is enabled by default on all KMD-based chains. Disabling `txindex` will cause this method to malfunction.
+  This method relies on the <b>txindex</b> runtime parameter, which is enabled by default on all KMD-based chains. Disabling <b>txindex</b> will cause this method to malfunction.
 </aside>
 
 ### Arguments:
@@ -642,7 +644,7 @@ response:
 
 The `sendrawtransction` method submits raw transaction (serialized, hex-encoded) to local nodes and the network.
 
-Also see [`createrawtransaction`](## createrawtransaction) and [`signrawtransaction`](## signrawtransaction) calls.
+Also see [`createrawtransaction`](#createrawtransaction) and [`signrawtransaction`](#signrawtransaction) calls.
 
 ### Arguments:
 
@@ -696,7 +698,7 @@ response:
 The `signrawtransaction` method signs inputs for a raw transaction (serialized, hex-encoded). The second optional argument (may be `null`) is an array of previous transaction outputs that this transaction depends on, but may not yet be in the block chain. The third optional argument (may be `null`) is an array of base58-encoded private keys that, if given, will be the only keys used to sign the transaction.
 
 <aside class="notice">
-  For full details, please see https://bitcoin.org/en/developer-reference#signrawtransaction
+  For full details, please see <a href="https://bitcoin.org/en/developer-reference#signrawtransaction">the linked documentation</a>.
 </aside>
 
 ### Arguments:
