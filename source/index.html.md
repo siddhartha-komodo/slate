@@ -26,6 +26,7 @@ includes:
   - 131-rawtransactions
   - 135-util
   - 139-wallet
+  - 301-creating-asset-chains
 
 search: true
 ---
