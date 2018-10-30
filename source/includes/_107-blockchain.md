@@ -331,6 +331,7 @@ response:
   "verificationprogress": 1,
   "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
   "pruned": false,
+  "size_on_disk": 5058467629,
   "commitments": 0,
   "valuePools": [
     {
@@ -386,6 +387,7 @@ response:
     "verificationprogress": 1,
     "chainwork": "0000000000000000000000000000000000000000000000000000000000001a7f",
     "pruned": false,
+    "size_on_disk": 5058467629,
     "commitments": 0,
     "valuePools": [
       {
@@ -432,53 +434,58 @@ The `getblockchaininfo` method returns a json object containing state informatio
   When the chain tip is at the last block before a network upgrade activation, the <b>consensus.chaintip</b> value is not equal to the <b>consensus.nextblock</b> value.
 </aside>
 
+[](getblockchaininfo now returns a new size_on_disk key, which is the size of the blockchain, on disk, in bytes)
+
 ### Arguments:
 
 Structure|Type|Description
 ---------|----|-----------
-  (none)| |
+(none)                                       |                             |
 
 ### Response:
 
 Structure|Type|Description
 ---------|----|-----------  
-{| |
-    "chain"|(string)|current network name as defined in BIP70 (main, test, regtest)
-    "blocks"|(numeric)|the current number of blocks processed in the server
-    "headers"|(numeric)|the current number of headers we have validated
-    "bestblockhash"|(string)|the hash of the currently best block
-    "difficulty"|(numeric)|the current difficulty
-    "verificationprogress"|(numeric)|estimate of verification progress [0..1]
-    "chainwork"|(string)|total amount of work in active chain, in hexadecimal
-    "commitments"|(numeric)|the current number of note commitments in the commitment tree
-    "softforks": [|(array)|status of softforks in progress
-      {| |
-        "id"|(string)|name of softfork
-        "version"|(numeric)|block version
-        "enforce": {|(object)|progress toward enforcing the softfork rules for new-version blocks
-          "status"|(boolean)|true if threshold reached
-          "found"|(numeric)|number of blocks with the new version found
-          "required"|(numeric)|number of blocks required to trigger
-          "window"|(numeric)|maximum size of examined window of recent blocks
-        },| |
-        "reject": {| |
-          ...|(object)|progress toward rejecting pre-softfork blocks (same fields as "enforce")
-        }| |
-      }, ...| |accepts multiple entries
-    ],| |
-    "upgrades": {|(object)|status of network upgrades
-      "xxxxxxxxx_string": {|(string)|branch ID of the upgrade
-          "name"|(string)|name of upgrade
-          "activationheight"|(numeric)|block height of activation
-          "status"|(string)|status of upgrade
-          "info"|(string)|additional information about upgrade
-      }, ...|accepts multiple entries
-    },| |
-    "consensus": {|(object)|branch IDs of the current and upcoming consensus rules
-     "chaintip"|(string)|branch ID used to validate the current chain tip
-     "nextblock"|(string)|branch ID that the next block will be validated under
-    }| |
-  }| |
+{                                            |                             |
+"chain"                                      |(string)                     |current network name as defined in BIP70 (main, test, regtest)
+"blocks"                                     |(numeric)                    |the current number of blocks processed in the server
+"headers"                                    |(numeric)                    |the current number of headers we have validated
+"bestblockhash"                              |(string)                     |the hash of the currently best block
+"difficulty"                                 |(numeric)                    |the current difficulty
+"verificationprogress"                       |(numeric)                    |estimate of verification progress [0..1]
+"chainwork"                                  |(string)                     |total amount of work in active chain, in hexadecimal
+"pruned"                                     |(bool)                       |whether the current state is in pruning mode; if true, the blockchain will not keep all transaction and block information, to preserve disk space
+"size_on_disk"                               |(numeric)                    |the size of the blockchain on disk, measured in bytes
+"commitments"                                |(numeric)                    |the current number of note commitments in the commitment tree
+"softforks":                                 |                             |
+{                                            |                             |
+"id"                                         |(string)                     |name of softfork
+"version"                                    |(numeric)                    |block version
+"enforce":                                   |                             |
+"status"                                     |(boolean)                    |true if threshold reached
+"found"                                      |(numeric)                    |number of blocks with the new version found
+"required"                                   |(numeric)                    |number of blocks required to trigger
+"window"                                     |(numeric)                    |maximum size of examined window of recent blocks
+},                                           |                             |
+"reject":                                    |                             |
+...                                          |(object)                     |progress toward rejecting pre-softfork blocks (same fields as "enforce")
+}                                            |                             |
+},                                           |                             |
+],                                           |                             |
+"upgrades":                                  |                             |
+"xxxxxxxxx_string":                          |                             |
+"name"                                       |(string)                     |name of upgrade
+"activationheight"                           |(numeric)                    |block height of activation
+"status"                                     |(string)                     |status of upgrade
+"info"                                       |(string)                     |additional information about upgrade
+},                                           |                             |
+},                                           |                             |
+"consensus":                                 |                             |
+"chaintip"                                   |(string)                     |branch ID used to validate the current chain tip
+"nextblock"                                  |(string)                     |branch ID that the next block will be validated under
+}                                            |                             |
+}                                            |                             |
+
 
 ## getblockcount
 
@@ -516,7 +523,7 @@ The `getblockcount` method returns the number of blocks in the best valid block 
 
 Structure|Type|Description
 ---------|----|-----------
-(none)| |
+(none)                                       |                             |
 
 ### Response:
 
@@ -782,7 +789,7 @@ The `getchaintips` method returns information about all known tips in the block 
 
 Structure|Type|Description
 ---------|----|-----------
-(none)| |
+(none)                                       |                             |
 
 ### Response:
 
@@ -849,7 +856,7 @@ The `getdifficulty` method returns the proof-of-work difficulty as a multiple of
 
 Structure|Type|Description
 ---------|----|-----------
-(none)| |
+(none)                                       |                             |
 
 ### Response:
 
@@ -901,7 +908,7 @@ The `getmempoolinfo` method returns details on the active state of the transacti
 
 Structure|Type|Description
 ---------|----|-----------
-(none)| |
+(none)                                       |                             |
 
 ### Response:
 
@@ -1229,7 +1236,7 @@ The `gettxoutsetinfo` method returns statistics about the unspent transaction ou
 ### Arguments:
 Structure|Type|Description
 ---------|----|-----------
-(none)| |
+(none)                                       |                             |
 
 ### Response:
 Structure|Type|Description
