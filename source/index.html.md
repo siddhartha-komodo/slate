@@ -15,6 +15,8 @@ toc_footers:
 includes:
   - 001-introduction
   - 010-common-runtime-parameters
+  - 015-creating-asset-chains
+  - 019-asset-chain-parameters
   - 103-address-index
   - 107-blockchain
   - 111-control
@@ -26,7 +28,6 @@ includes:
   - 131-rawtransactions
   - 135-util
   - 139-wallet
-  - 301-creating-asset-chains
 
 search: true
 ---
