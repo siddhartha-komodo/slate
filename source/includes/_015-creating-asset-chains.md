@@ -1,18 +1,4 @@
-# The Komodo Asset Chain
-
-## About Asset Chains
-
-A "Komodo asset chain" is an independent blockchain that is forked from Komodo technology and has the option of using Komodo's many services, including security and scalability.
-
-We use the term, "asset chain," because the coins in the blockchain are assets owned by you and your blockchain's users.
-
-The unique combination of technology in a Komodo asset chain grants businesses and developers an increased level of freedom.
-
-Simply creating and developing the asset chain does not require contact with or payment to the Komodo team.
-
-**However, under nearly all circumstances, an asset chain is not secure until it receives our dPoW connection to the Bitcoin hash rate (dPoW)**. Please reach out to our team whenever you are ready to enlist our services. Once set up, your blockchain will be secure enough to interact with other blockchains and exchanges, including fulfilling cross-chain smart contracts and conducting atomic swaps on our decentralized exchange.
-
-For a full description of the nature of a Komodo asset chain, please [refer to our white paper](https://www.komodoplatform.com/whitepaper).
+# Building a Komodo Asset Chain
 
 ## Creating A New Asset Chain
 
@@ -28,14 +14,14 @@ For a full description of the nature of a Komodo asset chain, please [refer to o
 ### Notes on the Machinery Used to Create an Asset Chain
 
 <aside class="success">
-  When you are building and testing a Komodo asset chain, please do not hesitate to reach out to us when you are stuck. We wish to make this as easy as possible. Our support agents are available in our [Discord #support channel](https://komodoplatform.com/discord) for many hours each day, and during off hours you can file a ticket on [our support page](https://support.komodoplatform.com/support/home).
+  When you are building and testing a Komodo asset chain, please do not hesitate to reach out to us when you are stuck. We wish to make this as easy as possible. Our support agents are available in our <a href="https://komodoplatform.com/discord">#support channel in Discord</a> for many hours each day, and during off hours you can file a ticket on <a href="https://support.komodoplatform.com/support/home">our support page</a>.
 </aside>
 
 <aside class="notice">
-  The word "node" is used throughout this documentation, and it can be confusing for beginners. A node can be a unique desktop computer connected to the Internet. It can also be a virtual-private server (VPS) that is rented or purchased, and which the developer can access at will. Or, it can be another type of unique instance of a computational device.
+  The word "node" is used throughout this documentation, and it can be confusing for beginners. A node can be a unique desktop computer connected to the Internet. It can also be a virtual-private server (VPS) that is rented or purchased, and which the developer can access at will. Or, it can be another type of unique instance of a computational machine.
 </aside>
 
-If you are ready to press forward with your first test asset chain, some basic knowledge about how to connect two "nodes" is recommended for the initial setup.
+If you are ready to press forward with your first test asset chain, some basic knowledge about how to connect two nodes is recommended for the initial setup.
 
 As per the original blockchain designs of Satoshi Nakamoto, on which Komodo is based, a Komodo-based asset chain does not exist on a single node. Rather, it exists via a connection between two or more nodes. This is the nature of decentralization: it is on the network we rely, rather than a single authority. Therefore, the design of the technology requires you to have two separate nodes, which are able to connect over a network.
 

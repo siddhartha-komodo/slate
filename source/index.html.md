@@ -14,9 +14,11 @@ toc_footers:
 
 includes:
   - 001-introduction
-  - 010-common-runtime-parameters
+  - 005-outline-for-new-developers
+  - 010-basic-instructions
   - 015-creating-asset-chains
   - 019-asset-chain-parameters
+  - 023-common-runtime-parameters
   - 103-address-index
   - 107-blockchain
   - 111-control
