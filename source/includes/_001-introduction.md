@@ -14,7 +14,7 @@ Each independent blockchain built on the Komodo framework has a wide range of ca
 
 * Consensus-level smart contracts
 
-* Cross-chain interoperability
+* Inter-chain linking
 
 * ...And more!
 
