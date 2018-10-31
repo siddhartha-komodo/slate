@@ -17,7 +17,7 @@ The first is the coin daemon itself, `komodod`. This is initiated by calling it 
 Once the software is set up, change into the installation directory.
 
 <aside class="notice">
-  Note to Windows Users: If you are using windows, replace ./komodod and ./komodo-cli with komodod.exe and komodo-cli.exe for each step.
+  Note to Windows Users: Replace ./komodod and ./komodo-cli with komodod.exe and komodo-cli.exe for each step.
 </aside>
 
 To launch the main KMD chain, execute:
@@ -60,8 +60,8 @@ For more information about creating and interacting with asset chains, please vi
 
 Follow this link to find information on [accessing the coin daemon remotely](#accessing-the-coin-daemon-remotely).
 
-<aside class="warning">
-  IMPORTANT: In nearly all circumstances, any blockchain you build should NOT be considered secure until it receives the dPoW security service. Please reach out to us to receive this service.
+<aside class="notice">
+  In nearly all circumstances, a Komodo-based blockchain is only secure once it receives our dPoW security service. Please reach out to us when you are ready to purchase.
 </aside>
 
 ## Komodo's Native DEX: BarterDEX
