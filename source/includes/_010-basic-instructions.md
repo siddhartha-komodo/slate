@@ -68,6 +68,10 @@ Follow this link to find information on [accessing the coin daemon remotely](#ac
 
 Komodo offers built-in native decentralized-exchange (DEX) compatibility through our software, BarterDEX. This software is separate from `komodod` and `komodo-cli`.
 
-BarterDEX is a pioneer in atomic-swap based exchange methods, and via our open-source philosophy, anyone is welcome to use it without restriction. Through our atomic-swap technology the end-users utilizing BarterDEX maintain ownership of their private keys at all times. Therefore, the developers maintaining any cluster of traders utilizing the BarterDEX software are not acting in the capacity of escrow-service or trading providers, unlike other exchanges.
+BarterDEX is a pioneer in atomic-swap based exchange methods. If you're not familiar with the concept of atomic-swaps, check out [Part III of our white paper](https://komodoplatform.com/whitepaper).
 
-Because the BarterDEX software is separate from `komodod` and `komodo-cli`, at this time we do not include it in this API documentation. Rather, you may find [API documentation for BarterDEX here](https://docs.komodoplatform.com/barterDEX/barterDEX-API.html).
+We performed our first atomic swap in 2014, and using our BarterDEX v1.0 software we performed thousands in 2017 with the open-source community before the concept gained attention in the news. To date, users in the Komodo ecosystem have conducted over 100,000 atomic swaps. We are currently taking what we learned from these experiences and rewriting the software from the ground up for v2.0.
+
+Via our open-source philosophy, anyone is welcome to use BarterDEX without restriction. As it is based on atomic-swap technology, the end-users utilizing BarterDEX maintain ownership of their private keys at all times. Therefore, developers maintaining any cluster of traders utilizing the BarterDEX software are not acting in the capacity of an escrow-service, a trading provider, a centralized exchange, or even a multi-coin decentralized gateway, unlike most other exchanges. This provides significant relief from the developer's security responsibilities.
+
+Because the BarterDEX software is separate from `komodod` and `komodo-cli`, at this time we do not yet include it in this API documentation. Rather, you may find [API documentation for BarterDEX here](https://docs.komodoplatform.com/barterDEX/barterDEX-API.html).

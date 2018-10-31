@@ -10,16 +10,16 @@ The Komodo security system, dPoW, functions best for asset chains that are being
 
 Many blockchains will not be used on a regular basis, however. The developers also may not elect to have any block rewards that would act as an incentive for miners to maintain activity on the chain.
 
-It is not economically efficient to notarize every single block that occurs. Therefore Komodo's dPoW security system requires several blocks to be generated before a notarization occurs. Without activity or miners, the notarization process naturally will stall.
+It is not economically efficient to notarize every single block that occurs. Therefore Komodo's dPoW security system requires several blocks to be generated before a notarization takes place. Without activity or miners, the notarization process naturally will stall.
 
-This creates a situation which is easily remedied, but only if the developer is proactive to maintain activity on their chain. We advise asset-chain developers who do not expect frequent transaction volume to ensure activity anytime an end-user utilizes their chain, and for which notarization security is required. A simple solution is to always have a node that is watching for transactions on the asset chain. When a transaction occurs from an end-user, the node should be set up with a script to perform minimum-amount transactions until the end-user's transaction is notarized, and then the script can cease activity.
+This creates a situation which is easily remedied, but only if the developer is proactive to maintain activity on their chain. We advise asset-chain developers who do not expect frequent transaction volume to ensure activity at crucial moments. If a transaction occurs on the blockchain from an end-user, for which notarization security is required, a simple solution can be to have a node running a script to watch for such transactions. When the transaction enters the mempool, the node can perform minimum-amount transactions until the end-user's transaction is notarized, and then the script can cease activity.
 
 The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than what it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.
 
 ## ac_name
 
 <aside class="warning">
-  All asset chains are required to set `-ac_name`.
+  All asset chains are required to set ac_name.
 </aside>
 
 This is the ticker symbol for the coin you wish to create. We recommended it consist only of numbers and uppercase letters.
@@ -28,21 +28,23 @@ This is the ticker symbol for the coin you wish to create. We recommended it con
 
 This is the amount of pre-mined coins you would like the chain to have.
 
-The node that sets [`-gen`](#gen) during the creation process will mine these coins in the genesis block.
+The node that sets [`gen`](#gen) during the creation process will mine these coins in the genesis block.
 
-If `-ac_supply` is not set, [`-ac_reward`](#ac_reward) must be set, and a default value of 10 coins will be used in the genesis block. If [`-ac_pubkey`](#ac_pubkey) is set, the  pre-mined coins will be mined to the address of the corresponding pubkey.
+If `ac_supply` is not set, [`ac_reward`](#ac_reward) must be set, and a default value of 10 coins will be used in the genesis block. If [`ac_pubkey`](#ac_pubkey) is set, the  pre-mined coins will be mined to the address of the corresponding pubkey.
 
-The `-ac_supply` parameter should be set to a whole number without any decimals places. It should also be set to less than `2000000000` to avoid 64-bit overflows.
+The `ac_supply` parameter should be set to a whole number without any decimals places. It should also be set to less than `2000000000` to avoid 64-bit overflows.
 
-All chains are required to set `-ac_supply`.
+All chains are required to set `ac_supply`.
 
 <aside class="notice">
-  An additional fraction of a coin will be added to this based on the asset chain's parameters. This is used by nodes to verify the genesis block. For example, the DEX chain's `-ac_supply` parameter is set to `999999`, but in reality the genesis block was `999999.13521376`.
+  An additional fraction of a coin will be added to this based on the asset chain's parameters. This is used by nodes to verify the genesis block. For example, the DEX chain's `ac_supply` parameter is set to `999999`, but in reality the genesis block was `999999.13521376`.
 </aside>
 
 ## ac_reward
 
-This is the block reward for each mined block, given in satoshis. If this is not set, the block reward will be `10000` satoshis. Also, blocks will be [on-demand](#a-note-about-low-activity-blockchains) after block 127.
+This is the block reward for each mined block, given in satoshis.
+
+If this is not set, the block reward will be `10000` satoshis and blocks will be [on-demand](#a-note-about-low-activity-blockchains) after block 127.
 
 ## ac_end
 
@@ -50,15 +52,15 @@ This is the block height in which block rewards will end. Every block after this
 
 ## ac_halving
 
-This is the number of blocks between each block reward halving. This parameter will have no effect if [`-ac_reward`](##ac_reward) is not set. The lowest possible value is `1440` (~1 day). If this parameter is set, but [`-ac_decay`](#ac_decay) is not, the reward will decrease by 50% each halving.
+This is the number of blocks between each block reward halving. This parameter will have no effect if [`ac_reward`](##ac_reward) is not set. The lowest possible value is `1440` (~1 day). If this parameter is set, but [`ac_decay`](#ac_decay) is not, the reward will decrease by 50% each halving.
 
 ## ac_decay
 
-This is the percentage the block reward will decrease by each block-reward halving. This parameter will have no effect if [`-ac_reward`](#ac_reward) is not set.
+This is the percentage the block reward will decrease by each block-reward halving. This parameter will have no effect if [`ac_reward`](#ac_reward) is not set.
 
-This is the formula that `-ac_decay` follows:
+This is the formula that `ac_decay` follows:
 
-`numhalvings = (height / -ac_halving);`
+`numhalvings = (height / ac_halving);`
 
 `for (i=0; i<numhalvings; i++)`
 
@@ -68,9 +70,9 @@ For example, if this is set to `750000000`, at each halving the block reward wil
 
 ## ac_perc
 
-The `-ac_perc` parameter is the percentage added to both the block reward and to the transactions that will be sent to the [`-ac_pubkey`](#ac_pubkey) address. If the `-ac_perc` parameter is set, `-ac_pubkey` must also be set.
+The `ac_perc` parameter is the percentage added to both the block reward and to the transactions that will be sent to the [`ac_pubkey`](#ac_pubkey) address. If the `ac_perc` parameter is set, `ac_pubkey` must also be set.
 
-For example, if `-ac_reward=100000000` and `-ac_perc=10000000`, for each block mined, the miner receives 1 coin along with the `-ac_pubkey` address receiving 0.1 coin. For every transaction sent, the pubkey address will receive 10% of the overall transaction value. This 10% is not taken from the user, rather it is created at this point. Each transaction inflates the overall supply.
+For example, if `ac_reward=100000000` and `ac_perc=10000000`, for each block mined, the miner receives 1 coin along with the `ac_pubkey` address receiving 0.1 coin. For every transaction sent, the pubkey address will receive 10% of the overall transaction value. This 10% is not taken from the user, rather it is created at this point. Each transaction inflates the overall supply.
 
 <aside class="notice">
   Vout 1 of each coinbase transaction must be the correct amount sent to the corresponding `pubkey`. The `vout` type for all coinbase vouts must be `pubkey` as opposed to `pubkeyhash`. This only affects a miner trying to use a stratum. Z-nomp is currently incompatible.
@@ -78,11 +80,11 @@ For example, if `-ac_reward=100000000` and `-ac_perc=10000000`, for each block m
 
 ## ac_pubkey
 
-The `-ac_pubkey` parameter designates a public address for receiving payments from the network. These payments can come in the genesis block, in all blocks mined thereafter, and from every transaction on the network.
+The `ac_pubkey` parameter designates a public address for receiving payments from the network. These payments can come in the genesis block, in all blocks mined thereafter, and from every transaction on the network.
 
-It is used in combination with [`-ac_perc`](#ac_perc), which sets the amount that is sent to the address. If `ac_perc` is not set, the only effect of `ac_pubkey` is to have the genesis block be mined to the `pubkey` specified.
+It is used in combination with [`ac_perc`](#ac_perc), which sets the amount that is sent to the address. If `ac_perc` is not set, the only effect of `ac_pubkey` is to have the genesis block be mined to the `pubkey` specified.
 
-If `-ac_pubkey` is set, but `-ac_perc` is not, this simply means the genesis block will be mined to the set `pubkey`'s address, and no blocks or transactions thereafter will mine payments to the `pubkey`.
+If `ac_pubkey` is set, but `ac_perc` is not, this simply means the genesis block will be mined to the set `pubkey`'s address, and no blocks or transactions thereafter will mine payments to the `pubkey`.
 
 `pubkey` must be set to a 33 byte hex string. You can get the pubkey of an address by using the [`validateaddress`](#validateaddress) command in `komodod`, and searching for the returned `pubkey` property. The address must be imported to the wallet before using `validateaddress`.
 
@@ -92,7 +94,7 @@ If `-ac_pubkey` is set, but `-ac_perc` is not, this simply means the genesis blo
   This parameter is still in testing.
 </aside>
 
-The `-ac_cc` parameter sets the network cluster on which the chain can interact with other chains via cross-chain smart contracts and MoMoM technology.
+The `ac_cc` parameter sets the network cluster on which the chain can interact with other chains via cross-chain smart contracts and MoMoM technology.
 
 Under most circumstances, this parameter requires the Komodo notarization service to achieve functionality, as it relies on the `pubkey` of the trusted notary nodes to ensure coin-supply stability.
 
@@ -100,11 +102,11 @@ Once activated, the `ac_cc` parameter can allow features such as cross-chain fun
 
 ### ac_cc=0
 
-Setting `-ac_cc=0` disables smart contracts on the asset chain entirely.
+Setting `ac_cc=0` disables smart contracts on the asset chain entirely.
 
 ### ac_cc=1
 
-Setting `-ac_cc=1` permits smart contracts on the asset chain, but will not allow the asset chain to interact in cross-chain smart contracts with other asset chains.
+Setting `ac_cc=1` permits smart contracts on the asset chain, but will not allow the asset chain to interact in cross-chain smart contracts with other asset chains.
 
 ### ac_cc=2 to 100
 
@@ -121,7 +123,7 @@ Setting the value of `ac_cc` to any value greater than or equal to `101` will pe
 ## ac_staked
 
 <aside class="notice">
-	This feature is currently only available in the <a href="https://github.com/jl777/komodo/tree/jl777">`jl777 branch`</a>
+	This feature is currently only available in the <a href="https://github.com/jl777/komodo/tree/jl777">jl777 branch</a>
 </aside>
 
 `ac_staked` indicates the percentage of blocks the chain will aim to have mined via Proof of Stake (PoS), with the remainder via Proof of Work (PoW). For example, an `ac_staked=90` chain will have ~90% PoS blocks and 10% PoW blocks.
@@ -139,20 +141,20 @@ When creating a chain with the `ac_staked` parameter, the creation process is sl
 </aside>
 
 <aside class="notice">
-  The first 100 blocks will allow PoW regardless of the `ac_staked` value.
+  The first 100 blocks will allow PoW regardless of the ac_staked value.
 </aside>
 
 <aside class="notice">
-  It is not possible to both PoW mine and stake on the same node. When the chain's consensus mechanism is set to both PoS and PoW, the developer will need a minimum of two nodes to keep the blockchain moving.
+  It is not possible to both PoW mine and stake on the same node. When the chain's consensus mechanism is set to both PoS and PoW, the developer will need a minimum of two nodes mining/staking to keep the blockchain moving.
 </aside>
 
 ### Notes on How ac_staked Functions
 
 To initiate staking, include `-gen -genproclimit=0` as a parameter while starting the daemon, or execute `./komodo-cli -ac_name=CHAIN_NAME setgenerate true 0` after launching the daemon.
 
-Once staking is active, utxos available in the wallet.dat file will begin staking automatically.  
+Once staking is active, utxos available in the `wallet.dat` file will begin staking automatically.  
 
-On an `ac_staked` asset chain there are 64 global segments (`segid`'s) to which all utxos belong, and these 64 `segid`s will automatically take turns staking blocks. The method of determining which segment a utxo belongs to is determined automatically, according to the hash of the address in which the utxo resides and the height of the blockchain.
+On an `ac_staked` asset chain there are 64 global segments (`segid`'s) to which all utxos belong, and these 64 `segid`'s will automatically take turns staking blocks. The method of determining which segment a utxo belongs to is determined automatically, according to the hash of the address in which the utxo resides and the height of the blockchain.
 
 You can see which segment an address belongs to by using the [`validateaddress`](#validateaddress) rpc call. You can find out the amount of rewards your staked coins have earned via the [`getbalance64`](#getbalance64) rpc call.
 

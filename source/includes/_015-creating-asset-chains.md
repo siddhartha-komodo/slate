@@ -11,9 +11,7 @@
 * `komodod` built on each
   * (when the goal is only to build a new asset chain, there is no need to sync the KMD main chain)
 
-### Notes on the Machinery Used to Create an Asset Chain
-
-<aside class="success">
+<aside class="notice">
   When you are building and testing a Komodo asset chain, please do not hesitate to reach out to us when you are stuck. We wish to make this as easy as possible. Our support agents are available in our <a href="https://komodoplatform.com/discord">#support channel in Discord</a> for many hours each day, and during off hours you can file a ticket on <a href="https://support.komodoplatform.com/support/home">our support page</a>.
 </aside>
 
@@ -21,9 +19,11 @@
   The word "node" is used throughout this documentation, and it can be confusing for beginners. A node can be a unique desktop computer connected to the Internet. It can also be a virtual-private server (VPS) that is rented or purchased, and which the developer can access at will. Or, it can be another type of unique instance of a computational machine.
 </aside>
 
+### Basic Info for Connecting At Least Two Nodes
+
 If you are ready to press forward with your first test asset chain, some basic knowledge about how to connect two nodes is recommended for the initial setup.
 
-As per the original blockchain designs of Satoshi Nakamoto, on which Komodo is based, a Komodo-based asset chain does not exist on a single node. Rather, it exists via a connection between two or more nodes. This is the nature of decentralization: it is on the network we rely, rather than a single authority. Therefore, the design of the technology requires you to have two separate nodes, which are able to connect over a network.
+As per the original blockchain designs of Satoshi Nakamoto, on which Komodo is based, a Komodo asset chain does not exist on a single node. Rather, it exists via a connection between two or more nodes. This is the nature of decentralization: it is on the network we rely, rather than a single authority. Therefore, the design of the technology requires you to have two separate nodes, which are able to connect over a network.
 
 In the most ideal circumstance, the new Komodo developer will already have two virtual private server boxes (VPS's) available for testing. VPS's can be cheap and easy to manage. A typical VPS will automatically have a static external IP; this makes it simple to create a connection between the two VPS nodes.
 
@@ -41,13 +41,15 @@ You will know that your machines have successfully connected when you can run th
 
 This command will generate a response every second, indicating the `ping` speed with which your machines are able to connect.
 
-`ping 192.168.1.101
+`ping 192.168.1.101`
 
-PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data.
+`PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data`
 
-64 bytes from 192.168.1.101: icmp_seq=1 ttl=64 time=131 ms
+`64 bytes from 192.168.1.101: icmp_seq=1 ttl=64 time=131 ms`
 
-64 bytes from 192.168.1.101: icmp_seq=2 ttl=64 time=2.40 ms`
+`64 bytes from 192.168.1.101: icmp_seq=2 ttl=64 time=2.40 ms`
+
+`...`
 
 If you do not see a continuing response in the shell, your machines are not yet connected. Please reach out to our team and we will do our best to assist you.
 
@@ -79,7 +81,7 @@ This completes the first half of the asset-chain creation process. Scroll down t
 
 ## Part II: Connecting the Second Node
 
-On the second node you issue the same command, with two key differences. You will use the other node's IP address, and you will include an additional setting that initiates mining on this machine, `-gen -genproclimit=$(nproc)`.
+On the second node you issue the same command, with two key differences. You will use the other node's IP address, and you will include an additional setting that initiates mining on this node, `-gen -genproclimit=$(nproc)`.
 
 `./komodod -ac_name=HELLOWORLD -ac_supply=777777 -addnode=<IP address of the first node> -gen -genproclimit=$(nproc) &`
 
@@ -95,17 +97,21 @@ You can check the contents of the wallet by executing the following command in t
 
 More info can be found in the debug.log of the chain found at:
 
-(Mac & GNU/Linux) `~/.komodo/HELLOWORLD/debug.log`
+(Mac & GNU/Linux)
 
-(Windows) `%appdata%\komodo\HELLOWORLD\debug.log`
+`~/.komodo/HELLOWORLD/debug.log`
+
+(Windows)
+
+`%appdata%\komodo\HELLOWORLD\debug.log`
 
 ## Querying the Asset Chain
 
-Using the `komodo-cli` software, which is included in any default installation of `./komodod`, you can now execute many RPC calls and other commands on your new asset chain. This enables you to perform transactions, create and execute smart contracts, store data in KV storage, create cross-chain compatible contracts, conduct atomic swaps, etc.
+Using the `komodo-cli` software, which is included in any default installation of `./komodod`, you can now execute many RPC calls and other commands on your new asset chain. This enables you to perform transactions, create and execute smart contracts, store data in KV storage, etc.
 
 Since the Komodo software began as a fork of Zcash and BTC, essentially all commands that are available on these two upstream blockchains are also available on your new asset chain.
 
-Furthermore, a key purpose of the Komodo blockchain is to create features and functions that facilitate and enhance your development experience. Information regarding these many enhancements is available throughout this API documentation.
+Furthermore, a key purpose of the Komodo blockchain is to create features and functions that facilitate and enhance your development experience. Information regarding these many enhancements is available throughout this documentation.
 
 In addition, since you are building on a Komodo-based blockchain, you have easy access to our multi-coin wallet, [Agama](https://komodoplatform.com/komodo-wallets/#desktopsection), our atomic-swap powered decentralized exchange, [BarterDEX](#komodo-39-s-native-dex-barterdex), our decentralized-ICO software (coming soon), and our future upgrades.
 
@@ -127,7 +133,7 @@ The following command returns information about all available RPC and API comman
 
 ## Secure this Asset Chain with Delayed Proof of Work
 
-Your new asset chain can receive the same security of the Bitcoin hash rate with a simple service from our KMD notary nodes, called "delayed Proof of Work" (dPoW).
+Your new asset chain can receive the same security of the Bitcoin hash rate with our security, called "delayed Proof of Work" (dPoW).
 
 There are two aspects to the cost for dPoW services. The first comes from the cost of making records in your asset chain's database, and in the records of the KMD main chain. These records are called "notarizations."
 
