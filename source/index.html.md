@@ -9,7 +9,9 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - (more coming)
 
 toc_footers:
-  - <a href='https://www.komodoplatform.com'>Komodo Website</a>
+  - <a href='https://komodoplatform.com/discord'>Komodo Discord</a>
+  - <a href='https://github.com/KomodoPlatform'>Komodo Github</a>
+  - <a href='https://komodoplatform.com'>Komodo Website</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
