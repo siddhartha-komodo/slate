@@ -1,6 +1,6 @@
 # Outline for New Developers
 
-For the experienced developer wishing to build your own blockchain using the Komodo software, we recommend the following approach.
+For the developer wishing to build your own blockchain using the Komodo software, we recommend the following approach.
 
 ## Visit Us in Discord
 
@@ -12,13 +12,15 @@ Ask questions in our Discord channels, such as `#developer`, `#cryptoconditions`
 
 ### Assumptions for this Documentation
 
-Before we get into specifics, we need to cover a few assumptions for this documentation.
+Before we get into specifics, we need to cover a few assumptions we make about our readers.
 
-We're going to start by assuming that you have a general idea of what a blockchain is. If you're not familiar, we recommend that you [read Part I of our white paper](https://www.komodoplatform.com/whitepaper). It explains what a blockchain is, why blockchain technology is significant, the basic idea of how it works, and why you should care.
+We're going to start by assuming that you have a general idea of what a blockchain is.
+
+If you're not familiar, we recommend that you [read Part I of our white paper](https://www.komodoplatform.com/whitepaper). It explains what a blockchain is, why blockchain technology is significant, the basic idea of how it works, and why you should care.
 
 We're also going to assume that you are comfortable programming in at least one mainstream language. Technically, Komodo can work with any language, but there are some things to keep in mind before you get too excited. [Find out more about languages on Komodo here](#a-brief-note-about-languages).
 
-If you're not yet a programmer, but you're interested to make a career in the blockchain revolution, welcome! The open-source nature of Komodo and our enthusiastic community make this a perfect place to begin your journey. We again recommend that you come [to our Discord channel](https://komodoplatform.com/discord) and discuss your goals and objectives with our community members. We look forward to meeting you!
+If you're not yet a programmer, but you're interested to make a career in the blockchain revolution, welcome! The open-source nature of Komodo and our enthusiastic community make this a perfect place to begin your journey. We again recommend that you come [to our Discord channel](https://komodoplatform.com/discord) and discuss your goals with our community members. We look forward to meeting you!
 
 ## "Why Komodo?"
 
@@ -38,7 +40,7 @@ One important thing to point out is that, at this time, a Komodo-based asset cha
 
 Most other blockchain platforms run a layer-one blockchain, and the journeyman developer runs their smart-contract code in a virtual machine, or on a side chain, which run on top of the layer-one chain. In many circumstances, the end-user pays gas and transaction fees in the token of the layer-one chain, regardless of the end-user's objective.
 
-Komodo is completely different. You get your own full blockchain entirely to yourself. All that is required is that you keep the basic Komodo framework in place, as it facilitates your connection to [the security of the Bitcoin hash rate](#secure-this-asset-chain-with-delayed-proof-of-work), and also your connection to other asset chains and features.
+Komodo is completely different. You get your own full blockchain entirely to yourself. All that is required is that you keep the basic Komodo framework in place, as it facilitates your connection to [the security of the Bitcoin hash rate](#secure-this-asset-chain-with-delayed-proof-of-work), and also your connection to other Komodo asset chains and features.
 
 ### No Gas/Transaction Fees
 
@@ -72,11 +74,13 @@ Many blockchain platforms say they'll have privacy some day, but how and when th
 
 In Komodo, we knew privacy would be an essential feature for any developer with a good head on their shoulders.
 
-That's why we started our platform as a fork of Zcash (which is itself a fork of Bitcoin).
+That's why we started our platform as a fork of [Zcash](https://z.cash) (which is itself a fork of [Bitcoin](https://bitcoin.org)).
 
-The Zcash parameters aren't your usual coin-mixer. Rather, with this zero-knowledge technology, you have the tools to spend your coins while leaving zero data in the public domain for later analysis.
+The [Zcash parameters](https://z.cash/technology/paramgen/) aren't your usual coin-mixer. Rather, with this zero-knowledge technology, you have the tools to spend your coins while leaving zero data in the public domain for later analysis.
 
 Every asset chain has the Zcash parameters pre-installed, putting the power to protect both you and your end-users from people who just don't know how to mind their own business.
+
+Find out more about how our zero-knowledge implementation works in [Part IV of our whitepaper](https://komodoplatform.com).
 
 ### Your Blockchain's Engine Belongs to You
 
@@ -184,7 +188,7 @@ With `komodod` and `komodo-cli` installed you're ready to spin up an asset chain
 
 [Follow the instructions in this linked guide to build your first asset chain.](#creating-a-new-asset-chain)
 
-We recommend that you use the simplest of settings when creating your first chain.
+We recommend that you use the simplest of settings for now.
 
 For example:
 

@@ -17,9 +17,9 @@ includes:
   - 005-outline-for-new-developers
   - 010-basic-instructions
   - 015-creating-asset-chains
+  - 017-cc-overview
   - 019-asset-chain-parameters
   - 023-common-runtime-parameters
-  - 027-cc-overview
   - 103-address-index
   - 107-blockchain
   - 111-control
