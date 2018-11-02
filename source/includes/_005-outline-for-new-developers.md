@@ -78,9 +78,7 @@ That's why we started our platform as a fork of [Zcash](https://z.cash) (which i
 
 The [Zcash parameters](https://z.cash/technology/paramgen/) aren't your usual coin-mixer. Rather, with this zero-knowledge technology, you have the tools to spend your coins while leaving zero data in the public domain for later analysis.
 
-Every asset chain has the Zcash parameters pre-installed, putting the power to protect both you and your end-users from people who just don't know how to mind their own business.
-
-Find out more about how our zero-knowledge implementation works in [Part IV of our whitepaper](https://komodoplatform.com).
+Every asset chain has the Zcash parameters pre-installed, giving you the tools to protect both yourself and your end-users from people who just don't know how to mind their own business.
 
 ### Your Blockchain's Engine Belongs to You
 
