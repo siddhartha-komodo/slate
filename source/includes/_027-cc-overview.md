@@ -1,4 +1,4 @@
-# CryptoConditions Overview
+# Smart Contracts Overview
 
 ### Smart Contracts on the Komodo Platform
 
