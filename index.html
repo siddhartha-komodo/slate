@@ -1382,11 +1382,11 @@
 
 <p>This creates a situation which is easily remedied, but only if the developer is proactive to maintain activity on their chain. We advise asset-chain developers who do not expect frequent transaction volume to ensure activity at crucial moments. If a transaction occurs on the blockchain from an end-user, for which notarization security is required, a simple solution can be to have a node running a script to watch for such transactions. When the transaction enters the mempool, the node can perform minimum-amount transactions until the end-user&#39;s transaction is notarized, and then the script can cease activity.</p>
 
-<p>The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than what it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.</p>
+<p>The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.</p>
 <h1 id='smart-contracts-overview'>Smart Contracts Overview</h1><h3 id='smart-contracts-on-the-komodo-platform'>Smart Contracts on the Komodo Platform</h3>
 <p>Komodo is built on the Bitcoin protocol, and traditionally, Bitcoin Script is thought of as being incapable of supporting smart contracts. This is mostly a consequence of the fact that Bitcoin Script is (intentionally) not Turing complete. Now, all of this is changing with CryptoConditions, a utxo-based smart contract protocol.</p>
 
-<p>As is often the case, Komodo Platform is leading the blockchain industry in this brand-new technology. This post will explain what CryptoConditions is, how it works, and how utxo-based smart contracts will dramatically alter the blockchain landscape.</p>
+<p>As is often the case, Komodo Platform is leading the blockchain industry in this brand-new technology. This section will explain what CryptoConditions is, how it works, and how utxo-based smart contracts will dramatically alter the blockchain landscape.</p>
 <h2 id='a-brief-review-of-bitcoin-script'>A Brief Review of Bitcoin Script</h2>
 <p>The very first block in the Bitcoin blockchain was mined on or around January 3, 2009. Since then, this revolutionary technology has exploded, forever changing the way we think of money and currency. We owe many of these developments to Satoshi Nakamoto and his original Bitcoin-core code.</p>
 
@@ -1466,7 +1466,7 @@
 
 <p>Until blockchain technology is capable of processing potentially billions, if not trillions, of transactions per second on a single blockchain, the gas-based blockchain platform is fundamentally flawed for today&#39;s market. The more popular a gas-based platform becomes, the more difficult, expensive, and prohibitive it is for businesses to develop on it, and for users to buy into it.</p>
 
-<p>Having observed crucial flaws in the currently popular gas-based smart-contract platform, we are now prepared to turn to the solution Komodo proposes.</p>
+<p>Having observed crucial flaws in the currently popular gas-based smart-contract platform, we are now prepared to turn to the smart-contract solution Komodo proposes.</p>
 <h2 id='introducing-cryptoconditions'>Introducing CryptoConditions</h2>
 <p>Recall that Satoshi Nakamoto&#39;s Bitcoin Script is not Turing complete. This choice was deliberate. Leaving Bitcoin Script in a simple form was a quicker, safer alternative to a Turing complete language. This is true because it removes the possibility of infinite loops clogging the Bitcoin network.</p>
 
@@ -1482,7 +1482,7 @@
 
 <p>Likewise, to participate the end-users need only purchase the currency of the developer&#39;s dApp; there is no need to purchase KMD. Therefore, for the end-user, the price of participating in the developer&#39;s dApp is tied only to the design and success of the dApp, and not to the unpredictability of the rest of the ecosystem.</p>
 <h2 id='cryptoconditions-is-utxo-technology'>CryptoConditions is Utxo Technology</h2>
-<p>CryptoConditions functions in a completely different manner from the popular gas-based model of other platforms. Before we can explain how CryptoConditions works, we must first briefly explain the concept of an &quot;unspent transaction&quot;, also called a &quot;utxo,&quot; for short. Utxos are integral to a blockchain&#39;s functionality, but many users do not know that they exist.</p>
+<p>CryptoConditions functions in a completely different manner from the popular gas-based model of other platforms. Before we can explain how CryptoConditions works, we must first briefly explain the concept of an &quot;unspent transaction&quot;, also called a &quot;utxo,&quot; for short. Utxos are integral to a blockchain&#39;s functionality, but many users do not know they exist.</p>
 
 <p>A utxo is simply a bill of value sitting in your digital wallet -- much like the many small fiat dollar bills you may have sitting in your physical wallet. The collection of utxos in your digital wallet make up the total balance.</p>
 
@@ -1510,7 +1510,7 @@
 
 <p>Now, Komodo has created an additional payment script that designates a utxo as belonging to a specific smart contract. In other words, it puts constraints on the utxo.</p>
 
-<p>The utxo in question gets marked with a specific EVAL code. This will effectively lock those funds into the desired smart contract. Every CryptoConditions contract has its own unique EVAL code, so there is never any confusion about which contract a specific utxo is entering.</p>
+<p>The utxo in question gets marked with a specific EVAL code. This will effectively lock those funds into the desired smart contract. Every CryptoConditions contract has its own unique EVAL code, so there is never any confusion about which contract a utxo is entering.</p>
 
 <p>There is also never any confusion about where the funds are sent because for each pubkey in existence, there is a unique address for each EVAL code. The pubkey remains the same, but due to the actual script having different EVAL codes, it ends up with a different result when entered into a cryptographic hash function, and thus a different address for each contract.</p>
 
