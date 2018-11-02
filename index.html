@@ -348,9 +348,6 @@
             <a href="#asset-chain-parameters" class="toc-h1 toc-link" data-title="Asset Chain Parameters">Asset Chain Parameters</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#a-note-about-low-activity-blockchains" class="toc-h2 toc-link" data-title="A Note About Low-Activity Blockchains">A Note About Low-Activity Blockchains</a>
-                  </li>
-                  <li>
                     <a href="#ac_name" class="toc-h2 toc-link" data-title="ac_name">ac_name</a>
                   </li>
                   <li>
@@ -1376,6 +1373,16 @@
 <p>The second part of the cost of notarization is the payment to the actual Komodo team, which is given in exchange for our services. You may reach out to our third-party service providers to receive a quote. @siu (Discord: @siu#3920) is the head of ChainMakers, and @PTYX (Discord: @PTYX#6840) is the head of Chainzilla. Both can provide different levels of service in asset-chain creation, electrum-server (SPV) setup and maintenance, explorer setup, and other decentralized-technology services.</p>
 
 <p>Several teams have already signed up for our services and are developing on our platform. From our experience with them we can confidently say that our pricing is competitive compared to other blockchain services. Furthermore, when considering that a Komodo-based asset chain does not require KMD for gas and transaction fees, the cost to your end-users can be exponentially cheaper. All things considered, creating a fully independent blockchain on Komodo can cost but a small fraction of what it would cost to deploy a single smart contract on the platforms of some of our competitors.</p>
+<h3 id='a-note-about-low-activity-blockchains'>A Note About Low-Activity Blockchains</h3>
+<p>The Komodo security system, dPoW, functions best for asset chains that are being actively used. If there is an end-user performing a transaction every minute on average, dPoW should function as normal. This includes hashing the asset chain&#39;s most recent state and inserting it into the KMD blockchain every ten to twenty minutes on average (and from there, a hash protecting this data is soon pushed into the Bitcoin blockchain).</p>
+
+<p>Many blockchains will not be used on a regular basis, however. The developers also may not elect to have any block rewards that would act as an incentive for miners to maintain activity on the chain.</p>
+
+<p>It is not economically efficient to notarize every single block that occurs. Therefore Komodo&#39;s dPoW security system requires several blocks to be generated before a notarization takes place. Without activity or miners, the notarization process naturally will stall.</p>
+
+<p>This creates a situation which is easily remedied, but only if the developer is proactive to maintain activity on their chain. We advise asset-chain developers who do not expect frequent transaction volume to ensure activity at crucial moments. If a transaction occurs on the blockchain from an end-user, for which notarization security is required, a simple solution can be to have a node running a script to watch for such transactions. When the transaction enters the mempool, the node can perform minimum-amount transactions until the end-user&#39;s transaction is notarized, and then the script can cease activity.</p>
+
+<p>The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than what it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.</p>
 <h1 id='smart-contracts-overview'>Smart Contracts Overview</h1><h3 id='smart-contracts-on-the-komodo-platform'>Smart Contracts on the Komodo Platform</h3>
 <p>Komodo is built on the Bitcoin protocol, and traditionally, Bitcoin Script is thought of as being incapable of supporting smart contracts. This is mostly a consequence of the fact that Bitcoin Script is (intentionally) not Turing complete. Now, all of this is changing with CryptoConditions, a utxo-based smart contract protocol.</p>
 
@@ -1551,21 +1558,11 @@
 
 <p>Komodo has implemented several smart contracts already, and they are available to all asset chains in our ecosystem. Some of these smart contracts can facilitate Oracles, on-chain gambling, on-chain DEX functionality, ERC20-like tokens, micro-payment channels, and more.</p>
 
-<p>To learn more about utxo-based smart contracts, join the #crypto-conditions channel in Komodo’s community on Discord. <a href="https://twitter.com/komodoplatform">You can also sign up for the weekly newsletter to get regular updates about Komodo’s developments</a>.</p>
+<p>To learn more about utxo-based smart contracts, <a href="https://komodoplatform.com/discord">join the #crypto-conditions channel in Komodo’s community on Discord</a>. <a href="https://komodoplatform.com/newsletter">You can also sign up for the weekly newsletter to get regular updates about Komodo’s developments</a>.</p>
 <h1 id='asset-chain-parameters'>Asset Chain Parameters</h1>
 <p>The Komodo platform offers various default customizations for determining the underlying nature of your asset chain. The desired combination of parameters should be included with the <code>komodod</code> execution every time the asset-chain daemon is launched.</p>
 
 <p>Changing these customizations at a later time is possible, but in many circumstances it can require a hard fork of your asset chain. In general, it is best to have your asset chain&#39;s parameters finalized before decentralizing the ownership of your coin. Should you discover a need to change these parameters after the fact, please reach out to our development team for assistance.</p>
-<h3 id='a-note-about-low-activity-blockchains'>A Note About Low-Activity Blockchains</h3>
-<p>The Komodo security system, dPoW, functions best for asset chains that are being actively used. If there is an end-user performing a transaction every minute on average, dPoW should function as normal. This includes hashing the asset chain&#39;s most recent state and inserting it into the KMD blockchain every ten to twenty minutes on average (and from there, a hash protecting this data is soon pushed into the Bitcoin blockchain).</p>
-
-<p>Many blockchains will not be used on a regular basis, however. The developers also may not elect to have any block rewards that would act as an incentive for miners to maintain activity on the chain.</p>
-
-<p>It is not economically efficient to notarize every single block that occurs. Therefore Komodo&#39;s dPoW security system requires several blocks to be generated before a notarization takes place. Without activity or miners, the notarization process naturally will stall.</p>
-
-<p>This creates a situation which is easily remedied, but only if the developer is proactive to maintain activity on their chain. We advise asset-chain developers who do not expect frequent transaction volume to ensure activity at crucial moments. If a transaction occurs on the blockchain from an end-user, for which notarization security is required, a simple solution can be to have a node running a script to watch for such transactions. When the transaction enters the mempool, the node can perform minimum-amount transactions until the end-user&#39;s transaction is notarized, and then the script can cease activity.</p>
-
-<p>The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than what it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.</p>
 <h2 id='ac_name'>ac_name</h2>
 <aside class="warning">
   All asset chains are required to set ac_name.
