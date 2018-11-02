@@ -19,6 +19,7 @@ includes:
   - 015-creating-asset-chains
   - 019-asset-chain-parameters
   - 023-common-runtime-parameters
+  - 027-cc-overview
   - 103-address-index
   - 107-blockchain
   - 111-control
@@ -30,7 +31,6 @@ includes:
   - 131-rawtransactions
   - 135-util
   - 139-wallet
-  - 301-cc-overview
 
 search: true
 ---
