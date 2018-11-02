@@ -4,7 +4,7 @@
 
 Komodo is built on the Bitcoin protocol, and traditionally, Bitcoin Script is thought of as being incapable of supporting smart contracts. This is mostly a consequence of the fact that Bitcoin Script is (intentionally) not Turing complete. Now, all of this is changing with CryptoConditions, a utxo-based smart contract protocol.
 
-As is often the case, Komodo Platform is leading the blockchain industry in this brand-new technology. This post will explain what CryptoConditions is, how it works, and how utxo-based smart contracts will dramatically alter the blockchain landscape.
+As is often the case, Komodo Platform is leading the blockchain industry in this brand-new technology. This section will explain what CryptoConditions is, how it works, and how utxo-based smart contracts will dramatically alter the blockchain landscape.
 
 ## A Brief Review of Bitcoin Script
 
@@ -96,7 +96,7 @@ While the spike in the price of gas can be advantageous for financial speculatio
 
 Until blockchain technology is capable of processing potentially billions, if not trillions, of transactions per second on a single blockchain, the gas-based blockchain platform is fundamentally flawed for today's market. The more popular a gas-based platform becomes, the more difficult, expensive, and prohibitive it is for businesses to develop on it, and for users to buy into it.
 
-Having observed crucial flaws in the currently popular gas-based smart-contract platform, we are now prepared to turn to the solution Komodo proposes.
+Having observed crucial flaws in the currently popular gas-based smart-contract platform, we are now prepared to turn to the smart-contract solution Komodo proposes.
 
 ## Introducing CryptoConditions
 
@@ -116,7 +116,7 @@ Likewise, to participate the end-users need only purchase the currency of the de
 
 ## CryptoConditions is Utxo Technology
 
-CryptoConditions functions in a completely different manner from the popular gas-based model of other platforms. Before we can explain how CryptoConditions works, we must first briefly explain the concept of an "unspent transaction", also called a "utxo," for short. Utxos are integral to a blockchain's functionality, but many users do not know that they exist.
+CryptoConditions functions in a completely different manner from the popular gas-based model of other platforms. Before we can explain how CryptoConditions works, we must first briefly explain the concept of an "unspent transaction", also called a "utxo," for short. Utxos are integral to a blockchain's functionality, but many users do not know they exist.
 
 A utxo is simply a bill of value sitting in your digital wallet -- much like the many small fiat dollar bills you may have sitting in your physical wallet. The collection of utxos in your digital wallet make up the total balance.
 
@@ -148,7 +148,7 @@ There are several different ways to execute a Bitcoin payment. In particular, th
 
 Now, Komodo has created an additional payment script that designates a utxo as belonging to a specific smart contract. In other words, it puts constraints on the utxo.
 
-The utxo in question gets marked with a specific EVAL code. This will effectively lock those funds into the desired smart contract. Every CryptoConditions contract has its own unique EVAL code, so there is never any confusion about which contract a specific utxo is entering.
+The utxo in question gets marked with a specific EVAL code. This will effectively lock those funds into the desired smart contract. Every CryptoConditions contract has its own unique EVAL code, so there is never any confusion about which contract a utxo is entering.
 
 There is also never any confusion about where the funds are sent because for each pubkey in existence, there is a unique address for each EVAL code. The pubkey remains the same, but due to the actual script having different EVAL codes, it ends up with a different result when entered into a cryptographic hash function, and thus a different address for each contract.
 
@@ -162,7 +162,13 @@ It’s also worth pointing out that one of the conditions of a CryptoConditions 
 
 With these rules in place, a CryptoConditions smart contract becomes like a mini-consensus mechanism. It forces consensus for the participants in the smart contract, while riding on the master consensus mechanism of the blockchain.
 
-If you'd like to learn more about the full technical details of Komodo’s utxo-based smart contracts, [read this documentation by Komodo’s lead developer, JL777](https://github.com/jl777/komodo/blob/FSM/src/cc/CC%20made%20easy).
+If you'd like to try writing your own CryptoConditions smart contract, [read this documentation by Komodo’s lead developer, JL777](https://github.com/jl777/komodo/blob/FSM/src/cc/CC%20made%20easy).
+
+Rest assured if you find this documentation too challenging. As the library of finished smart-contract templates increases over time, a normal developer will not need to write a full smart contract to utilize Komodo. Rather, you'll just pull a series of pre-written templates that function like building blocks, as you create your dApps.
+
+If you have a specific idea you'd like to try out and the template does not yet exist for it, please reach out to our team. We may be able to help you, as we are working to build up our template library.
+
+Now let's take a closer look at the many advantages CryptoConditions creates.
 
 ## Advantages Of CryptoConditions & Utxo-based Smart Contracts
 
@@ -171,6 +177,8 @@ There are a few additional advantages of utxo-based smart contracts that must be
 First, these smart contracts are hard-coded into the Komodo code base, which means they can be written in C and C++. They can also be written in any compiled programming language that can create a linkable library capable of calling and being called by C/C++ functions. In that sense, Komodo’s utxo-based smart contracts are language agnostic.
 
 The C and C++ programming languages are widely understood, time-tested, and, perhaps most importantly, Turing complete. Thus, utxo-based smart contracts can be programmed to do anything that any other existing program or application is able to do.
+
+Furthermore, because smart contracts on Komodo run in the daemon, developers can avoid the limitations and hassles of having to run code in a virtual machine, as is the case with the many gas-based smart contract platforms. You have far more speed, flexibility, and power. This is made possible by our unique design of connecting independent blockchains together, rather than forcing all users to run on a layer-one main chain.
 
 Second, utxo-based smart contracts are more secure than balance-based smart contracts. This is true in two ways. For one thing, because Komodo’s smart contracts are utxo-based, the entire balance of an address is never at risk.
 

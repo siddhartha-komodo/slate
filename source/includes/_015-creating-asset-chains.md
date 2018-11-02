@@ -161,4 +161,4 @@ It is not economically efficient to notarize every single block that occurs. The
 
 This creates a situation which is easily remedied, but only if the developer is proactive to maintain activity on their chain. We advise asset-chain developers who do not expect frequent transaction volume to ensure activity at crucial moments. If a transaction occurs on the blockchain from an end-user, for which notarization security is required, a simple solution can be to have a node running a script to watch for such transactions. When the transaction enters the mempool, the node can perform minimum-amount transactions until the end-user's transaction is notarized, and then the script can cease activity.
 
-The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than what it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.
+The amount it costs the developer to perform these occasional minimum-amount transactions is far cheaper than it would cost the developer to have the asset chain notarized every ten to twenty minutes on an inactive chain.
