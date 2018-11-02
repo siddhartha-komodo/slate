@@ -39,7 +39,7 @@ The `addmultisigaddress` method adds a multi-signature address to the wallet, wh
 The keys function as signatures, allowing multiple parties or entities to manage an account. Each key in the array can be an address or a hex-encoded public key.
 
 <aside class="notice">
-  DEPRECATED: if <b>account</b> is specified, the method assigns the multi-signature address to that account.
+  DEPRECATED: If <b>account</b> is specified, the method assigns the multi-signature address to that account.
 </aside>
 
 ### Arguments:
@@ -496,7 +496,7 @@ amount                                       |(numeric)                    |the 
   This method is part of the new <b>ac_staked</b> functionality.
 </aside>
 
-The `getbalance64` method is used only on asset chains that are utilizing the `-ac_staked` functionality. On KMD-based Proof-of-Stake (PoS) asset chains, all staked coins are placed into one of 64 segments (`segid`'s'). The `getbalance64` method returns the balance of coins in each `segid`. For further information, please reach out to our support team.
+The `getbalance64` method is used only on asset chains that are utilizing the `ac_staked` functionality. On KMD-based Proof-of-Stake (PoS) asset chains, all staked coins are placed into one of 64 segments (`segid`'s'). The `getbalance64` method returns the balance of coins in each `segid`. For further information, please reach out to our support team.
 
 ## getnewaddress
 
@@ -3500,11 +3500,11 @@ The number of utxos and notes selected for merging can be limited by the caller.
 
 The following special strings are accepted inside the `fromaddresses` array:
 
- - `"*"`: merge both utxos and notes from all addresses belonging to the wallet
+ - `"*"`: Merge both utxos and notes from all addresses belonging to the wallet
 
- - "ANY_TADDR": merge utxos from all t addresses belonging to the wallet
+ - `"ANY_TADDR"`: Merge utxos from all t addresses belonging to the wallet
 
- - "ANY_ZADDR": merge notes from all z addresses belonging to the wallet
+ - `"ANY_ZADDR"`: Merge notes from all z addresses belonging to the wallet
 
 If a special string is given, any given addresses of that type will be ignored
 

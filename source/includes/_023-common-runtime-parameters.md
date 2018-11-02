@@ -191,7 +191,9 @@ regtest=0
 
 ## mempooltxinputlimit
 
-** DEPRECATED **
+<aside class="notice">
+  DEPRECATED
+</aside>
 
 `mempooltxinputlimit` is a runtime parameter inherited from Zcash. The functionality it facilitated is now enabled by default, and therefore the parameter is deprecated. Please see [the Zcash documentation for more information](https://blog.z.cash/new-release-1-1-0/).
 
@@ -257,7 +259,7 @@ Use [host]:port notation for IPv6
 
 `addnode` tells the daemon which nodes are trusted to act as seed nodes. After connecting to a node via `addnode`, the trusted node will send your node the list of all nodes that it is connected to, and your node will then connect to these additional nodes until [the max limit](#maxconnections) is reached.
 
-This contrasts from [the `connect` runtime parameter](#connect), as the latter does not attempt to connect your node to additional nodes.
+This contrasts from the [`connect`](#connect) runtime parameter, as the latter does not attempt to connect your node to additional nodes.
 
 If you are behind a firewall or are having issues connecting to the network, `addnode` is a stronger option.
 
@@ -281,7 +283,7 @@ connect=69.164.218.197
 
 `connect` connects the `komodod` server to a trusted peer node, but not to request or add any additional nodes.
 
-Please refer to [the `addnode` parameter](#addnode) entry for more information.
+Please refer to the [`addnode`](#addnode) parameter entry for more information.
 
 ## gen
 
@@ -365,7 +367,7 @@ komodod -rpcbind=127.0.0.1:9704
 
 `rpcbind` instructs the daemon to listen for json-rpc connections.
 
-Use [host]:port notation for IPv6.
+Use `[host]:port` notation for IPv6.
 
 This option can be specified multiple times.
 
@@ -427,7 +429,11 @@ Specify as many `rpcallowip=` settings as you like to allow connections from oth
 rpcconnect=127.0.0.1
 ```
 
-`rpcconnect` allows the user to connect to `komodod` and send RPC commands from a host. By default, it is set to localhost. We DO NOT RECOMMEND that the average user set this value to anything other than the localhost, as it can grant access to a foreign party, who are then able to take control over `komodod` and all funds in your `wallet.dat` file.
+`rpcconnect` allows the user to connect to `komodod` and send RPC commands from a host. By default, it is set to localhost.
+
+<aside class="warning">
+  We DO NOT RECOMMEND that the average user set this value to anything other than the localhost, as it can grant access to a foreign party, who are then able to take control over komodod and all funds in your wallet.dat file.
+</aside>
 
 ## sendfreetransactions
 

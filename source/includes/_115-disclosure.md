@@ -30,7 +30,7 @@ response:
   EXPERIMENTAL FEATURE: Payment disclosure is currently DISABLED. This call always fails.
 </aside>
 
-**z_getpaymentdisclosure "transaction" "js_index" "output_index" ("message")**
+**z_getpaymentdisclosure transaction js_index output_index ("message")**
 
 The `z_getpaymentdisclosure` method generates a payment disclosure for a given joinsplit output.
 
