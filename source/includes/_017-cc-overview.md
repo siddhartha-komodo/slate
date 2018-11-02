@@ -200,4 +200,4 @@ As far as the Komodo team knows, no other blockchain project has successfully im
 
 Komodo has implemented several smart contracts already, and they are available to all asset chains in our ecosystem. Some of these smart contracts can facilitate Oracles, on-chain gambling, on-chain DEX functionality, ERC20-like tokens, micro-payment channels, and more.
 
-To learn more about utxo-based smart contracts, join the #crypto-conditions channel in Komodo’s community on Discord. [You can also sign up for the weekly newsletter to get regular updates about Komodo’s developments](https://twitter.com/komodoplatform).
+To learn more about utxo-based smart contracts, [join the #crypto-conditions channel in Komodo’s community on Discord](https://komodoplatform.com/discord). [You can also sign up for the weekly newsletter to get regular updates about Komodo’s developments](https://komodoplatform.com/newsletter).
