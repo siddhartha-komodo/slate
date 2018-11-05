@@ -106,11 +106,13 @@ However, at the same time, the lack of Turing completeness also prevented smart 
 
 Komodo now offers "CryptoConditions", a feature that allows smart contracts to be developed on top of Bitcoin-protocol based blockchains. We believe CryptoConditions to be a useful addition to the blockchain industry, because it empowers Bitcoin-core based cryptocurrencies with support for smart contracts and decentralized applications.
 
-Furthermore, CryptoConditions gains more usefulness when combined with Komodo's unique design. Recall that Komodo is built not to require all developers and users to function on the main Komodo blockchain. Rather, it is designed to connect networks of independent blockchains together, each secured with the hash rate of Bitcoin, and interconnected through technologies such as atomic-swaps, cross-chain smart contracts, chain interlinking, and more.
+Furthermore, CryptoConditions gains more usefulness when combined with Komodo's unique design. Recall that Komodo is built not to require all developers and users to function on the main Komodo blockchain. Rather, it empowers you with an independent blockchain all of your own, secures each chain with the hash rate of Bitcoin, and facilitates an interconnected network between all such chains using technologies such as atomic-swaps, cross-chain smart contracts, chain interlinking, and more.
 
 This combination of Komodo technologies overcomes the challenges of the currently popular, gas-based, single-blockchain platforms.
 
-With CryptoConditions, the business developer can maintain interactivity with the Komodo ecosystem, while also being able to run their smart contracts and dApps on a private blockchain. Because the developer has the full blockchain all to themselves, they are able to safely occupy the full transaction capacity without fear of interruption by other dApp developers in the ecosystem. In short, if you want to build an Uber-like dApp, Komodo is the platform for you.
+With CryptoConditions, the business developer can maintain interactivity with the Komodo ecosystem, while also being able to run their smart contracts and dApps on a private blockchain. Because the developer has the full blockchain all to themselves, they are able to safely occupy the full transaction capacity without fear of interruption by other dApp developers in the ecosystem. Developers of highly active blockchains can even split their single blockchain into multiple blockchains, using the same interconnection technology.
+
+In short, if you want to build an Uber-like dApp, Komodo is the platform for you.
 
 Likewise, to participate the end-users need only purchase the currency of the developer's dApp; there is no need to purchase KMD. Therefore, for the end-user, the price of participating in the developer's dApp is tied only to the design and success of the dApp, and not to the unpredictability of the rest of the ecosystem.
 
@@ -186,7 +188,7 @@ This is not the case with balance-based smart contracts, like those on Ethereum,
 
 Third, utxo-based smart contracts are essentially an extension of the Bitcoin protocol, so a series of RPC calls can be established. This makes it extremely simple to customize and implement utxo-based smart contracts.
 
-It is a straightforward process to create a GUI so non-technical users can make use of Komodo’s smart contract technology without needing to work through a CLI. Eventually, once a large variety of RPC calls have been created, it will become possible to build entire decentralized applications based on RPC calls alone.
+It is a straightforward process to create a GUI so non-technical users can make use of Komodo’s smart-contract technology without needing to work through a CLI. Eventually, once a large variety of RPC calls have been created, it will become possible to build entire decentralized applications based on RPC calls alone.
 
 Fourth, CryptoConditions allows zero-confirmation micro-payments. Also, these 0-conf micro-payments are secured by Komodo’s delayed Proof of Work security mechanism. The payments are fully peer-to-peer, and are considered confirmed as soon as they enter the mempool.
 
