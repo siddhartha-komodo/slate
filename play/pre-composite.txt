@@ -1,6 +1,1 @@
-name (string) Name of your Dice contract
-funds (number) The amount of funds you want to start with
-minbet (number) Minimum amount allowed for bet
-maxbet (number) Maximum amount allowed for bet
-maxodds (number) is the largest odds you can be with
-timeoutblocks (number) is how many blocks before it times out and pays out to the winner
+fundingtxid (string) the fundingtxid of the desired dice contract

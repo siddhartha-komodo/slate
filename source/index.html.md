@@ -20,6 +20,8 @@ includes:
   - 017-cc-overview
   - 019-common-runtime-parameters
   - 023-asset-chain-parameters
+  - 101-cryptoconditions-instructions
+  - 104-cc-dice
   - 303-address-index
   - 307-blockchain
   - 311-control
