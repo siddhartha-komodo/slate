@@ -155,7 +155,7 @@ hex:                                         |(string)                     |a ra
 }
 ```
 
-**rewardsaddress [pubkey]**
+**rewardsaddress (pubkey)**
 
 The `rewardsaddress` method returns info about the a `rewards` plan associated with the given `pubkey`. If no `pubkey` is provided, the `pubkey` used to launch the daemon is used.
 
@@ -172,8 +172,8 @@ Structure|Type|Description
 result                                       |(string)                     |whether the method executed successfully
 RewardsCCaddress                             |(string)                     |taking the contract's EVAL code as a modifyer, this is the public address that corresponds to the contract's privkey
 Rewardsmarker                                |(string)                     |the unmodified public address generated from the contract's privkey
-GatewaysPubkey                               |(string)
-RewardsCCassets                              |(string)
+GatewaysPubkey                               |(string)                     |
+RewardsCCassets                              |(string)                     |
 CCaddress                                    |(string)                     |taking the contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
 myCCaddress                                  |(string)                     |taking the dice contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
 myaddress                                    |(string)                     |the public address of the pubkey used to launch the chain
@@ -372,6 +372,7 @@ funding                                      |(number)                     |tota
 ## rewardslist
 
 > Command:
+
 ```
 ./komodo-cli -ac_name=HELLOWORLD rewardslist
 
@@ -649,9 +650,9 @@ hex:                                         |(string)                     |a ra
 }
 ```
 
-**rewardsunlock name fundingtxid [txid]**
+**rewardsunlock name fundingtxid (txid)**
 
-The `rewardsunlock` method unlocks your funds from a specific rewards plan after the minimum lock time is met.
+The `rewardsunlock` method unlocks your funds from a specific rewards plan after the minimum lock time is met. If `txid` is not provided, `rewardsunlock` unlocks all funds in the `fundingtxid` plan.
 
 If you attempt to unlock your funds before the minimum period is met, the daemon returns this error:
 
@@ -682,7 +683,7 @@ Structure|Type|Description
 ---------|----|-----------
 name                                         |(string)                     |the name of the rewards plan
 fundingtxid                                  |(string)                     |the txid that identifies the desired rewards plan
-txid                                         |(number)                     |the txid that was returned as a result of the original rewardslock command
+txid                                         |(string, optional)           |the txid that was returned as a result of the original rewardslock command; if `txid` is not provided, `rewardsunlock` unlocks all funds in the `fundingtxid` plan
 
 ### Response:
 

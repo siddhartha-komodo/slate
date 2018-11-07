@@ -35,7 +35,7 @@ The `tokenaddress` method returns information about a token address according to
 
 Structure|Type|Description
 ---------|----|-----------
-pubkey (string, optional) the pubkey of the desired address
+pubkey                                       |(string, optional)           |the pubkey of the desired address
 
 ### Response:
 
@@ -984,16 +984,6 @@ AssetValidate.(t) passed
 88ac2d4d27654e9d8ac195d5ab482ee9895303902eaacfbb687b1e736bb06fb4
 ```
 > Step 3. Decode the raw transaction and check against the following if the data is sane
-
-```
-vin.0: normal input
-vin.1 to vin.n-1: valid CC outputs
-vout.0 to n-2: assetoshis output to CC
-vout.n-2: normal output for change (if any)
-vout.n-1: opreturn [EVAL_ASSETS] ['t'] [assetid]
-```
-
-> Command:
 
 ```
 ./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000023b61e44ce3cedf536b52d8da11faacd041494a078e971551ed4e2bd496bc8da1000000006a4730440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f6012103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcffffffff66cc65f38d7e878d312386777c4f049f738b8894353c30108f7fe4ca515489e4000000007b4c79a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001ffffffff0420a1070000000000302ea22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401cce028933b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc28b9486cb2430000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc6600000000
