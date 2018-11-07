@@ -1,6 +1,8 @@
 # Smart Contract: Dice
 
-The `dice` smart contract is a demonstration chain. It shows how CryptoConditions allows the combination of real-time gameplay with blockchain-enforced provably random entropy.
+The `dice` smart contract allows for a decentralized `dice` game on a blockchain. The `dice` smart contract is essentially a simple, but fully functional decentralized application (dApp).
+
+It also useful as a demonstration chain, as it shows how CryptoConditions allows the combination of real-time gameplay with blockchain-enforced provably random entropy.
 
 `dice` is a simple gambling game, where one node creates a "house" contract, with seed funds and other parameters, and other users place bets within the indicated parameters. Winners and losers are determined by blockchain-supported random entropy.
 
@@ -134,7 +136,7 @@ Only the owner of the `dice` contract is able to add funds.
 Structure|Type|Description
 ---------|----|-----------
 name                                         |(string)                     |name of your dice contract
-fundingtxid                                  |(string)                     |the address of the dice smart-contract you want to add funds
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
 amount                                       |(number)                     |the amount of funds you want to add to your dice from your wallet
 
 
@@ -339,7 +341,7 @@ The `dicebet` method places a bet on the indicated `dice` contract.
 Structure|Type|Description
 ---------|----|-----------
 name                                         |(string)                     |name of the dice contract you want to place your bet
-fundingtxid                                  |(string)                     |the ID of the dice contract
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
 amount                                       |(number)                     |amount you want to place bet
 odds                                         |(number)                     |specify your odds
 
@@ -375,14 +377,12 @@ If the returned `hex` value is `0`, the bet is finished.
 
 If the returned `hex` value is not `0`, then the `hex` value should be broadcast with [`sendrawtransaction`](#sendrawtransaction).
 
-===need to revisit fundingtxid throughout docs===
-
 ### Arguments:
 
 Structure|Type|Description
 ---------|----|-----------
 name                                         |(string)                     |the name of the dice contract
-fundingtxid                                  |(string)                     |the fundingtxid of the contract
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
 bettxid                                      |(string)                     |the bettxid for which info is requested
 
 ### Response:
@@ -642,6 +642,8 @@ hex                                          |(string)                     |the 
 
 The `diceinfo` method looks up information about the specific `dice` contract according to the relevant `fundingtxid`.
 
+A `fundingtxid` is the txid of the transaction that created and funded the relevant contract.
+
 Use the [`dicelist`](#dicelist) method to discover a list of available `fundingtxid` hashes on the asset chain.
 
 
@@ -649,16 +651,16 @@ Use the [`dicelist`](#dicelist) method to discover a list of available `fundingt
 
 Structure|Type|Description
 ---------|----|-----------
-fundingtxid                                  |(string)                     |the fundingtxid of the desired dice contract
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
 
 ### Response:
 
 Structure|Type|Description
 ---------|----|-----------
 "result"                                     |(string)                     |whether the command executed successfully
-"fundingtxid"                                |(string)                     |the fundingtxid ===?=== of the relevant dice contract
+"fundingtxid"                                |(string)                     |the txid of the transaction that created and funded this contract
 "name"                                       |(string)                     |the name of the dice contract
-"sbits"                                      |(number)                     |===?===
+"sbits"                                      |(number)                     |a 64-bit int binary encoding of the first 8 characters of the name property
 "minbet"                                     |(number)                     |the minimum bet amount this contract accepts
 "maxbet"                                     |(number)                     |the maximum bet amount this contract accepts
 "maxodds"                                    |(number)                     |the maximum odds the contract accepts
@@ -685,6 +687,8 @@ Structure|Type|Description
 
 The `dicelist` method calls the total list of `fundingtxid`'s of all `dice` contracts available on the asset chain.
 
+A `fundingtxid` is the txid of the transaction that created and funded the relevant contract.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -696,7 +700,7 @@ Structure|Type|Description
 Structure|Type|Description
 ---------|----|-----------
 [                                            |                             |
-fundingtxid                                  |(string)                     |the fundingtxids available on the asset chain
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded the relevant contract
 ]                                            |                             |
 
 ## dicestatus
@@ -718,14 +722,14 @@ fundingtxid                                  |(string)                     |the 
 
 **dicestatus name fundingtxid bettxid**
 
-The `dicestatus` method prints the status of a `dicebet` and return whether the `bettxid` received a winning or losing result.
+The `dicestatus` method prints the status of a `dicebet` and returns whether the `bettxid` received a winning or losing result.
 
 ### Arguments:
 
 Structure|Type|Description
 ---------|----|-----------
 name                                         |(string)                     |the name of the dice contract
-fundingtxid                                  |(string)                     |the fundingtxid of the dice contract
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
 bettxid                                      |(string)                     |the bettxid, the result of which is desired
 
 ### Response:

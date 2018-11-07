@@ -21,7 +21,13 @@ includes:
   - 019-common-runtime-parameters
   - 023-asset-chain-parameters
   - 101-cryptoconditions-instructions
-  - 104-cc-dice
+  - 110-cc-channels
+  - 120-cc-dice
+  - 130-cc-faucet
+  - 133-cc-gateways
+  - 135-cc-oracles
+  - 140-cc-rewards
+  - 150-cc-tokens
   - 303-address-index
   - 307-blockchain
   - 311-control
@@ -34,5 +40,5 @@ includes:
   - 335-util
   - 339-wallet
 
-search: true
+search: false
 ---
