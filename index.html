@@ -3866,7 +3866,7 @@ addnode=144.76.94.3
     "myaddress": "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
 }
 </code></pre>
-<p><strong>rewardsaddress [pubkey]</strong></p>
+<p><strong>rewardsaddress (pubkey)</strong></p>
 
 <p>The <code>rewardsaddress</code> method returns info about the a <code>rewards</code> plan associated with the given <code>pubkey</code>. If no <code>pubkey</code> is provided, the <code>pubkey</code> used to launch the daemon is used.</p>
 <h3 id='arguments-2'>Arguments:</h3>
@@ -4193,19 +4193,18 @@ addnode=144.76.94.3
 </tbody></table>
 <h2 id='rewardslist'>rewardslist</h2>
 <blockquote>
-<p>Command:
-```
-./komodo-cli -ac_name=HELLOWORLD rewardslist</p>
+<p>Command:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>
-&gt; Response:
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardslist
 
 </code></pre>
-<p>[
-  &quot;e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd&quot;
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  "e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd"
 ]
-```</p>
-
+</code></pre>
 <p><strong>rewardslist</strong></p>
 
 <p>The <code>rewardslist</code> method lists the <code>fundingtxid</code>&#39;s of all the rewards contracts available on the asset chain.</p>
@@ -4504,9 +4503,9 @@ addnode=144.76.94.3
     "vjoinsplit": []
 }
 </code></pre>
-<p><strong>rewardsunlock name fundingtxid [txid]</strong></p>
+<p><strong>rewardsunlock name fundingtxid (txid)</strong></p>
 
-<p>The <code>rewardsunlock</code> method unlocks your funds from a specific rewards plan after the minimum lock time is met.</p>
+<p>The <code>rewardsunlock</code> method unlocks your funds from a specific rewards plan after the minimum lock time is met. If <code>txid</code> is not provided, <code>rewardsunlock</code> unlocks all funds in the <code>fundingtxid</code> plan.</p>
 
 <p>If you attempt to unlock your funds before the minimum period is met, the daemon returns this error:</p>
 
@@ -4550,8 +4549,8 @@ addnode=144.76.94.3
 </tr>
 <tr>
 <td>txid</td>
-<td>(number)</td>
-<td>the txid that was returned as a result of the original rewardslock command</td>
+<td>(string, optional)</td>
+<td>the txid that was returned as a result of the original rewardslock command; if <code>txid</code> is not provided, <code>rewardsunlock</code> unlocks all funds in the <code>fundingtxid</code> plan</td>
 </tr>
 </tbody></table>
 <h3 id='response-7'>Response:</h3>
@@ -4608,9 +4607,12 @@ addnode=144.76.94.3
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>pubkey</td>
+<td>(string, optional)</td>
+<td>the pubkey of the desired address</td>
+</tr>
 </tbody></table>
-
-<p>pubkey (string, optional) the pubkey of the desired address</p>
 <h3 id='response'>Response:</h3>
 <table><thead>
 <tr>
@@ -5817,15 +5819,6 @@ AssetValidate.(t) passed
 </code></pre>
 <blockquote>
 <p>Step 3. Decode the raw transaction and check against the following if the data is sane</p>
-</blockquote>
-<pre class="highlight plaintext"><code>vin.0: normal input
-vin.1 to vin.n-1: valid CC outputs
-vout.0 to n-2: assetoshis output to CC
-vout.n-2: normal output for change (if any)
-vout.n-1: opreturn [EVAL_ASSETS] ['t'] [assetid]
-</code></pre>
-<blockquote>
-<p>Command:</p>
 </blockquote>
 <pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000023b61e44ce3cedf536b52d8da11faacd041494a078e971551ed4e2bd496bc8da1000000006a4730440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f6012103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcffffffff66cc65f38d7e878d312386777c4f049f738b8894353c30108f7fe4ca515489e4000000007b4c79a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001ffffffff0420a1070000000000302ea22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401cce028933b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc28b9486cb2430000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc6600000000
 </code></pre>
