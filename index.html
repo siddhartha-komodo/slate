@@ -198,7 +198,7 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+      <script src="javascripts/all_nosearch.js"></script>
   </head>
 
   <body class="index" data-languages="[&quot;shell&quot;,&quot;C&#x2F;C++&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;(more coming)&quot;]">
@@ -217,10 +217,6 @@
               <a href="#" data-language-name="javascript">javascript</a>
               <a href="#" data-language-name="(more coming)">(more coming)</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
@@ -521,6 +517,93 @@
                   </li>
                   <li>
                     <a href="#dicestatus" class="toc-h2 toc-link" data-title="dicestatus">dicestatus</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#smart-contract-faucet" class="toc-h1 toc-link" data-title="Smart Contract: Faucet">Smart Contract: Faucet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#faucetaddress" class="toc-h2 toc-link" data-title="faucetaddress">faucetaddress</a>
+                  </li>
+                  <li>
+                    <a href="#faucetfund" class="toc-h2 toc-link" data-title="faucetfund">faucetfund</a>
+                  </li>
+                  <li>
+                    <a href="#faucetget" class="toc-h2 toc-link" data-title="faucetget">faucetget</a>
+                  </li>
+                  <li>
+                    <a href="#faucetinfo" class="toc-h2 toc-link" data-title="faucetinfo">faucetinfo</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#smart-contract-rewards" class="toc-h1 toc-link" data-title="Smart Contract: Rewards">Smart Contract: Rewards</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#rewardsaddfunding" class="toc-h2 toc-link" data-title="rewardsaddfunding">rewardsaddfunding</a>
+                  </li>
+                  <li>
+                    <a href="#rewardsaddress" class="toc-h2 toc-link" data-title="rewardsaddress">rewardsaddress</a>
+                  </li>
+                  <li>
+                    <a href="#rewardscreatefunding" class="toc-h2 toc-link" data-title="rewardscreatefunding">rewardscreatefunding</a>
+                  </li>
+                  <li>
+                    <a href="#rewardsinfo" class="toc-h2 toc-link" data-title="rewardsinfo">rewardsinfo</a>
+                  </li>
+                  <li>
+                    <a href="#rewardslist" class="toc-h2 toc-link" data-title="rewardslist">rewardslist</a>
+                  </li>
+                  <li>
+                    <a href="#rewardslock" class="toc-h2 toc-link" data-title="rewardslock">rewardslock</a>
+                  </li>
+                  <li>
+                    <a href="#rewardsunlock" class="toc-h2 toc-link" data-title="rewardsunlock">rewardsunlock</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#smart-contracts-tokens" class="toc-h1 toc-link" data-title="Smart Contracts: Tokens">Smart Contracts: Tokens</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#tokenaddress" class="toc-h2 toc-link" data-title="tokenaddress">tokenaddress</a>
+                  </li>
+                  <li>
+                    <a href="#tokenask" class="toc-h2 toc-link" data-title="tokenask">tokenask</a>
+                  </li>
+                  <li>
+                    <a href="#tokenbalance" class="toc-h2 toc-link" data-title="tokenbalance">tokenbalance</a>
+                  </li>
+                  <li>
+                    <a href="#tokenbid" class="toc-h2 toc-link" data-title="tokenbid">tokenbid</a>
+                  </li>
+                  <li>
+                    <a href="#tokencancelask" class="toc-h2 toc-link" data-title="tokencancelask">tokencancelask</a>
+                  </li>
+                  <li>
+                    <a href="#tokencancelbid" class="toc-h2 toc-link" data-title="tokencancelbid">tokencancelbid</a>
+                  </li>
+                  <li>
+                    <a href="#tokencreate" class="toc-h2 toc-link" data-title="tokencreate">tokencreate</a>
+                  </li>
+                  <li>
+                    <a href="#tokenfillask" class="toc-h2 toc-link" data-title="tokenfillask">tokenfillask</a>
+                  </li>
+                  <li>
+                    <a href="#tokenfillbid" class="toc-h2 toc-link" data-title="tokenfillbid">tokenfillbid</a>
+                  </li>
+                  <li>
+                    <a href="#tokeninfo" class="toc-h2 toc-link" data-title="tokeninfo">tokeninfo</a>
+                  </li>
+                  <li>
+                    <a href="#tokenlist" class="toc-h2 toc-link" data-title="tokenlist">tokenlist</a>
+                  </li>
+                  <li>
+                    <a href="#tokenorders" class="toc-h2 toc-link" data-title="tokenorders">tokenorders</a>
+                  </li>
+                  <li>
+                    <a href="#tokentransfer" class="toc-h2 toc-link" data-title="tokentransfer">tokentransfer</a>
                   </li>
               </ul>
           </li>
@@ -2285,9 +2368,11 @@ addnode=144.76.94.3
 
 <p>If <code>ac_private</code> is set to <code>1</code>, all transactions other than coinbase transactions (block rewards) must use zk-SNARKs. Beyond sending mined coins from a transparent addresses to a z address, all other transparent activity is disabled.</p>
 <h1 id='cryptoconditions-instructions'>CryptoConditions Instructions</h1>
-<p>Creating a pubkey. Why a pubkey, and how the addresses differ.</p>
+<p>===Creating a pubkey. Why a pubkey, and how the addresses differ.===</p>
 <h1 id='smart-contract-dice'>Smart Contract: Dice</h1>
-<p>The <code>dice</code> smart contract is a demonstration chain. It shows how CryptoConditions allows the combination of real-time gameplay with blockchain-enforced provably random entropy.</p>
+<p>The <code>dice</code> smart contract allows for a decentralized <code>dice</code> game on a blockchain. The <code>dice</code> smart contract is essentially a simple, but fully functional decentralized application (dApp).</p>
+
+<p>It also useful as a demonstration chain, as it shows how CryptoConditions allows the combination of real-time gameplay with blockchain-enforced provably random entropy.</p>
 
 <p><code>dice</code> is a simple gambling game, where one node creates a &quot;house&quot; contract, with seed funds and other parameters, and other users place bets within the indicated parameters. Winners and losers are determined by blockchain-supported random entropy.</p>
 
@@ -2423,7 +2508,7 @@ addnode=144.76.94.3
 <tr>
 <td>fundingtxid</td>
 <td>(string)</td>
-<td>the address of the dice smart-contract you want to add funds</td>
+<td>the txid of the transaction that created and funded this contract</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -2494,32 +2579,32 @@ addnode=144.76.94.3
 </tr>
 </thead><tbody>
 <tr>
-<td>&quot;result&quot;</td>
+<td>result</td>
 <td>(string)</td>
 <td>whether the diceaddress method was successful</td>
 </tr>
 <tr>
-<td>&quot;DiceCCaddress&quot;</td>
+<td>DiceCCaddress</td>
 <td>(string)</td>
 <td>taking the dice contract&#39;s EVAL code as a modifyer, this is the public address that corresponds to the dice contract&#39;s privkey</td>
 </tr>
 <tr>
-<td>&quot;Dicemarker&quot;</td>
+<td>Dicemarker</td>
 <td>(string)</td>
 <td>the unmodified public address generated from the dice contract&#39;s privkey</td>
 </tr>
 <tr>
-<td>&quot;CCaddress&quot;</td>
+<td>CCaddress</td>
 <td>(string)</td>
 <td>taking the dice contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
 </tr>
 <tr>
-<td>&quot;myCCaddress&quot;</td>
+<td>myCCaddress</td>
 <td>(string)</td>
 <td>taking the dice contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
 </tr>
 <tr>
-<td>&quot;myaddress&quot;</td>
+<td>myaddress</td>
 <td>(string)</td>
 <td>the public address of the pubkey used to launch the chain</td>
 </tr>
@@ -2679,7 +2764,7 @@ addnode=144.76.94.3
 <tr>
 <td>fundingtxid</td>
 <td>(string)</td>
-<td>the ID of the dice contract</td>
+<td>the txid of the transaction that created and funded this contract</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -2732,8 +2817,6 @@ addnode=144.76.94.3
 <p>If the returned <code>hex</code> value is <code>0</code>, the bet is finished.</p>
 
 <p>If the returned <code>hex</code> value is not <code>0</code>, then the <code>hex</code> value should be broadcast with <a href="#sendrawtransaction"><code>sendrawtransaction</code></a>.</p>
-
-<p>===need to revisit fundingtxid throughout docs===</p>
 <h3 id='arguments-4'>Arguments:</h3>
 <table><thead>
 <tr>
@@ -2750,7 +2833,7 @@ addnode=144.76.94.3
 <tr>
 <td>fundingtxid</td>
 <td>(string)</td>
-<td>the fundingtxid of the contract</td>
+<td>the txid of the transaction that created and funded this contract</td>
 </tr>
 <tr>
 <td>bettxid</td>
@@ -3056,6 +3139,8 @@ addnode=144.76.94.3
 
 <p>The <code>diceinfo</code> method looks up information about the specific <code>dice</code> contract according to the relevant <code>fundingtxid</code>.</p>
 
+<p>A <code>fundingtxid</code> is the txid of the transaction that created and funded the relevant contract.</p>
+
 <p>Use the <a href="#dicelist"><code>dicelist</code></a> method to discover a list of available <code>fundingtxid</code> hashes on the asset chain.</p>
 <h3 id='arguments-6'>Arguments:</h3>
 <table><thead>
@@ -3068,7 +3153,7 @@ addnode=144.76.94.3
 <tr>
 <td>fundingtxid</td>
 <td>(string)</td>
-<td>the fundingtxid of the desired dice contract</td>
+<td>the txid of the transaction that created and funded this contract</td>
 </tr>
 </tbody></table>
 <h3 id='response-6'>Response:</h3>
@@ -3087,7 +3172,7 @@ addnode=144.76.94.3
 <tr>
 <td>&quot;fundingtxid&quot;</td>
 <td>(string)</td>
-<td>the fundingtxid ===?=== of the relevant dice contract</td>
+<td>the txid of the transaction that created and funded this contract</td>
 </tr>
 <tr>
 <td>&quot;name&quot;</td>
@@ -3097,7 +3182,7 @@ addnode=144.76.94.3
 <tr>
 <td>&quot;sbits&quot;</td>
 <td>(number)</td>
-<td>===?===</td>
+<td>a 64-bit int binary encoding of the first 8 characters of the name property</td>
 </tr>
 <tr>
 <td>&quot;minbet&quot;</td>
@@ -3141,6 +3226,8 @@ addnode=144.76.94.3
 <p><strong>dicelist</strong></p>
 
 <p>The <code>dicelist</code> method calls the total list of <code>fundingtxid</code>&#39;s of all <code>dice</code> contracts available on the asset chain.</p>
+
+<p>A <code>fundingtxid</code> is the txid of the transaction that created and funded the relevant contract.</p>
 <h3 id='arguments-7'>Arguments:</h3>
 <table><thead>
 <tr>
@@ -3171,7 +3258,7 @@ addnode=144.76.94.3
 <tr>
 <td>fundingtxid</td>
 <td>(string)</td>
-<td>the fundingtxids available on the asset chain</td>
+<td>the txid of the transaction that created and funded the relevant contract</td>
 </tr>
 <tr>
 <td>]</td>
@@ -3195,7 +3282,7 @@ addnode=144.76.94.3
 </code></pre>
 <p><strong>dicestatus name fundingtxid bettxid</strong></p>
 
-<p>The <code>dicestatus</code> method prints the status of a <code>dicebet</code> and return whether the <code>bettxid</code> received a winning or losing result.</p>
+<p>The <code>dicestatus</code> method prints the status of a <code>dicebet</code> and returns whether the <code>bettxid</code> received a winning or losing result.</p>
 <h3 id='arguments-8'>Arguments:</h3>
 <table><thead>
 <tr>
@@ -3212,7 +3299,7 @@ addnode=144.76.94.3
 <tr>
 <td>fundingtxid</td>
 <td>(string)</td>
-<td>the fundingtxid of the dice contract</td>
+<td>the txid of the transaction that created and funded this contract</td>
 </tr>
 <tr>
 <td>bettxid</td>
@@ -3237,6 +3324,2646 @@ addnode=144.76.94.3
 <td>status</td>
 <td>(string)</td>
 <td>the result of the bet for the relevant bettxid</td>
+</tr>
+</tbody></table>
+<h1 id='smart-contract-faucet'>Smart Contract: Faucet</h1>
+<p>The <code>faucet</code> CryptoConditions smart contract enables anyone to set up and operate an on-chain faucet.</p>
+
+<p>There may only be one <code>faucet</code> contract per asset chain.</p>
+
+<p>For any faucet, there is a public address to which anyone can send their funds to support the faucet.  </p>
+
+<p>A <code>faucet</code> rpc call can be executed by anyone on the asset chain, as long as their public address satisfies a few constraints: the user&#39;s pubkey and address must have no history of funds or transactions, and an address can claim faucet funds only once.</p>
+
+<p>The <a href="#faucetget"><code>faucetget</code></a> is the rpc call that executes the <code>faucet</code> contract, and the rpc call requires the user to perform a small PoW calculation. This deters leechers.</p>
+
+<p>When called, <code>faucet</code> sends 0.1 coins to the indicated address, and requires about 30 seconds of CPU time.</p>
+<h2 id='faucetaddress'>faucetaddress</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD faucetaddress 03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "FaucetCCaddress": "RSxACZQhskPjQyxp7TUPG1oP1wm4agFycJ",
+  "CCaddress": "RSxACZQhskPjQyxp7TUPG1oP1wm4agFycJ",
+  "myCCaddress": "RSxACZQhskPjQyxp7TUPG1oP1wm4agFycJ",
+  "myaddress": "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+}
+</code></pre>
+<p><strong>faucetaddress [pubkey]</strong></p>
+
+<p>The <code>faucetaddress</code> method returns the CC address information for the requested pubkey. If no pubkey is provided, the method returns information for the pubkey used to launch the daemon.</p>
+<h3 id='arguments'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pubkey</td>
+<td>(string, optional)</td>
+<td>the desired pubkey; the method uses the pubkey used to launch the daemon if no pubkey is provided</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>FaucetCCaddress</td>
+<td>(string)</td>
+<td>taking the faucet contract&#39;s EVAL code as a modifyer, this is the public address that corresponds to the faucet contract&#39;s privkey</td>
+</tr>
+<tr>
+<td>CCaddress</td>
+<td>(string)</td>
+<td>taking the faucet contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>myCCaddress</td>
+<td>(string)</td>
+<td>taking the dice contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>myaddress</td>
+<td>(string)</td>
+<td>the unmodified public address of the pubkey used to launch the chain</td>
+</tr>
+</tbody></table>
+<h2 id='faucetfund'>faucetfund</h2>
+<blockquote>
+<p>Step 1: Specify faucet amount and get the raw transaction HEX value</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD faucetfund 100
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "hex": "01000000013c34d14c6a32219f4b633a1fe01f5826b3bd7b4cbe01c20cfc0c29138d9c99720100000049483045022100b265993f541d580f10e8820f9986bdd479859fdcb2e636dd1ee1b23506eebeac02202234a6e5141345459c4b4959e921aa85b9fa616f4c44ea15e53d08bf4885259501ffffffff0200e40b5402000000302ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cce06d66fa15090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast/send raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000013c34d14c6a32219f4b633a1fe01f5826b3bd7b4cbe01c20cfc0c29138d9c99720100000049483045022100b265993f541d580f10e8820f9986bdd479859fdcb2e636dd1ee1b23506eebeac02202234a6e5141345459c4b4959e921aa85b9fa616f4c44ea15e53d08bf4885259501ffffffff0200e40b5402000000302ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cce06d66fa15090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    f2baf8d9a1eaf42bb1a85462b5699ffc0f04e8c54aafc4661767df96be9022b7
+</code></pre>
+<blockquote>
+<p>Step 3: Decode raw transaction (optional to check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000013c34d14c6a32219f4b633a1fe01f5826b3bd7b4cbe01c20cfc0c29138d9c99720100000049483045022100b265993f541d580f10e8820f9986bdd479859fdcb2e636dd1ee1b23506eebeac02202234a6e5141345459c4b4959e921aa85b9fa616f4c44ea15e53d08bf4885259501ffffffff0200e40b5402000000302ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cce06d66fa15090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 3</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "f2baf8d9a1eaf42bb1a85462b5699ffc0f04e8c54aafc4661767df96be9022b7",
+    "size": 225,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "72999c8d13290cfc0cc201be4c7bbdb326581fe01f3a634b9f21326a4cd1343c",
+            "vout": 1,
+            "scriptSig": {
+                "asm": "3045022100b265993f541d580f10e8820f9986bdd479859fdcb2e636dd1ee1b23506eebeac02202234a6e5141345459c4b4959e921aa85b9fa616f4c44ea15e53d08bf4885259501",
+                "hex": "483045022100b265993f541d580f10e8820f9986bdd479859fdcb2e636dd1ee1b23506eebeac02202234a6e5141345459c4b4959e921aa85b9fa616f4c44ea15e53d08bf4885259501"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 100.00000000,
+            "valueSat": 10000000000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "R9zHrofhRbub7ER77B7NrVch3A63R39GuC"
+                ]
+            }
+        },
+        {
+            "value": 99899.99980000,
+            "valueSat": 9989999980000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc OP_CHECKSIG",
+                "hex": "2103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+                ]
+            }
+        }
+    ]
+}
+</code></pre>
+<p><strong>faucetfund amount</strong></p>
+
+<p>The <code>faucetfund</code> method creates and funds a faucet contract.</p>
+<h3 id='arguments-2'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>(number)</td>
+<td>the amount to add to the faucet, taken from the user&#39;s available funds</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the command executed successfully</td>
+</tr>
+<tr>
+<td>hex</td>
+<td>(string)</td>
+<td>the data in hex-encoded format; you must broadcast this hex using sendrawtransaction for the command to complete</td>
+</tr>
+</tbody></table>
+<h2 id='faucetget'>faucetget</h2>
+<blockquote>
+<p>Step 1: Use faucetget and get the raw HEX value</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD faucetget
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "hex": "01000000010941cea65a560aeae02f0d49770965490bd99eeac4185f25075685da58e99d40000000007b4c79a276a072a26ba067a565802103682b255c40d0cde8faee381a1a50bbb89980ff24539cb8518e294d3a63cefe128140150ad95012ad8fae990096787d75d563977cef914e812e9dc8b6236243ac5f0050b3af4f2675ad433dcff4be16d113fb9a46357ee60682ed5d76c60f9ccffe8ea100af038001e4a10001ffffffff02b077a43018090000302ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cc00e1f50500000000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000"
+  }
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast/send the raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000010941cea65a560aeae02f0d49770965490bd99eeac4185f25075685da58e99d40000000007b4c79a276a072a26ba067a565802103682b255c40d0cde8faee381a1a50bbb89980ff24539cb8518e294d3a63cefe128140150ad95012ad8fae990096787d75d563977cef914e812e9dc8b6236243ac5f0050b3af4f2675ad433dcff4be16d113fb9a46357ee60682ed5d76c60f9ccffe8ea100af038001e4a10001ffffffff02b077a43018090000302ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cc00e1f50500000000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>faucetget validated
+64760e66c49df97eea14896ecdd505d2d78ea214eb583c8a6a0ac863b2b989b3
+</code></pre>
+<blockquote>
+<p>Step 3: Decode the raw transaction (optional to check if the value are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000010941cea65a560aeae02f0d49770965490bd99eeac4185f25075685da58e99d40000000007b4c79a276a072a26ba067a565802103682b255c40d0cde8faee381a1a50bbb89980ff24539cb8518e294d3a63cefe128140150ad95012ad8fae990096787d75d563977cef914e812e9dc8b6236243ac5f0050b3af4f2675ad433dcff4be16d113fb9a46357ee60682ed5d76c60f9ccffe8ea100af038001e4a10001ffffffff02b077a43018090000302ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cc00e1f50500000000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 3:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "64760e66c49df97eea14896ecdd505d2d78ea214eb583c8a6a0ac863b2b989b3",
+    "size": 275,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "409de958da855607255f18c4ea9ed90b49650977490d2fe0ea0a565aa6ce4109",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "a276a072a26ba067a565802103682b255c40d0cde8faee381a1a50bbb89980ff24539cb8518e294d3a63cefe128140150ad95012ad8fae990096787d75d563977cef914e812e9dc8b6236243ac5f0050b3af4f2675ad433dcff4be16d113fb9a46357ee60682ed5d76c60f9ccffe8ea100af038001e4a10001",
+                "hex": "4c79a276a072a26ba067a565802103682b255c40d0cde8faee381a1a50bbb89980ff24539cb8518e294d3a63cefe128140150ad95012ad8fae990096787d75d563977cef914e812e9dc8b6236243ac5f0050b3af4f2675ad433dcff4be16d113fb9a46357ee60682ed5d76c60f9ccffe8ea100af038001e4a10001"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 99994.99950000,
+            "valueSat": 9999499950000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020e029c511da55523565835887e412e5a0c9b920801b007000df45e545f25028248103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "R9zHrofhRbub7ER77B7NrVch3A63R39GuC"
+                ]
+            }
+        },
+        {
+            "value": 1.00000000,
+            "valueSat": 100000000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc OP_CHECKSIG",
+                "hex": "2103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+                ]
+            }
+        }
+    ]
+}
+</code></pre>
+<p><strong>faucetget</strong></p>
+
+<p>The <code>faucetget</code> method requests the <code>faucet</code> contract to send coins.</p>
+
+<p>Faucet returns 0.1 coins and requires about 30 seconds of CPU time.</p>
+<h3 id='arguments-3'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the command executed successfully</td>
+</tr>
+<tr>
+<td>hex</td>
+<td>(string)</td>
+<td>the data in hex-encoded format; you must broadcast this hex using sendrawtransaction for the command to complete</td>
+</tr>
+</tbody></table>
+<h2 id='faucetinfo'>faucetinfo</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD faucetinfo
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+      "result": "success",
+      "name": "Faucet",
+      "funding": "200207.99860023"
+    }
+</code></pre>
+<p><strong>faucetinfo</strong></p>
+
+<p>The <code>faucetinfo</code> method displays the balance of funds in the chain&#39;s faucet.</p>
+<h3 id='arguments-4'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the command executed successfully</td>
+</tr>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>the data in hex-encoded format; you must broadcast this hex using sendrawtransaction for the command to complete</td>
+</tr>
+<tr>
+<td>funding</td>
+<td>(number)</td>
+<td>the amount of funds available in the faucet</td>
+</tr>
+</tbody></table>
+<h1 id='smart-contract-rewards'>Smart Contract: Rewards</h1>
+<p>The <code>rewards</code> contract creates a master-node like rewards program, giving a user the ability to earn rewards by locking coins.</p>
+
+<p>It features configurable parameters, such as a customizable APR, minimum deposit, a required holding period,etc.</p>
+
+<p>There can be many <code>rewards</code> plans active at any given time.</p>
+
+<p>The flow of a plan is as follows:</p>
+
+<ul>
+<li>Anyone can create a new plan using <a href="#rewardscreatefunding"><code>rewardscreatefunding</code></a></li>
+<li>Anyone can add funding to the plan using <a href="#rewardsaddfunding"><code>rewardsaddfunding</code></a></li>
+<li>Anyone can query the list of all active plans using <a href="#rewardslist"><code>rewardslist</code></a></li>
+<li>To get the details of a particular plan, use <a href="#rewardsinfo"><code>rewardsinfo</code></a></li>
+<li>After finding a suitable plan, any user can lock funds using <a href="#rewardsinfo"><code>rewardslock</code></a></li>
+<li>After the minimum lock time is met, the user can use <a href="#rewardsunlock"><code>rewardsunlock</code></a> to unlock their funds and receive their rewards</li>
+</ul>
+<h2 id='rewardsaddfunding'>rewardsaddfunding</h2>
+<blockquote>
+<p>Step 1: Create a raw transaction and get the HEX value</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardsaddfunding FREE e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd 100
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "hex": "0100000001bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e00200000048473044022050ab254c7498e411ab5360551148405c4afff28d68729e2bd00ba2508ab105d402204067ab95020d606c35d3604d4385dcb97c899a06aa8bf8ce30471fb7868ac7a401ffffffff0300e40b5402000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401ccd05eefb1fe080000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae5414652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 0100000001bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e00200000048473044022050ab254c7498e411ab5360551148405c4afff28d68729e2bd00ba2508ab105d402204067ab95020d606c35d3604d4385dcb97c899a06aa8bf8ce30471fb7868ac7a401ffffffff0300e40b5402000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401ccd05eefb1fe080000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae5414652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>008ca94eebce8dbfa91491028c8861016ad4c25240f9ddc5616f2fb0853da580
+</code></pre>
+<blockquote>
+<p>Step 3: Decode raw transaction (optional to check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=ATEST decoderawtransaction 0100000001bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e00200000048473044022050ab254c7498e411ab5360551148405c4afff28d68729e2bd00ba2508ab105d402204067ab95020d606c35d3604d4385dcb97c899a06aa8bf8ce30471fb7868ac7a401ffffffff0300e40b5402000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401ccd05eefb1fe080000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae5414652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "008ca94eebce8dbfa91491028c8861016ad4c25240f9ddc5616f2fb0853da580",
+    "size": 277,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd",
+            "vout": 2,
+            "scriptSig": {
+                "asm": "3044022050ab254c7498e411ab5360551148405c4afff28d68729e2bd00ba2508ab105d402204067ab95020d606c35d3604d4385dcb97c899a06aa8bf8ce30471fb7868ac7a401",
+                "hex": "473044022050ab254c7498e411ab5360551148405c4afff28d68729e2bd00ba2508ab105d402204067ab95020d606c35d3604d4385dcb97c899a06aa8bf8ce30471fb7868ac7a401"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 100.00000000,
+            "valueSat": 10000000000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RTsRBYL1HSvMoE3qtBJkyiswdVaWkm8YTK"
+                ]
+            }
+        },
+        {
+            "value": 98899.99970000,
+            "valueSat": 9889999970000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5 OP_CHECKSIG",
+                "hex": "2103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e5414652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e0",
+                "hex": "6a2ae5414652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e0",
+                "type": "nulldata"
+            }
+        }
+    ],
+    "vjoinsplit": []
+}
+</code></pre>
+<p><strong>rewardsaddfunding name fundingtxid amount</strong></p>
+
+<p>The <code>rewardsaddfunding</code> method adds funds to a rewards plan.</p>
+<h3 id='arguments'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>the desired name of your rewards plan</td>
+</tr>
+<tr>
+<td>fundingtxid</td>
+<td>(string)</td>
+<td>the txid of the transaction that created and funded this contract</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>(number)</td>
+<td>the amount of funds to add to the contract</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result:</td>
+<td>(string)</td>
+<td>whether the command succeeded</td>
+</tr>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='rewardsaddress'>rewardsaddress</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardsaddress 03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "RewardsCCaddress": "RTsRBYL1HSvMoE3qtBJkyiswdVaWkm8YTK",
+    "Rewardsmarker": "RMgye9jeczNjQx9Uzq8no8pTLiCSwuHwkz",
+    "GatewaysPubkey": "03ea9c062b9652d8eff34879b504eda0717895d27597aaeb60347d65eed96ccb40",
+    "RewardsCCassets": "RLh5sgvh3scCyM4aq1fhYhwgfbmb5SpCkT",
+    "CCaddress": "RJdwcBsoWwmt9dtSqyFCULNW2F3zj2mcD3",
+    "myCCaddress": "RJdwcBsoWwmt9dtSqyFCULNW2F3zj2mcD3",
+    "myaddress": "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
+}
+</code></pre>
+<p><strong>rewardsaddress [pubkey]</strong></p>
+
+<p>The <code>rewardsaddress</code> method returns info about the a <code>rewards</code> plan associated with the given <code>pubkey</code>. If no <code>pubkey</code> is provided, the <code>pubkey</code> used to launch the daemon is used.</p>
+<h3 id='arguments-2'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pubkey</td>
+<td>(string, optional)</td>
+<td>the pubkey of the requested info; by default it is the pubkey used to launch the chain</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the method executed successfully</td>
+</tr>
+<tr>
+<td>RewardsCCaddress</td>
+<td>(string)</td>
+<td>taking the contract&#39;s EVAL code as a modifyer, this is the public address that corresponds to the contract&#39;s privkey</td>
+</tr>
+<tr>
+<td>Rewardsmarker</td>
+<td>(string)</td>
+<td>the unmodified public address generated from the contract&#39;s privkey</td>
+</tr>
+<tr>
+<td>GatewaysPubkey</td>
+<td>(string)</td>
+<td></td>
+</tr>
+<tr>
+<td>RewardsCCassets</td>
+<td>(string)</td>
+<td></td>
+</tr>
+<tr>
+<td>CCaddress</td>
+<td>(string)</td>
+<td>taking the contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>myCCaddress</td>
+<td>(string)</td>
+<td>taking the dice contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>myaddress</td>
+<td>(string)</td>
+<td>the public address of the pubkey used to launch the chain</td>
+</tr>
+</tbody></table>
+<h2 id='rewardscreatefunding'>rewardscreatefunding</h2>
+<blockquote>
+<p>Step 1: Create raw transaction HEX using your own parameter</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardscreatefunding FREE 1000 5 1 10 10
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "hex": "010000000104f2435046f3ad452e76e53ec01429ae4f49d3322e8cc96da96b9e35d6ada70e0000000049483045022100ebd06f60dea0e1fbfc82fdb1f17ca265c63bae51cd2db558946871513f64453902207d4d39b2418a5206bd7ef4efb9130f93f304577e0c84cc79be4e8abe0c8b22fe01ffffffff0400e8764817000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc1027000000000000232103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9ace069fb0501090000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae54646524545000000000065cd1d000000008051010000000000002f0d000000000000ca9a3b0000000000000000"
+}    
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast/send the raw hex/transaction. This will output the txid which is the fundingtxid, also called the rewards plan id.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=ATEST sendrawtransaction 010000000104f2435046f3ad452e76e53ec01429ae4f49d3322e8cc96da96b9e35d6ada70e0000000049483045022100ebd06f60dea0e1fbfc82fdb1f17ca265c63bae51cd2db558946871513f64453902207d4d39b2418a5206bd7ef4efb9130f93f304577e0c84cc79be4e8abe0c8b22fe01ffffffff0400e8764817000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc1027000000000000232103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9ace069fb0501090000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae54646524545000000000065cd1d000000008051010000000000002f0d000000000000ca9a3b0000000000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd
+</code></pre>
+<blockquote>
+<p>Step 3: Decode the raw transaction (optional to check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=ATEST decoderawtransaction 010000000104f2435046f3ad452e76e53ec01429ae4f49d3322e8cc96da96b9e35d6ada70e0000000049483045022100ebd06f60dea0e1fbfc82fdb1f17ca265c63bae51cd2db558946871513f64453902207d4d39b2418a5206bd7ef4efb9130f93f304577e0c84cc79be4e8abe0c8b22fe01ffffffff0400e8764817000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc1027000000000000232103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9ace069fb0501090000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae54646524545000000000065cd1d000000008051010000000000002f0d000000000000ca9a3b0000000000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 3:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd",
+    "size": 322,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "0ea7add6359e6ba96dc98c2e32d3494fae2914c03ee5762e45adf3465043f204",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "3045022100ebd06f60dea0e1fbfc82fdb1f17ca265c63bae51cd2db558946871513f64453902207d4d39b2418a5206bd7ef4efb9130f93f304577e0c84cc79be4e8abe0c8b22fe01",
+                "hex": "483045022100ebd06f60dea0e1fbfc82fdb1f17ca265c63bae51cd2db558946871513f64453902207d4d39b2418a5206bd7ef4efb9130f93f304577e0c84cc79be4e8abe0c8b22fe01"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 1000.00000000,
+            "valueSat": 100000000000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RTsRBYL1HSvMoE3qtBJkyiswdVaWkm8YTK"
+                ]
+            }
+        },
+        {
+            "value": 0.00010000,
+            "valueSat": 10000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9 OP_CHECKSIG",
+                "hex": "2103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RMgye9jeczNjQx9Uzq8no8pTLiCSwuHwkz"
+                ]
+            }
+        },
+        {
+            "value": 98999.99980000,
+            "valueSat": 9899999980000,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5 OP_CHECKSIG",
+                "hex": "2103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 3,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e54646524545000000000065cd1d000000008051010000000000002f0d000000000000ca9a3b00000000",
+                "hex": "6a2ae54646524545000000000065cd1d000000008051010000000000002f0d000000000000ca9a3b00000000",
+                "type": "nulldata"
+            }
+        }
+    ],
+    "vjoinsplit": []
+}
+</code></pre>
+<p><strong>rewardscreatefunding name amount APR mindays maxdays mindeposit</strong></p>
+
+<p>The <code>rewardscreatefunding</code> method creates a new <code>rewards</code> plan.</p>
+
+<p>The method returns a hex value which must then be broadcast using the <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> method.</p>
+
+<p>The <code>sendrawtransaction</code> method will then return a <code>txid</code>. This <code>txid</code> is the <code>fundingtxid</code> that serves to identify the <code>rewards</code> plan.</p>
+
+<aside class="notice">
+  If you create a plan with <b>mindeposit: 10000</b>, make sure to also add 10000 of your coin and the transaction fees using the <b>rewardsaddfunding</b> call after creating the plan. The rewards contract won't allow locking of funds greater than the amount already locked in a single transaction as it needs to assure that it will have the required funds to pay.
+</aside>
+<h3 id='arguments-3'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>the desired name of your rewards plan</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>(number)</td>
+<td>the amount of seed funds to withdraw from your wallet</td>
+</tr>
+<tr>
+<td>APR</td>
+<td>(number)</td>
+<td>annual percentage of rewards, given in percentage units</td>
+</tr>
+<tr>
+<td>mindays</td>
+<td>(number)</td>
+<td>minimum number of days the funds will be locked</td>
+</tr>
+<tr>
+<td>maxdays</td>
+<td>(number)</td>
+<td>maximum number of days the funds will be locked</td>
+</tr>
+<tr>
+<td>mindeposit</td>
+<td>(number)</td>
+<td>the minimum deposit amount for a user to participate</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result:</td>
+<td>(string)</td>
+<td>whether the command succeeded</td>
+</tr>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='rewardsinfo'>rewardsinfo</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardsinfo e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "fundingtxid": "e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd",
+    "name": "FREE",
+    "sbits": 1162170950,
+    "APR": "5.00000000",
+    "minseconds": 86400,
+    "maxseconds": 864000,
+    "mindeposit": "10.00000000",
+    "funding": "1100.00000000",
+    "locked": "200.00000000"
+}
+</code></pre>
+<p><strong>rewardsinfo fundingtxid</strong></p>
+
+<p>The <code>rewardsinfo</code> method returns information about specific <code>rewards</code> plan.</p>
+
+<p>Use <a href="#rewardslist"><code>rewardslist</code></a> to see a list of all available <code>fundingtxid</code>&#39;s.</p>
+<h3 id='arguments-4'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fundingtxid</td>
+<td>(string)</td>
+<td>the txid given on the creation of the rewards plan</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>name of the rewards plan</td>
+</tr>
+<tr>
+<td>sbits</td>
+<td>(number)</td>
+<td>a 64-bit int binary encoding of the first 8 characters of the name property</td>
+</tr>
+<tr>
+<td>APR</td>
+<td>(number)</td>
+<td>annual percentage of rewards, given in percentage units</td>
+</tr>
+<tr>
+<td>minseconds</td>
+<td>(number)</td>
+<td>minimum number of seconds the funds will be locked</td>
+</tr>
+<tr>
+<td>maxseconds</td>
+<td>(number)</td>
+<td>minimum number of seconds the funds will be locked</td>
+</tr>
+<tr>
+<td>mindeposit</td>
+<td>(number)</td>
+<td>minimum deposit amount</td>
+</tr>
+<tr>
+<td>funding</td>
+<td>(number)</td>
+<td>total available funds in the rewards plan</td>
+</tr>
+</tbody></table>
+<h2 id='rewardslist'>rewardslist</h2>
+<blockquote>
+<p>Command:
+```
+./komodo-cli -ac_name=HELLOWORLD rewardslist</p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+&gt; Response:
+
+</code></pre>
+<p>[
+  &quot;e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd&quot;
+]
+```</p>
+
+<p><strong>rewardslist</strong></p>
+
+<p>The <code>rewardslist</code> method lists the <code>fundingtxid</code>&#39;s of all the rewards contracts available on the asset chain.</p>
+<h3 id='arguments-5'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fundingtxid</td>
+<td>(string)</td>
+<td>the txid of the transaction that created and funded the relevant contract</td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='rewardslock'>rewardslock</h2>
+<blockquote>
+<p>Step 1: Create raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardslock FREE e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd 200
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "hex": "010000000180a53d85b02f6f61c5ddf94052c2d46a0161888c029114a9bf8dceeb4ea98c000100000049483045022100cf5581a6729eb0f37d03f0975dd6cfaca79ea08d380dae7df25b2335931bff5d02204feaf188f7f28d90c056a7b2bfa1f8d38fdf242c333470cf1e0cd3534ef1609701ffffffff0400c817a804000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc1027000000000000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5acb048d709fa080000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae54c4652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=ATEST sendrawtransaction 010000000180a53d85b02f6f61c5ddf94052c2d46a0161888c029114a9bf8dceeb4ea98c000100000049483045022100cf5581a6729eb0f37d03f0975dd6cfaca79ea08d380dae7df25b2335931bff5d02204feaf188f7f28d90c056a7b2bfa1f8d38fdf242c333470cf1e0cd3534ef1609701ffffffff0400c817a804000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc1027000000000000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5acb048d709fa080000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae54c4652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>494c4e8ab19ab73db9fde0454762e50ff3621d9708170083ea9d925918ec0263
+</code></pre>
+<blockquote>
+<p>Step 3: Decode raw transaction (optional to check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=ATEST decoderawtransaction 010000000180a53d85b02f6f61c5ddf94052c2d46a0161888c029114a9bf8dceeb4ea98c000100000049483045022100cf5581a6729eb0f37d03f0975dd6cfaca79ea08d380dae7df25b2335931bff5d02204feaf188f7f28d90c056a7b2bfa1f8d38fdf242c333470cf1e0cd3534ef1609701ffffffff0400c817a804000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc1027000000000000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5acb048d709fa080000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae54c4652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 3:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "494c4e8ab19ab73db9fde0454762e50ff3621d9708170083ea9d925918ec0263",
+    "size": 322,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "008ca94eebce8dbfa91491028c8861016ad4c25240f9ddc5616f2fb0853da580",
+            "vout": 1,
+            "scriptSig": {
+                "asm": "3045022100cf5581a6729eb0f37d03f0975dd6cfaca79ea08d380dae7df25b2335931bff5d02204feaf188f7f28d90c056a7b2bfa1f8d38fdf242c333470cf1e0cd3534ef1609701",
+                "hex": "483045022100cf5581a6729eb0f37d03f0975dd6cfaca79ea08d380dae7df25b2335931bff5d02204feaf188f7f28d90c056a7b2bfa1f8d38fdf242c333470cf1e0cd3534ef1609701"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 200.00000000,
+            "valueSat": 20000000000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RTsRBYL1HSvMoE3qtBJkyiswdVaWkm8YTK"
+                ]
+            }
+        },
+        {
+            "value": 0.00010000,
+            "valueSat": 10000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5 OP_CHECKSIG",
+                "hex": "2103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
+                ]
+            }
+        },
+        {
+            "value": 98699.99950000,
+            "valueSat": 9869999950000,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5 OP_CHECKSIG",
+                "hex": "2103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 3,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e54c4652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e0",
+                "hex": "6a2ae54c4652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e0",
+                "type": "nulldata"
+            }
+        }
+    ],
+    "vjoinsplit": []
+}
+</code></pre>
+<p><strong>rewardslock name fundingtxid amount</strong></p>
+
+<p>The <code>rewardslock</code> method commits your desired amount of funds into the specified rewards plan. They remain locked until the minimum number of seconds/days passes.</p>
+
+<p>The method returns a <code>hex</code> value that must be broadcast using <a href="#sendrawtransaction"><code>sendrawtransaction</code></a>.</p>
+
+<p>The <code>sendrawtransaction</code> method will then return a <code>txid</code>, which is later used in the <a href="#rewardsunlock"><code>rewardsunlock</code></a> method. In general, it is best to save this <code>txid</code> in a secure location.</p>
+
+<p>If the final <code>txid</code> is lost, it is possible to find it again. See <a href="#rewardsunlock"><code>rewardsunlock</code></a> for more information.</p>
+<h3 id='arguments-6'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>the name of the rewards plan</td>
+</tr>
+<tr>
+<td>fundingtxid</td>
+<td>(string)</td>
+<td>the txid that identifies the desired rewards plan</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>(number)</td>
+<td>the amount of funds to commit to the plan (must be over the plan&#39;s minimum)</td>
+</tr>
+</tbody></table>
+<h3 id='response-6'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result:</td>
+<td>(string)</td>
+<td>whether the command succeeded</td>
+</tr>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the <code>diceaddfunds</code> command</td>
+</tr>
+</tbody></table>
+<h2 id='rewardsunlock'>rewardsunlock</h2>
+<blockquote>
+<p>Step 1: Create raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD rewardsunlock FREE e020151cd81647b20aa45a0e6850216ae52d3e895443bbe1ae97dea3ae6767bd 494c4e8ab19ab73db9fde0454762e50ff3621d9708170083ea9d925918ec0263
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "hex": "01000000026302ec1859929dea83001708971d62f30fe5624745e0fdb93db79ab18a4e4c49000000007b4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb98140dd5c7a6e8436748501608056b934a6b6cd54122f9451a1ca76f3d41568cb0e7a08e4d4f9045083425f42a4171e42b2d32f5e331f87d5b45298e006b909c706d2a100af038001e5a10001ffffffff45fc2d61dd7bf709409c3e5b9021ebd6191901a2a43fa7ed2704c03aa0d3a682000000007b4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9814011825693143f97dc51d34b47638f314146c20c92b5020673fb7411ab37018c2003870255e17d87d46b7af7d042335579de566ce492fd8c3c4e883253870ba329a100af038001e5a10001ffffffff0349f04c4817000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cca79841a804000000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae5554652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000026302ec1859929dea83001708971d62f30fe5624745e0fdb93db79ab18a4e4c49000000007b4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb98140dd5c7a6e8436748501608056b934a6b6cd54122f9451a1ca76f3d41568cb0e7a08e4d4f9045083425f42a4171e42b2d32f5e331f87d5b45298e006b909c706d2a100af038001e5a10001ffffffff45fc2d61dd7bf709409c3e5b9021ebd6191901a2a43fa7ed2704c03aa0d3a682000000007b4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9814011825693143f97dc51d34b47638f314146c20c92b5020673fb7411ab37018c2003870255e17d87d46b7af7d042335579de566ce492fd8c3c4e883253870ba329a100af038001e5a10001ffffffff0349f04c4817000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cca79841a804000000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae5554652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>7a69605f5ecfeb0613c8573cbc4ae2471698a65b60c983ec21fb41f09975c000
+</code></pre>
+<blockquote>
+<p>Step 3: Decode raw transaction (optional to check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000026302ec1859929dea83001708971d62f30fe5624745e0fdb93db79ab18a4e4c49000000007b4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb98140dd5c7a6e8436748501608056b934a6b6cd54122f9451a1ca76f3d41568cb0e7a08e4d4f9045083425f42a4171e42b2d32f5e331f87d5b45298e006b909c706d2a100af038001e5a10001ffffffff45fc2d61dd7bf709409c3e5b9021ebd6191901a2a43fa7ed2704c03aa0d3a682000000007b4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9814011825693143f97dc51d34b47638f314146c20c92b5020673fb7411ab37018c2003870255e17d87d46b7af7d042335579de566ce492fd8c3c4e883253870ba329a100af038001e5a10001ffffffff0349f04c4817000000302ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cca79841a804000000232103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac00000000000000002c6a2ae5554652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e000000000
+</code></pre>
+<blockquote>
+<p>Response from Step 3:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "7a69605f5ecfeb0613c8573cbc4ae2471698a65b60c983ec21fb41f09975c000",
+    "size": 492,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "494c4e8ab19ab73db9fde0454762e50ff3621d9708170083ea9d925918ec0263",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb98140dd5c7a6e8436748501608056b934a6b6cd54122f9451a1ca76f3d41568cb0e7a08e4d4f9045083425f42a4171e42b2d32f5e331f87d5b45298e006b909c706d2a100af038001e5a10001",
+    "hex": "4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb98140dd5c7a6e8436748501608056b934a6b6cd54122f9451a1ca76f3d41568cb0e7a08e4d4f9045083425f42a4171e42b2d32f5e331f87d5b45298e006b909c706d2a100af038001e5a10001"
+            },
+            "sequence": 4294967295
+        },
+        {
+            "txid": "82a6d3a03ac00427eda73fa4a2011919d6eb21905b3e9c4009f77bdd612dfc45",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9814011825693143f97dc51d34b47638f314146c20c92b5020673fb7411ab37018c2003870255e17d87d46b7af7d042335579de566ce492fd8c3c4e883253870ba329a100af038001e5a10001",
+    "hex": "4c79a276a072a26ba067a565802103da60379d924c2c30ac290d2a86c2ead128cb7bd571f69211cb95356e2dcc5eb9814011825693143f97dc51d34b47638f314146c20c92b5020673fb7411ab37018c2003870255e17d87d46b7af7d042335579de566ce492fd8c3c4e883253870ba329a100af038001e5a10001"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 999.97249609,
+            "valueSat": 99997249609,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c802065686d47a4049c2c845a71895a915eb84c04445896eec5dc0be40df0b31372da8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RTsRBYL1HSvMoE3qtBJkyiswdVaWkm8YTK"
+                ]
+            }
+        },
+        {
+            "value": 200.02740391,
+            "valueSat": 20002740391,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5 OP_CHECKSIG",
+                "hex": "2103810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e5554652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e0",
+                "hex": "6a2ae5554652454500000000bd6767aea3de97aee1bb4354893e2de56a2150680e5aa40ab24716d81c1520e0",
+                "type": "nulldata"
+            }
+        }
+    ],
+    "vjoinsplit": []
+}
+</code></pre>
+<p><strong>rewardsunlock name fundingtxid [txid]</strong></p>
+
+<p>The <code>rewardsunlock</code> method unlocks your funds from a specific rewards plan after the minimum lock time is met.</p>
+
+<p>If you attempt to unlock your funds before the minimum period is met, the daemon returns this error:</p>
+
+<p>The method requires the <code>txid</code> that was returned as a result of the original <a href="#rewardslock"><code>rewardslock</code></a> method.</p>
+
+<p>If the original <code>txid</code> is lost, it is possible to find it again by either rebroadcasting the original <code>hex</code> (if it is available), or by scanning through available utxos using the <a href="#getaddressutxos"><code>getaddressutxos</code></a> method.</p>
+
+<aside class="notice">
+{
+  "result": "error",
+  "error": "reward 0 is <= the transaction fee"
+}
+</aside>
+
+<p>An error similar to the one below prints in the console:</p>
+
+<p><code>APR 5.00000000 minseconds.86400 maxseconds.864000 mindeposit 10.00000000</code></p>
+
+<p><code>duration 74628 &lt; minseconds 86400</code></p>
+
+<p><code>reward 0 is &lt;= the transaction fee</code></p>
+
+<p><code>amount 200.00000000 -&gt; reward 0.00000000</code></p>
+<h3 id='arguments-7'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>the name of the rewards plan</td>
+</tr>
+<tr>
+<td>fundingtxid</td>
+<td>(string)</td>
+<td>the txid that identifies the desired rewards plan</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>(number)</td>
+<td>the txid that was returned as a result of the original rewardslock command</td>
+</tr>
+</tbody></table>
+<h3 id='response-7'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result:</td>
+<td>(string)</td>
+<td>whether the command succeeded</td>
+</tr>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the <code>diceaddfunds</code> command</td>
+</tr>
+</tbody></table>
+<h1 id='smart-contracts-tokens'>Smart Contracts: Tokens</h1>
+<p>The <code>tokens</code> CryptoConditions smart contract enables core-asset support for the on-chain creation of colored coins, also called tokens. The functionality is facilitated by utxo technology. Tokens can be generated on any chain where the <a href="#ac_cc"><code>ac_cc</code></a> is enabled.</p>
+
+<p>The <code>tokens</code> smart contract requires locking a proportional amount of satoshis of the native coins. These satoshis create the supply for the token.</p>
+
+<p>For example, if you desire to create a one-of-a-kind token, use 1 satoshi in its creation.</p>
+<h2 id='tokenaddress'>tokenaddress</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenaddress 028702e30d8465d6aa85f35d2f58c06a6ee17f23f376b56044dadf7b793f2c12b9
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "AssetsCCaddress": "RGKRjeTBw4LYFotSDLT6RWzMHbhXri6BG6",
+    "Assetsmarker": "RFYE2yL3KknWdHK6uNhvWacYsCUtwzjY3u",
+    "CCaddress": "RG6mr23tQ9nUhmi5GEnYqjfkqZt9x2MRXz",
+    "myCCaddress": "RG6mr23tQ9nUhmi5GEnYqjfkqZt9x2MRXz",
+    "myaddress": "RDjG4sM1y4udiJSszF6BLotqUnZX79Rom9"
+}
+</code></pre>
+<p><strong>tokenaddress (pubkey)</strong></p>
+
+<p>The <code>tokenaddress</code> method returns information about a token address according to a specific <code>pubkey</code>. If no <code>pubkey</code> is provided, the <code>pubkey</code> used to the launch the daemon is the default.</p>
+<h3 id='arguments'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>pubkey (string, optional) the pubkey of the desired address</p>
+<h3 id='response'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the command executed successfully</td>
+</tr>
+<tr>
+<td>AssetsCCaddress</td>
+<td>(string)</td>
+<td>taking the token contract&#39;s EVAL code as a modifyer, this is the public address that corresponds to the token contract&#39;s privkey</td>
+</tr>
+<tr>
+<td>Assetsmarker</td>
+<td>(string)</td>
+<td>the unmodified public address generated from the token contract&#39;s privkey</td>
+</tr>
+<tr>
+<td>CCaddress</td>
+<td>(string)</td>
+<td>taking the token contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>myCCaddress</td>
+<td>(string)</td>
+<td>taking the token contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>myaddress</td>
+<td>(string)</td>
+<td>the public address of the pubkey used to launch the chain</td>
+</tr>
+</tbody></table>
+<h2 id='tokenask'>tokenask</h2>
+<blockquote>
+<p>Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenask 1000 c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59 1
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "hex": "010000000248403cd63777a2086206592c096ddfa1d4ba2647673b330610968eace2cf7b540200000049483045022100bde9eaf43a43fe252530bcf346be3e336e86f0171b817977d38d6ebd4bb0756e0220735f3292ef012fd56f7476700f5649b23aacf2387f4fa5a537e1b6c6daa6c1d101ffffffff4f2016d356282fca9d8278aa04fbdbed98ac6af0bf7a479959c5bb91f95e8ef5020000007b4c79a276a072a26ba067a5658021028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e278140fe6a2cd6fdb5a359d5d6eea9bcf34e5b7d8e2def612afe9c01af1129b006e68344d8f9905ea5f226cdb1556659df0c8741e8e3def1238761721b66718dabe92ca100af038001e3a10001ffffffff03e803000000000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc5087b00e000000002321028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e27ac00000000000000004f6a4c4ce373c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b5900e876481700000021028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e2700000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Use sendrawtransaction to broadcast the order</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 010000000248403cd63777a2086206592c096ddfa1d4ba2647673b330610968eace2cf7b540200000049483045022100bde9eaf43a43fe252530bcf346be3e336e86f0171b817977d38d6ebd4bb0756e0220735f3292ef012fd56f7476700f5649b23aacf2387f4fa5a537e1b6c6daa6c1d101ffffffff4f2016d356282fca9d8278aa04fbdbed98ac6af0bf7a479959c5bb91f95e8ef5020000007b4c79a276a072a26ba067a5658021028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e278140fe6a2cd6fdb5a359d5d6eea9bcf34e5b7d8e2def612afe9c01af1129b006e68344d8f9905ea5f226cdb1556659df0c8741e8e3def1238761721b66718dabe92ca100af038001e3a10001ffffffff03e803000000000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc5087b00e000000002321028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e27ac00000000000000004f6a4c4ce373c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b5900e876481700000021028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e2700000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>8d5bb0ae5cc8406b8b12fff04437c748495f4f8852ae124e6a137bc130d3be64
+</code></pre>
+<p><strong>tokenask numtokens tokenid price</strong></p>
+
+<p>The <code>tokenask</code> method posts a public ask order.</p>
+<h3 id='arguments-2'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>numtokens</td>
+<td>(number)</td>
+<td>the number of tokens to request in the order</td>
+</tr>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>price</td>
+<td>(number)</td>
+<td>the price to pay for each token (units are in coins of the parent asset chain)</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokenbalance'>tokenbalance</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenbalance c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "CCaddress": "RRPpWbVdxcxmhx4xnWnVZFDfGc9p1177ti",
+    "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+    "balance": 99989
+}
+</code></pre>
+<blockquote>
+<p>Check the token balance of a specific pubkey</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenbalance c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59 028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e27
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "CCaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+    "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+    "balance": 999900011
+}
+</code></pre>
+<p><strong>tokenbalance tokenid (pubkey)</strong></p>
+
+<p>The <code>tokenbalanced</code> method checks the token balance according to a provided <code>pubkey</code>. If no <code>pubkey</code> is provided, the <code>pubkey</code> used the launch the daemon is the default.</p>
+<h3 id='arguments-3'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>pubkey</td>
+<td>(string)</td>
+<td>the pubkey for which to examine the balance; if no pubkey is provided, the pubkey used to launch the daemon is the default</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the command executed succesfully</td>
+</tr>
+<tr>
+<td>CCaddress</td>
+<td>(string)</td>
+<td>taking the token contract&#39;s EVAL code as a modifyer, this is the CC address from the pubkey of the user</td>
+</tr>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>(number)</td>
+<td>the balance of the address that corresponds to the pubkey</td>
+</tr>
+</tbody></table>
+<h2 id='tokenbid'>tokenbid</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenbid 1000 c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59 1
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>0100000001484256677a6417030dd99716a47b8c9cb06fba6e57ff4617e9932a6cde2972830100000049483045022100fc1926401b27ba044bbf17c36f36030adae52a188594efc75fe42861ab0b997802205e729d6f5587e5a5296b5649a154ce1fe3c581078fac7ae4e2b4577978c05c8901ffffffff0300e8764817000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc10d262684a0300002321028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e27ac00000000000000004f6a4c4ce362c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59e80300000000000021028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e2700000000`
+</code></pre>
+<blockquote>
+<p>Use sendrawtransaction to publish order</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 0100000001484256677a6417030dd99716a47b8c9cb06fba6e57ff4617e9932a6cde2972830100000049483045022100fc1926401b27ba044bbf17c36f36030adae52a188594efc75fe42861ab0b997802205e729d6f5587e5a5296b5649a154ce1fe3c581078fac7ae4e2b4577978c05c8901ffffffff0300e8764817000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc10d262684a0300002321028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e27ac00000000000000004f6a4c4ce362c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59e80300000000000021028bb4ae66aa4f1960a4aa822907e800eb688d9ab2605c8067a34b421748c67e2700000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>5fc8c472bc0e5f994b5a9a3fda23af1a3e1cfd746b902d7216352732e6adba05
+</code></pre>
+<p><strong>tokenbid numtokens tokenid price</strong></p>
+
+<p>The <code>tokenbid</code> method posts a public bid order.</p>
+
+<p>To fill the order, the parent chain&#39;s coin must be used.</p>
+
+<p>The method returns a raw hex, which must be broadcast using <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> to complete the command.</p>
+
+<p>The <code>sendrawtransaction</code> method then returns a <code>txid</code>, which is the identification method of the bid order, and should be saved for future use.</p>
+<h3 id='arguments-4'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>numtokens</td>
+<td>(number)</td>
+<td>the number of tokens to request in the order</td>
+</tr>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>price</td>
+<td>(number)</td>
+<td>the price to pay for each token (units are in coins of the parent asset chain)</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokencancelask'>tokencancelask</h2>
+<blockquote>
+<p>Step 1: Issue the call and get your raw transaction HEX value</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokencancelask 9217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e 7194ae293330af80fdbe4b4b2c8b51194f12e334b4a0489288288c1b7336a65c
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "hex": "010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Send raw transaction / broadcast the HEX value from above</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>AssetValidate (x)
+vin1 10, vout0 10, AssetValidateSellvin
+Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
+21d152480275568e3f82a5049d8b30308e3739ebd98171e075a75fea504364cd
+</code></pre>
+<blockquote>
+<p>Step 3 (optional): Decode the raw transaction (check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "21d152480275568e3f82a5049d8b30308e3739ebd98171e075a75fea504364cd",
+    "size": 434,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "084db1c5712b31613b5c8d4a76b7bccf77554f280e0b42428eeaad6da435c334",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "30450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601",
+                "hex": "4830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601"
+            },
+            "sequence": 4294967295
+        },
+        {
+            "txid": "7194ae293330af80fdbe4b4b2c8b51194f12e334b4a0489288288c1b7336a65c",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001",
+                "hex": "4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 0.00000010,
+            "valueSat": 10,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RRPpWbVdxcxmhx4xnWnVZFDfGc9p1177ti"
+                ]
+            }
+        },
+        {
+            "value": 99999.99990000,
+            "valueSat": 9999999990000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc OP_CHECKSIG",
+                "hex": "2103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e",
+                "hex": "6a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e",
+                "type": "nulldata"
+            }
+        }
+    ]
+}
+</code></pre>
+<p><strong>tokencancelask tokenid asktxid</strong></p>
+
+<p>The <code>tokencancelask</code> method cancels a specific <code>ask</code>/<code>sell</code> order that you created.</p>
+<h3 id='arguments-5'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>asktxid</td>
+<td>(string)</td>
+<td>the txid that identifies the original ask request</td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokencancelbid'>tokencancelbid</h2>
+<blockquote>
+<p>Step 1: Issue the call and get your raw transaction HEX value</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokencancelbid 9217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e 7194ae293330af80fdbe4b4b2c8b51194f12e334b4a0489288288c1b7336a65c
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "result": "success",
+    "hex": "010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Send raw transaction / broadcast the HEX value from above</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>AssetValidate (x)
+vin1 10, vout0 10, AssetValidateBuyvin
+Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
+21d152480275568e3f82a5049d8b30308e3739ebd98171e075a75fea504364cd
+</code></pre>
+<blockquote>
+<p>Step 3: Decode the raw transaction (optional to check if the values are sane)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 3:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "21d152480275568e3f82a5049d8b30308e3739ebd98171e075a75fea504364cd",
+    "size": 434,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "084db1c5712b31613b5c8d4a76b7bccf77554f280e0b42428eeaad6da435c334",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "30450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601",
+                "hex": "4830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601"
+            },
+            "sequence": 4294967295
+        },
+        {
+            "txid": "7194ae293330af80fdbe4b4b2c8b51194f12e334b4a0489288288c1b7336a65c",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001",
+                "hex": "4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 0.00000010,
+            "valueSat": 10,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RRPpWbVdxcxmhx4xnWnVZFDfGc9p1177ti"
+                ]
+            }
+        },
+        {
+            "value": 99999.99990000,
+            "valueSat": 9999999990000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc OP_CHECKSIG",
+                "hex": "2103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e",
+                "hex": "6a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e",
+                "type": "nulldata"
+            }
+        }
+    ]
+}
+</code></pre>
+<p><strong>tokencancelbid tokenid bidtxid</strong></p>
+
+<p>The <code>tokencancelbid</code> method cancels a specific <code>bid</code>/<code>buy</code> order that you created.</p>
+<h3 id='arguments-6'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>bidtxid</td>
+<td>(string)</td>
+<td>the txid that identifies the original bid request</td>
+</tr>
+</tbody></table>
+<h3 id='response-6'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokencreate'>tokencreate</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokencreate TAK 10 "Testing phase."
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "hex": "01000000022c223cfc9c3349aed24ca89e44af6fcdb030150443bd6ac55e2080ce4b097c3002000000484730440220316605c400c47e2d5aa6104ac5c5229e71683b8db9482efa1655d257690d338802202344f254b208a6d724f52f4503531cf005a8ca68119bde4b6cb281ab9fccaf1101ffffffff80e66c0c47311449c5effc2782134006f05fd31e79659bc4b0608d7e247e280c0000000049483045022100ec494d3fa5c76fe0382e83980affdfd091509fb4e18b20fff8c095374e6b6bee022015ddaf95dc8b03e8cbba00ff7a377b80a7bd2200a68669718c329c617549757701ffffffff0400a0724e18090000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc1027000000000000232102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702acc01f66fa15090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000396a37e3632103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc0354414b0e54657374696e672070686173652e00000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast the raw transaction hex</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000012c223cfc9c3349aed24ca89e44af6fcdb030150443bd6ac55e2080ce4b097c300200000049483045022100dc83b88f5ed1f01aab7dee8bd8f2b3c0bf83537c9b3cbb0c6ea78ebafdf4c6f60220518440e7f43d24c5733531a8d5a825dbb90e716f7ba20c0d469e7004c1fcc5aa01ffffffff0400ca9a3b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc1027000000000000232102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702acc055cbbe15090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000396a37e3632103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc0354414b0e54657374696e672070686173652e00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2: (This is your token ID)</p>
+</blockquote>
+<pre class="highlight plaintext"><code>e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66
+</code></pre>
+<blockquote>
+<p>Step 3 (Optional): Use decoderawtransaction to verify the output is sane</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000012c223cfc9c3349aed24ca89e44af6fcdb030150443bd6ac55e2080ce4b097c300200000049483045022100dc83b88f5ed1f01aab7dee8bd8f2b3c0bf83537c9b3cbb0c6ea78ebafdf4c6f60220518440e7f43d24c5733531a8d5a825dbb90e716f7ba20c0d469e7004c1fcc5aa01ffffffff0400ca9a3b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc1027000000000000232102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702acc055cbbe15090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000396a37e3632103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc0354414b0e54657374696e672070686173652e00000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66",
+    "size": 335,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "307c094bce80205ec56abd43041530b0cd6faf449ea84cd2ae49339cfc3c222c",
+            "vout": 2,
+            "scriptSig": {
+                "asm": "3045022100dc83b88f5ed1f01aab7dee8bd8f2b3c0bf83537c9b3cbb0c6ea78ebafdf4c6f60220518440e7f43d24c5733531a8d5a825dbb90e716f7ba20c0d469e7004c1fcc5aa01",
+                "hex": "483045022100dc83b88f5ed1f01aab7dee8bd8f2b3c0bf83537c9b3cbb0c6ea78ebafdf4c6f60220518440e7f43d24c5733531a8d5a825dbb90e716f7ba20c0d469e7004c1fcc5aa01"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 10.00000000,
+            "valueSat": 1000000000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RRPpWbVdxcxmhx4xnWnVZFDfGc9p1177ti"
+                ]
+            }
+        },
+        {
+            "value": 0.00010000,
+            "valueSat": 10000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "02adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702 OP_CHECKSIG",
+                "hex": "2102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702ac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RFYE2yL3KknWdHK6uNhvWacYsCUtwzjY3u"
+                ]
+            }
+        },
+        {
+            "value": 99889.99960000,
+            "valueSat": 9988999960000,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc OP_CHECKSIG",
+                "hex": "2103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 3,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e3632103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc0354414b0e54657374696e672070686173652e",
+                "hex": "6a37e3632103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc0354414b0e54657374696e672070686173652e",
+                "type": "nulldata"
+            }
+        }
+    ]
+}
+</code></pre>
+<p><strong>tokencreate name supply description</strong></p>
+
+<p>The <code>tokencreate</code> method creates a new token.</p>
+
+<p>It returns a hex-encoded transaction which should then be broadcast using <code>sendrawtransaction</code>.</p>
+
+<p><code>sendrawtransaction</code> then returns a <code>txid</code>, which is your <code>tokenid</code>.</p>
+<h3 id='arguments-7'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>the proposed name of the token</td>
+</tr>
+<tr>
+<td>supply</td>
+<td>(number)</td>
+<td>the intended supply of the token</td>
+</tr>
+<tr>
+<td>&quot;description&quot;</td>
+<td>(string)</td>
+<td>description of the token</td>
+</tr>
+</tbody></table>
+<h3 id='response-7'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokenfillask'>tokenfillask</h2>
+<blockquote>
+<p>Step 1: Create the raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenfillask 9217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e d1b2676bb118d7bb8604dc5bb0a320a2ffb6f7ee118bfd20ed33be3fbd0b9b62 50
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>totally filled!
+{
+    "result": "success",
+    "hex": "01000000031a47a2fa94f27f7e98645a6827f9382991d76fcfd2d84b96065763d1cfed78fc02000000494830450221008be941e56b10fb51459f66288bb68936c55fd17ecbebd12b142f4575b0fe4bf702205f048ad69269ba81530230496fea42983aad88882b1ef7d08304e1230040fb0001ffffffff629b0bbd3fbe33ed20fd8b11eef7b6ffa220a3b05bdc0486bbd718b16b67b2d1000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa27028140da534b773f52c77ebbd590330468ba49333acc0971da444de512b85d039f59f778c8bab7cb1be909b6473789b237966a0f137a9b24c93ebebe0d83ae34a6bd6fa100af038001e3a10001ffffffff2bf671abc3bdfb673c0103a3bd59282c1aee473c6ccc4b591cdb42dc469d68c4000000004847304402204fa686dfdc7c0b7d42e538751aee0534b54747df4f335fb4d3b0d1a86c68e96d02202083fa811dd4506ad83f6d58a420d31ff7ccbae84ea05399b616e3d6f373682401ffffffff050000000000000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc3200000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc0065cd1d00000000232103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9efacf01710252d090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000000000004f6a4c4ce3539217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000000000002103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9ef00000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast the hex using sendrawtransaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000031a47a2fa94f27f7e98645a6827f9382991d76fcfd2d84b96065763d1cfed78fc02000000494830450221008be941e56b10fb51459f66288bb68936c55fd17ecbebd12b142f4575b0fe4bf702205f048ad69269ba81530230496fea42983aad88882b1ef7d08304e1230040fb0001ffffffff629b0bbd3fbe33ed20fd8b11eef7b6ffa220a3b05bdc0486bbd718b16b67b2d1000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa27028140da534b773f52c77ebbd590330468ba49333acc0971da444de512b85d039f59f778c8bab7cb1be909b6473789b237966a0f137a9b24c93ebebe0d83ae34a6bd6fa100af038001e3a10001ffffffff2bf671abc3bdfb673c0103a3bd59282c1aee473c6ccc4b591cdb42dc469d68c4000000004847304402204fa686dfdc7c0b7d42e538751aee0534b54747df4f335fb4d3b0d1a86c68e96d02202083fa811dd4506ad83f6d58a420d31ff7ccbae84ea05399b616e3d6f373682401ffffffff050000000000000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc3200000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc0065cd1d00000000232103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9efacf01710252d090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000000000004f6a4c4ce3539217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000000000002103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9ef00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>AssetValidate (S)
+vin1 50, vout1 50, AssetValidateSellvin
+Got 0.00000050 to origaddr.(RVCVaEHdH1gp1aPfu9MkgGBfdVNuW824PY)
+  0 0 50 50 500000000 500000000
+got recvunitprice 0.10000000 &gt;= 0.10000000 unitprice, new unitprice 0.00000000
+fill validated
+b6ebeaafced887fd63deb9207e0484570d49abe8fe4fcbaa026666d4ea3f902e
+</code></pre>
+<blockquote>
+<p>Step 3: Wait for the transaction to be confirmed</p>
+</blockquote>
+
+<p><strong>tokenfillask tokenid asktxid fillamount</strong></p>
+
+<p>The <code>tokenfillask</code> method fills an existing ask.</p>
+
+<p>It returns a hex-encoded transaction which should then be broadcast using <code>sendrawtransaction</code>.</p>
+<h3 id='arguments-8'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>asktxid</td>
+<td>(string)</td>
+<td>the txid that identifies the ask order</td>
+</tr>
+<tr>
+<td>fillamount</td>
+<td>(number)</td>
+<td>the amount to fill</td>
+</tr>
+</tbody></table>
+<h3 id='response-8'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokenfillbid'>tokenfillbid</h2>
+<blockquote>
+<p>Step 1: Create raw transaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenfillbid 9217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e d1b2676bb118d7bb8604dc5bb0a320a2ffb6f7ee118bfd20ed33be3fbd0b9b62 50
+</code></pre>
+<blockquote>
+<p>Response from Step 1:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>totally filled!
+{
+  "result": "success",
+  "hex": "01000000031a47a2fa94f27f7e98645a6827f9382991d76fcfd2d84b96065763d1cfed78fc02000000494830450221008be941e56b10fb51459f66288bb68936c55fd17ecbebd12b142f4575b0fe4bf702205f048ad69269ba81530230496fea42983aad88882b1ef7d08304e1230040fb0001ffffffff629b0bbd3fbe33ed20fd8b11eef7b6ffa220a3b05bdc0486bbd718b16b67b2d1000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa27028140da534b773f52c77ebbd590330468ba49333acc0971da444de512b85d039f59f778c8bab7cb1be909b6473789b237966a0f137a9b24c93ebebe0d83ae34a6bd6fa100af038001e3a10001ffffffff2bf671abc3bdfb673c0103a3bd59282c1aee473c6ccc4b591cdb42dc469d68c4000000004847304402204fa686dfdc7c0b7d42e538751aee0534b54747df4f335fb4d3b0d1a86c68e96d02202083fa811dd4506ad83f6d58a420d31ff7ccbae84ea05399b616e3d6f373682401ffffffff050000000000000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc3200000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc0065cd1d00000000232103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9efacf01710252d090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000000000004f6a4c4ce3539217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000000000002103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9ef00000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2: Broadcast the hex or sendrawtransaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000031a47a2fa94f27f7e98645a6827f9382991d76fcfd2d84b96065763d1cfed78fc02000000494830450221008be941e56b10fb51459f66288bb68936c55fd17ecbebd12b142f4575b0fe4bf702205f048ad69269ba81530230496fea42983aad88882b1ef7d08304e1230040fb0001ffffffff629b0bbd3fbe33ed20fd8b11eef7b6ffa220a3b05bdc0486bbd718b16b67b2d1000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa27028140da534b773f52c77ebbd590330468ba49333acc0971da444de512b85d039f59f778c8bab7cb1be909b6473789b237966a0f137a9b24c93ebebe0d83ae34a6bd6fa100af038001e3a10001ffffffff2bf671abc3bdfb673c0103a3bd59282c1aee473c6ccc4b591cdb42dc469d68c4000000004847304402204fa686dfdc7c0b7d42e538751aee0534b54747df4f335fb4d3b0d1a86c68e96d02202083fa811dd4506ad83f6d58a420d31ff7ccbae84ea05399b616e3d6f373682401ffffffff050000000000000000302ea22c80201ab400e039122028345520ba041ac3e6ec81ad28d8415e78d760d55f41097dd58103120c008203000401cc3200000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc0065cd1d00000000232103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9efacf01710252d090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac00000000000000004f6a4c4ce3539217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000000000002103fcc4b37ee767a67b75503832764b559d764d71c13785482b73609159aa6ae9ef00000000
+</code></pre>
+<blockquote>
+<p>Response from Step 2:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>AssetValidate (S)
+vin1 50, vout1 50, AssetValidateBidvin
+Got 0.00000050 to origaddr.(RVCVaEHdH1gp1aPfu9MkgGBfdVNuW824PY)
+0 0 50 50 500000000 500000000
+got recvunitprice 0.10000000 &gt;= 0.10000000 unitprice, new unitprice 0.00000000
+fill validated
+b6ebeaafced887fd63deb9207e0484570d49abe8fe4fcbaa026666d4ea3f902e
+</code></pre>
+<blockquote>
+<p>Step 3: Wait for the transaction to be confirmed</p>
+</blockquote>
+
+<p><strong>tokenfillbid tokenid bidtxid fillamount</strong></p>
+
+<p>The <code>tokenfillbid</code> method fills an existing ask.</p>
+
+<p>It returns a hex-encoded transaction which should then be broadcast using <code>sendrawtransaction</code>.</p>
+<h3 id='arguments-9'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+<tr>
+<td>bidtxid</td>
+<td>(string)</td>
+<td>the txid that identifies the bid order</td>
+</tr>
+<tr>
+<td>fillamount</td>
+<td>(number)</td>
+<td>the amount to fill</td>
+</tr>
+</tbody></table>
+<h3 id='response-9'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
+</tr>
+</tbody></table>
+<h2 id='tokeninfo'>tokeninfo</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokeninfo 43850dfce744581ef44775086625745adecd628993c5ff4c1c786cfd21009add
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "tokenid":    "43850dfce744581ef44775086625745adecd628993c5ff4c1c786cfd21009add",
+  "owner": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc",
+  "name": "TAKA",
+  "supply": "100000.00000000",
+  "description": "Testing phase 3."
+}
+</code></pre>
+<p><strong>tokeninfo tokenid</strong></p>
+
+<p>The <code>tokeninfo</code> method reveals information about any token.</p>
+<h3 id='arguments-10'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the txid that identifies the token</td>
+</tr>
+</tbody></table>
+<h3 id='response-10'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td>(string)</td>
+<td>whether the command executed successfully</td>
+</tr>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the identifying txid for the token id</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>(string)</td>
+<td>the identifying pubkey of the token creator</td>
+</tr>
+<tr>
+<td>name</td>
+<td>(string)</td>
+<td>name of the token</td>
+</tr>
+<tr>
+<td>supply</td>
+<td>(number)</td>
+<td>the total supply of the token</td>
+</tr>
+<tr>
+<td>description</td>
+<td>(string)</td>
+<td>the token description provided by the owner at token creation</td>
+</tr>
+</tbody></table>
+<h2 id='tokenlist'>tokenlist</h2>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenlist
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+  "307c094bce80205ec56abd43041530b0cd6faf449ea84cd2ae49339cfc3c222c",
+  "e7d034fb7dbad561c9a86dcbcc64aa89e1d311891b4e7c744280b7de13b1186f",
+  "21020a609c162fa2d0bc223acfff14bb0b886743303f5e4a661dade7a69b24a5",
+  "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+  "e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66",
+  "045a31b7e38b1538d111ea87ad9ec53952a70e9a5e8d076f7ed7923d8723f02d",
+  "f4131ee56a47273195a899f60a187862aa8e39a974b5a19d860e2fe69f60242f",
+  "9217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e",
+  "9eec77a3e02dec0ca60ead7e8cfb6cb6809c40fe54b804e51d5c6c2a445ffbf3",
+  "43850dfce744581ef44775086625745adecd628993c5ff4c1c786cfd21009add"
+]
+</code></pre>
+<p><strong>tokenlist</strong></p>
+
+<p>The <code>tokenlist</code> method lists all available tokens on the asset chain.</p>
+<h3 id='arguments-11'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(none)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='response-11'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the identifying txid for the token id</td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='tokenorders'>tokenorders</h2>
+<blockquote>
+<p>Show all available orders</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenorders
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+    {
+        "funcid": "B",
+        "txid": "b9d305e9b6a82e715efce9b6244cc15fef131baf1893a7eb45b199c23b3fb806",
+        "vout": 0,
+        "amount": 0,
+        "bidamount": 0,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59"
+    },
+    {
+        "funcid": "b",
+        "txid": "45b3f7874fc4a2699729a9792bc7679f6b5f11035a29ad9f661425b19534dd1d",
+        "vout": 0,
+        "amount": 1000,
+        "bidamount": 1000,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+        "totalrequired": 1000,
+        "price": 1
+    },
+    {
+        "funcid": "B",
+        "txid": "d4643ce47e9799681a4549468d47c85337367f0ef2733afe1d79c50175e6ae32",
+        "vout": 0,
+        "amount": 0,
+        "bidamount": 0,
+        "origaddress": "R9sDyKt2kW5uJaoZT6GF9e3WRbGioBuhoZ",
+        "tokenid": "e7d034fb7dbad561c9a86dcbcc64aa89e1d311891b4e7c744280b7de13b1186f"
+    },
+    {
+        "funcid": "B",
+        "txid": "0909df82ade3193c9a630dd80947141f34489732e9a2f8346790304ebbdcc251",
+        "vout": 0,
+        "amount": 0,
+        "bidamount": 0,
+        "origaddress": "R9sDyKt2kW5uJaoZT6GF9e3WRbGioBuhoZ",
+        "tokenid": "e7d034fb7dbad561c9a86dcbcc64aa89e1d311891b4e7c744280b7de13b1186f"
+    },
+    {
+        "funcid": "b",
+        "txid": "a8d60a3ce429ccb885ad445e7a4534130a35d2424d1883c6513d0f4da2fe9a92",
+        "vout": 0,
+        "amount": 150,
+        "bidamount": 150,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+        "totalrequired": 100,
+        "price": 1.5
+    },
+    {
+        "funcid": "B",
+        "txid": "03e118fc442a223df4dd87add64f142e1bfd99baee94c8be26bc77ed809d50a4",
+        "vout": 0,
+        "amount": 0,
+        "bidamount": 0,
+        "origaddress": "R9sDyKt2kW5uJaoZT6GF9e3WRbGioBuhoZ",
+        "tokenid": "e7d034fb7dbad561c9a86dcbcc64aa89e1d311891b4e7c744280b7de13b1186f"
+    }
+]
+</code></pre>
+<blockquote>
+<p>Show orders for specific token</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokenorders c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[
+    {
+        "funcid": "B",
+        "txid": "b9d305e9b6a82e715efce9b6244cc15fef131baf1893a7eb45b199c23b3fb806",
+        "vout": 0,
+        "amount": 0,
+        "bidamount": 0,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59"
+    },
+    {
+        "funcid": "b",
+        "txid": "9dabd8c01bb7d59455b64fe100617149c20cb4520d266183686aa4986fd3021d",
+        "vout": 0,
+        "amount": 100,
+        "bidamount": 100,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+        "totalrequired": 100,
+        "price": 1
+    },
+    {
+        "funcid": "b",
+        "txid": "45b3f7874fc4a2699729a9792bc7679f6b5f11035a29ad9f661425b19534dd1d",
+        "vout": 0,
+        "amount": 1000,
+        "bidamount": 1000,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+        "totalrequired": 1000,
+        "price": 1
+    },
+    {
+        "funcid": "b",
+        "txid": "a8d60a3ce429ccb885ad445e7a4534130a35d2424d1883c6513d0f4da2fe9a92",
+        "vout": 0,
+        "amount": 150,
+        "bidamount": 150,
+        "origaddress": "RQymbXA8FfWw2AaHv7oC8JRKo9W5HkFVMm",
+        "tokenid": "c5bbc34e6517c483afc910a3b0585c40da5c09b7c5d2d9757c5c5075e2d41b59",
+        "totalrequired": 100,
+        "price": 1.5
+    }
+]
+</code></pre>
+<p><strong>tokenorders (tokenid)</strong></p>
+
+<p>The <code>tokenorders</code> method displays the public on-chain orderbook for a specific token. If no <code>tokenid</code> is provided, it displays the on-chain orderbook for all available tokens.</p>
+
+<p>Information about the <code>funcid</code> property:</p>
+
+<p>A lowercase <code>b</code>&#39; describes an bid offer.</p>
+
+<p>An uppercase <code>B</code> describes a bid fill.</p>
+
+<p>A lowercase <code>s</code> describes an ask offer.</p>
+
+<p>An uppercase <code>S</code> describes the ask fill.</p>
+<h3 id='arguments-12'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string, optional)</td>
+<td>the identifying txid for the token id</td>
+</tr>
+</tbody></table>
+<h3 id='response-12'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>funcid</td>
+<td>(string)</td>
+<td>describes either a bid ask <code>b</code>, a bid fill <code>B</code>, an ask <code>s</code>, or an ask fill <code>S</code></td>
+</tr>
+<tr>
+<td>txid</td>
+<td>(string)</td>
+<td>the txid of the identifying order or fill</td>
+</tr>
+<tr>
+<td>vout</td>
+<td>(number)</td>
+<td>the vout value</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>(number)</td>
+<td>the amount remaining in the bid/ask request</td>
+</tr>
+<tr>
+<td>bidamount/askamount</td>
+<td>(number)</td>
+<td>the total amount of the relevant bid or ask request</td>
+</tr>
+<tr>
+<td>origaddress</td>
+<td>(string)</td>
+<td>the address that made the original bid <code>b</code> or ask <code>s</code></td>
+</tr>
+<tr>
+<td>tokenid</td>
+<td>(string)</td>
+<td>the tokenid for the relevant bid/ask request/fill</td>
+</tr>
+<tr>
+<td>totalrequired</td>
+<td>(number, <code>b</code> and <code>s</code> only)</td>
+<td>the total amount available in the original big/ask request/fill</td>
+</tr>
+<tr>
+<td>price</td>
+<td>(number, <code>b</code> and <code>s</code> only)</td>
+<td>the price per token, units are in the parent asset chain&#39;s coin</td>
+</tr>
+</tbody></table>
+<h2 id='tokentransfer'>tokentransfer</h2>
+<blockquote>
+<p>Step 1. Create the rawtransaction</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD tokentransfer e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66 02ebc786cb83de8dc3922ab83c21f3f8a2f3216940c3bf9da43ce39e2a3a882c92 500000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "hex": "01000000023b61e44ce3cedf536b52d8da11faacd041494a078e971551ed4e2bd496bc8da1000000006a4730440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f6012103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcffffffff66cc65f38d7e878d312386777c4f049f738b8894353c30108f7fe4ca515489e4000000007b4c79a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001ffffffff0420a1070000000000302ea22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401cce028933b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc28b9486cb2430000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc6600000000"
+}
+</code></pre>
+<blockquote>
+<p>Step 2. Send/broadcast the raw transaction hex</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction 01000000023b61e44ce3cedf536b52d8da11faacd041494a078e971551ed4e2bd496bc8da1000000006a4730440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f6012103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcffffffff66cc65f38d7e878d312386777c4f049f738b8894353c30108f7fe4ca515489e4000000007b4c79a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001ffffffff0420a1070000000000302ea22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401cce028933b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc28b9486cb2430000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc6600000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>ProcessAssets
+AssetValidate (t)
+vin1 1000000000, vout0 500000, vout1 999500000, transfer validated 10.00000000 -&gt; 10.00000000
+AssetValidate.(t) passed
+88ac2d4d27654e9d8ac195d5ab482ee9895303902eaacfbb687b1e736bb06fb4
+</code></pre>
+<blockquote>
+<p>Step 3. Decode the raw transaction and check against the following if the data is sane</p>
+</blockquote>
+<pre class="highlight plaintext"><code>vin.0: normal input
+vin.1 to vin.n-1: valid CC outputs
+vout.0 to n-2: assetoshis output to CC
+vout.n-2: normal output for change (if any)
+vout.n-1: opreturn [EVAL_ASSETS] ['t'] [assetid]
+</code></pre>
+<blockquote>
+<p>Command:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 01000000023b61e44ce3cedf536b52d8da11faacd041494a078e971551ed4e2bd496bc8da1000000006a4730440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f6012103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcffffffff66cc65f38d7e878d312386777c4f049f738b8894353c30108f7fe4ca515489e4000000007b4c79a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001ffffffff0420a1070000000000302ea22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401cce028933b00000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc28b9486cb2430000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc6600000000
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "txid": "88ac2d4d27654e9d8ac195d5ab482ee9895303902eaacfbb687b1e736bb06fb4",
+    "size": 524,
+    "version": 1,
+    "locktime": 0,
+    "vin": [
+        {
+            "txid": "a18dbc96d42b4eed5115978e074a4941d0acfa11dad8526b53dfcee34ce4613b",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "30440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f601 03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc",
+                "hex": "4730440220111c67172740c0c2556979fdf84639ba299ff22586ebd220f25aa301f029003f02203da97a2575c0ed1b309774309f5dc952ee305a46cd83e95eae99e3564a1772f6012103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc"
+            },
+            "sequence": 4294967295
+        },
+        {
+            "txid": "e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66",
+            "vout": 0,
+            "scriptSig": {
+                "asm": "a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001",
+                "hex": "4c79a276a072a26ba067a565802103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc8140c875a14edcbece61a6c18721398c927dc1e4509863e075b3922a8e3a2da6848e037142436e9102b529ee93a9ec618a4c67b63c52790d71812bb94179056913bba100af038001e3a10001"
+            },
+            "sequence": 4294967295
+        }
+    ],
+    "vout": [
+        {
+            "value": 0.00500000,
+            "valueSat": 500000,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "a22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020541be9f843b476373fc18d8c8fab59c98c2c009f49c07fa66b7b431e4142feae8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RLB1YWh4N115NFh8tbArCBGaTQ3F43Yg1F"
+                ]
+            }
+        },
+        {
+            "value": 9.99500000,
+            "valueSat": 999500000,
+            "n": 1,
+            "scriptPubKey": {
+                "asm": "a22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401 OP_CHECKCRYPTOCONDITION",
+                "hex": "2ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401cc",
+                "reqSigs": 1,
+                "type": "cryptocondition",
+                "addresses": [
+                    "RRPpWbVdxcxmhx4xnWnVZFDfGc9p1177ti"
+                ]
+            }
+        },
+        {
+            "value": 744335.99945000,
+            "valueSat": 74433599945000,
+            "n": 2,
+            "scriptPubKey": {
+                "asm": "03fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abc OP_CHECKSIG",
+                "hex": "2103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac",
+                "reqSigs": 1,
+                "type": "pubkey",
+                "addresses": [
+                    "RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ"
+                ]
+            }
+        },
+        {
+            "value": 0.00000000,
+            "valueSat": 0,
+            "n": 3,
+            "scriptPubKey": {
+                "asm": "OP_RETURN e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66",
+                "hex": "6a22e374e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66",
+                "type": "nulldata"
+            }
+        }
+    ]
+}
+</code></pre>
+<p><strong>tokentransfer tokenid destpubkey amount</strong></p>
+
+<p>The <code>tokentransfer</code> method transfers tokens from one cc address to another.</p>
+
+<p>It is similar to the <a href="#sendmany"><code>sendmany</code></a> method used to send coins on the parent chain.</p>
+
+<p>The method returns a raw hex, which must be broadcast using <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> to complete the command.</p>
+
+<aside class="notice">
+  The source `txid/vout` needs to be specified as it is critical to match outputs with inputs.
+</aside>
+
+<aside class="notice">
+  A token may be burned by using `tokentransfer` to send to a burn address.
+</aside>
+<h3 id='arguments-13'>Arguments:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokenid</td>
+<td>(string, optional)</td>
+<td>the identifying txid for the token id</td>
+</tr>
+<tr>
+<td>destpubkey</td>
+<td>(string)</td>
+<td>the pubkey where the tokens should be sent</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>(number)</td>
+<td>the number of tokens to send</td>
+</tr>
+</tbody></table>
+<h3 id='response-13'>Response:</h3>
+<table><thead>
+<tr>
+<th>Structure</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hex:</td>
+<td>(string)</td>
+<td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command</td>
 </tr>
 </tbody></table>
 <h1 id='address-index'>Address Index</h1>
