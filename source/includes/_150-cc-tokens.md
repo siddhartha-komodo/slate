@@ -362,7 +362,6 @@ Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
 ```
 
 > Step 3: Decode the raw transaction (optional to check if the values are sane)
-=============================================================================
 
 ```
 ./komodo-cli -ac_name=HELLOWORLD decoderawtransaction 010000000234c335a46dadea8e42420b0e284f5577cfbcb7764a8d5c3b61312b71c5b14d0800000000494830450221009f365d429d03df66b34cad764368092498ebd7340587c558ea19c4248202317b0220531524ef076f9e5b26ec5aa38b3078c041f8d0603b85552177ef14d00b0e499601ffffffff5ca636731b8c28889248a0b434e3124f19518b2c4b4bbefd80af303329ae9471000000007b4c79a276a072a26ba067a565802102adf84e0e075cf90868bd4e3d34a03420e034719649c41f371fc70d8e33aa2702814066f6a9d580da0ac901ada8c61922d93da005e92c9e419a44c1bcbf9ec8ad43790dfc8ca71b5c21b79a58aa173fb71e1ab0b82c590dc883359de60f743fabda16a100af038001e3a10001ffffffff030a00000000000000302ea22c8020bc485b86ffd067abe520c078b74961f6b25e4efca6388c6bfd599ca3f53d8dae8103120c008203000401ccf078724e18090000232103fe754763c176e1339a3f62ee6b9484720e17ee4646b65a119e9f6370c7004abcac0000000000000000246a22e3789217014eae0a83a0b64632f379c1b474859794f9eaf1cf1eecf5804ed6124a5e00000000
@@ -945,11 +944,11 @@ Structure|Type|Description
 funcid                                       |(string)                     |describes either a bid ask `b`, a bid fill `B`, an ask `s`, or an ask fill `S`
 txid                                         |(string)                     |the txid of the identifying order or fill
 vout                                         |(number)                     |the vout value
-amount                                       |(number)                     |the amount of the relevant bid/ask request/fill
+amount                                       |(number)                     |the amount remaining in the bid/ask request
 bidamount/askamount                          |(number)                     |the total amount of the relevant bid or ask request
 origaddress                                  |(string)                     |the address that made the original bid `b` or ask `s`
 tokenid                                      |(string)                     |the tokenid for the relevant bid/ask request/fill
-totalrequired                                |(number, `b` and `s` only)   |the total required before the offer is considered full ===?===
+totalrequired                                |(number, `b` and `s` only)   |the total amount available in the original big/ask request/fill
 price                                        |(number, `b` and `s` only)   |the price per token, units are in the parent asset chain's coin
 
 ## tokentransfer

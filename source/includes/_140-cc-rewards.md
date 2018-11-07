@@ -17,10 +17,6 @@ The flow of a plan is as follows:
 
 ## rewardsaddfunding
 
-**rewardsaddfunding name fundingtxid amount**
-
-The `rewardsaddfunding` method adds funds to a rewards plan.
-
 > Step 1: Create a raw transaction and get the HEX value
 
 ```
@@ -117,12 +113,26 @@ The `rewardsaddfunding` method adds funds to a rewards plan.
 }
 ```
 
+**rewardsaddfunding name fundingtxid amount**
+
+The `rewardsaddfunding` method adds funds to a rewards plan.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+name                                         |(string)                     |the desired name of your rewards plan
+fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
+amount                                       |(number)                     |the amount of funds to add to the contract
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
+hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
+
 ## rewardsaddress
-
-**rewardsaddress [pubkey]**
-
-The `rewardsaddress` method returns info about the a `rewards` plan associated with the given `pubkey`. If no `pubkey` is provided, the `pubkey` used to launch the daemon is used.
-
 
 > Command:
 
@@ -144,6 +154,29 @@ The `rewardsaddress` method returns info about the a `rewards` plan associated w
     "myaddress": "RVXhz5UCJfSRoTfa4zvBFBrpDBbqMM21He"
 }
 ```
+
+**rewardsaddress [pubkey]**
+
+The `rewardsaddress` method returns info about the a `rewards` plan associated with the given `pubkey`. If no `pubkey` is provided, the `pubkey` used to launch the daemon is used.
+
+### Arguments:
+
+Structure|Type|Description
+---------|----|-----------
+pubkey                                       |(string, optional)           |the pubkey of the requested info; by default it is the pubkey used to launch the chain
+
+### Response:
+
+Structure|Type|Description
+---------|----|-----------
+result                                       |(string)                     |whether the method executed successfully
+RewardsCCaddress                             |(string)                     |taking the contract's EVAL code as a modifyer, this is the public address that corresponds to the contract's privkey
+Rewardsmarker                                |(string)                     |the unmodified public address generated from the contract's privkey
+GatewaysPubkey                               |(string)
+RewardsCCassets                              |(string)
+CCaddress                                    |(string)                     |taking the contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
+myCCaddress                                  |(string)                     |taking the dice contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
+myaddress                                    |(string)                     |the public address of the pubkey used to launch the chain
 
 ## rewardscreatefunding
 
