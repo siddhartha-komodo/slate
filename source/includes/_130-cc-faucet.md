@@ -143,6 +143,8 @@ myaddress                                    |(string)                     |the 
 
 The `faucetfund` method creates and funds a faucet contract.
 
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -248,7 +250,9 @@ faucetget validated
 
 The `faucetget` method requests the `faucet` contract to send coins.
 
-Faucet returns 0.1 coins and requires about 30 seconds of CPU time.
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
+A `faucet` command yields 0.1 coins and requires about 30 seconds of CPU time.
 
 ### Arguments:
 
@@ -296,5 +300,5 @@ Structure|Type|Description
 Structure|Type|Description
 ---------|----|-----------
 result                                       |(string)                     |whether the command executed successfully
-name                                         |(string)                     |the data in hex-encoded format; you must broadcast this hex using sendrawtransaction for the command to complete
+name                                         |(string)                     |the name of the faucet contract
 funding                                      |(number)                     |the amount of funds available in the faucet

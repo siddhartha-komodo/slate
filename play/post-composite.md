@@ -1,1 +1,4 @@
-pubkey                                       |(string, optional)           |the pubkey of the desired address
+ChannelCCaddress                             |                             |
+No.                                          |                             |
+Amount                                       |                             |
+open_tx_id                                   |                             |

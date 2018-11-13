@@ -117,6 +117,8 @@ The flow of a plan is as follows:
 
 The `rewardsaddfunding` method adds funds to a rewards plan.
 
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -172,10 +174,10 @@ Structure|Type|Description
 result                                       |(string)                     |whether the method executed successfully
 RewardsCCaddress                             |(string)                     |taking the contract's EVAL code as a modifyer, this is the public address that corresponds to the contract's privkey
 Rewardsmarker                                |(string)                     |the unmodified public address generated from the contract's privkey
-GatewaysPubkey                               |(string)                     |
-RewardsCCassets                              |(string)                     |
+GatewaysPubkey                               |(string)                     |the pubkey for the gateways cc
+RewardsCCassets                              |(string)                     |this property is used for development purposes only and can otherwise be ignored
 CCaddress                                    |(string)                     |taking the contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
-myCCaddress                                  |(string)                     |taking the dice contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
+myCCaddress                                  |(string)                     |taking the contract's EVAL code as a modifyer, this is the CC address from the pubkey of the user
 myaddress                                    |(string)                     |the public address of the pubkey used to launch the chain
 
 ## rewardscreatefunding
@@ -653,6 +655,8 @@ hex:                                         |(string)                     |a ra
 **rewardsunlock name fundingtxid (txid)**
 
 The `rewardsunlock` method unlocks your funds from a specific rewards plan after the minimum lock time is met. If `txid` is not provided, `rewardsunlock` unlocks all funds in the `fundingtxid` plan.
+
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method to complete the command.
 
 If you attempt to unlock your funds before the minimum period is met, the daemon returns this error:
 

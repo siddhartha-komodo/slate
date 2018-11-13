@@ -131,6 +131,8 @@ The `diceaddfunds` method adds funds to the desired `dice` contract.
 
 Only the owner of the `dice` contract is able to add funds.
 
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -139,13 +141,12 @@ name                                         |(string)                     |name
 fundingtxid                                  |(string)                     |the txid of the transaction that created and funded this contract
 amount                                       |(number)                     |the amount of funds you want to add to your dice from your wallet
 
-
 ### Response:
 
 Structure|Type|Description
 ---------|----|-----------
 result:                                      |(string)                     |whether the command succeeded
-hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the `diceaddfunds` command
+hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## diceaddress
 
@@ -335,6 +336,8 @@ myaddress                                    |(string)                     |the 
 **dicebet name fundingtxid amount odds**
 
 The `dicebet` method places a bet on the indicated `dice` contract.
+
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
 
 ### Arguments:
 
@@ -585,6 +588,8 @@ ebfcff20fa5ab7bebf14b778e74bd6b34b02f100ff75e4cb611190f160ae4cf7
 ```
 
 The `dicefund` method creates and funds a dice contract.
+
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
 
 Ideally, the dice creator node should be online throughout the contract's life, to determine `winning bid` or `losing bid`.
 

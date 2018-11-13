@@ -24,7 +24,6 @@ includes:
   - 110-cc-channels
   - 120-cc-dice
   - 130-cc-faucet
-  - 133-cc-gateways
   - 135-cc-oracles
   - 140-cc-rewards
   - 150-cc-tokens

@@ -82,6 +82,8 @@ myaddress                                    |(string)                     |the 
 
 The `tokenask` method posts a public ask order.
 
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -94,6 +96,7 @@ price                                        |(number)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokenbalance
@@ -200,6 +203,7 @@ price                                        |(number)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokencancelask
@@ -315,6 +319,8 @@ Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
 
 The `tokencancelask` method cancels a specific `ask`/`sell` order that you created.
 
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -326,6 +332,7 @@ asktxid                                      |(string)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokencancelbid
@@ -442,6 +449,8 @@ Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
 
 The `tokencancelbid` method cancels a specific `bid`/`buy` order that you created.
 
+The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
+
 ### Arguments:
 
 Structure|Type|Description
@@ -453,6 +462,7 @@ bidtxid                                      |(string)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokencreate
@@ -586,6 +596,7 @@ supply                                       |(number)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokenfillask
@@ -644,6 +655,7 @@ fillamount                                   |(number)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokenfillbid
@@ -702,6 +714,7 @@ fillamount                                   |(number)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
 
 ## tokeninfo
@@ -1102,4 +1115,5 @@ amount                                       |(number)                     |the 
 
 Structure|Type|Description
 ---------|----|-----------
+result:                                      |(string)                     |whether the command succeeded
 hex:                                         |(string)                     |a raw transaction in hex-encoded format; you must broadcast this transaction to complete the command
