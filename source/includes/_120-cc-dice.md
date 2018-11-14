@@ -587,6 +587,8 @@ ebfcff20fa5ab7bebf14b778e74bd6b34b02f100ff75e4cb611190f160ae4cf7
 }
 ```
 
+**dicefund name funds minbet maxbet maxodds timeoutblocks**
+
 The `dicefund` method creates and funds a dice contract.
 
 The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
@@ -598,8 +600,6 @@ If the dice creator node is offline after the `timeoutblocks` period completes, 
 Typically, the creator should set the `timeoutblocks` property to a longer period. This prevents the house from losing funds if the house's node unexpectedly experiences downtime.
 
 The `maxodds` property must be between 1 and 9999.
-
-**dicefund name funds minbet maxbet maxodds timeoutblocks**
 
 ### Arguments:
 

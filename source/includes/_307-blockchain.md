@@ -305,7 +305,7 @@ Structure|Type|Description
   "difficulty"|(numeric)|the difficulty
   "previousblockhash"|(string)|the hash of the previous block
   "nextblockhash"|(string)|the hash of the next block
-}
+}| |
 
 ### Response:
 

@@ -1,4 +1,4 @@
-# Outline for New Developers
+# Start Here
 
 For the developer wishing to build your own blockchain using the Komodo software, we recommend the following approach.
 
