@@ -1,6 +1,6 @@
-# CryptoConditions Instructions
+# Smart Contract Instructions
 
-## Understanding CC Addresses
+## Understanding CryptoConditions Addresses
 
 The method of transferring CryptoConditions-related assets is often slightly different than transferring the main coins of an asset chain.
 
@@ -11,6 +11,8 @@ In CryptoConditions, you may see several addresses involved with a transaction. 
 Also, each smart contract will move coins or tokens differently, depending on the nature of the contract. For example, if you are dealing with tokens (also called "colored coins"), you may use the [`tokentransfer`](#tokentransfer) method.
 
 The first address you must understand is the pubkey. Any user using a CryptoConditions smart contract must have a pubkey indicated in their daemon. The pubkey forms the basis for many other CryptoConditions addresses. Typically, each CryptoConditions smart contract  will take the pubkey, combine it with a unique and contract-specific EVAL code, and create a new base-58 encoded address from it. This base-58 encoded address will be the address you use to hold and manage CryptoConditions-related assets.
+
+## Creating and Launching with a Pubkey
 
 To get a pubkey, launch the chain with the normal launch parameters and execute the [`getnewaddress`](#getnewaddress) rpc call.
 

@@ -1,5 +1,7 @@
 # Smart Contract: Oracles
 
+## Introduction
+
 The `oracles` contract allows users to make off-chain data available on-chain.
 
 The flow of an oracles plan is as follows:

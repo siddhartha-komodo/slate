@@ -1,4 +1,4 @@
-# Smart Contracts: Tokens
+# Smart Contract: Tokens
 
 The `tokens` CryptoConditions smart contract enables core-asset support for the on-chain creation of colored coins, also called tokens. The functionality is facilitated by utxo technology. Tokens can be generated on any chain where the [`ac_cc`](#ac_cc) is enabled.
 
@@ -580,7 +580,9 @@ e4895451cae47f8f10303c3594888b739f044f7c778623318d877e8df365cc66
 
 The `tokencreate` method creates a new token.
 
-It returns a hex-encoded transaction which should then be broadcast using `sendrawtransaction`.
+For every token created, the method requires one satoshi of the parent blockchain's coins. For example, one of the blockchain COINS provides 100000000 tokens.
+
+The method returns a hex-encoded transaction which should then be broadcast using `sendrawtransaction`.
 
 `sendrawtransaction` then returns a `txid`, which is your `tokenid`.
 
@@ -589,7 +591,7 @@ It returns a hex-encoded transaction which should then be broadcast using `sendr
 Structure|Type|Description
 ---------|----|-----------
 name                                         |(string)                     |the proposed name of the token
-supply                                       |(number)                     |the intended supply of the token
+supply                                       |(number)                     |the intended supply of the token, given in coins
 "description"                                |(string)                     |description of the token
 
 ### Response:
