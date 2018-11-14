@@ -492,10 +492,13 @@
               </ul>
           </li>
           <li>
-            <a href="#cryptoconditions-instructions" class="toc-h1 toc-link" data-title="CryptoConditions Instructions">CryptoConditions Instructions</a>
+            <a href="#smart-contract-instructions" class="toc-h1 toc-link" data-title="Smart Contract Instructions">Smart Contract Instructions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#understanding-cc-addresses" class="toc-h2 toc-link" data-title="Understanding CC Addresses">Understanding CC Addresses</a>
+                    <a href="#understanding-cryptoconditions-addresses" class="toc-h2 toc-link" data-title="Understanding CryptoConditions Addresses">Understanding CryptoConditions Addresses</a>
+                  </li>
+                  <li>
+                    <a href="#creating-and-launching-with-a-pubkey" class="toc-h2 toc-link" data-title="Creating and Launching with a Pubkey">Creating and Launching with a Pubkey</a>
                   </li>
               </ul>
           </li>
@@ -566,10 +569,42 @@
               </ul>
           </li>
           <li>
+            <a href="#smart-contract-gateways" class="toc-h1 toc-link" data-title="Smart Contract: Gateways">Smart Contract: Gateways</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#brief-gateways-tutorial" class="toc-h2 toc-link" data-title="Brief Gateways Tutorial">Brief Gateways Tutorial</a>
+                  </li>
+                  <li>
+                    <a href="#creating-a-gateway" class="toc-h2 toc-link" data-title="Creating a Gateway">Creating a Gateway</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-blockchain" class="toc-h2 toc-link" data-title="Create a new Blockchain">Create a new Blockchain</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-token-for-on-chain-representation-of-an-external-cryptocurrency" class="toc-h2 toc-link" data-title="Create a token for on-chain representation of an external cryptocurrency">Create a token for on-chain representation of an external cryptocurrency</a>
+                  </li>
+                  <li>
+                    <a href="#convert-the-tokens-to-use-with-gatewayscc" class="toc-h2 toc-link" data-title="Convert the tokens to use with GatewaysCC">Convert the tokens to use with GatewaysCC</a>
+                  </li>
+                  <li>
+                    <a href="#create-an-oracle-for-storing-quot-blockheader-data-quot-on-the-blockchain" class="toc-h2 toc-link" data-title="Create an Oracle for Storing "Blockheader Data" on the Blockchain">Create an Oracle for Storing "Blockheader Data" on the Blockchain</a>
+                  </li>
+                  <li>
+                    <a href="#bind-the-tokens-and-oracle-as-a-gateway" class="toc-h2 toc-link" data-title="Bind the Tokens and Oracle as a Gateway">Bind the Tokens and Oracle as a Gateway</a>
+                  </li>
+                  <li>
+                    <a href="#assemble-the-dapp" class="toc-h2 toc-link" data-title="Assemble the dApp">Assemble the dApp</a>
+                  </li>
+                  <li>
+                    <a href="#using-the-gateway" class="toc-h2 toc-link" data-title="Using the Gateway">Using the Gateway</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#smart-contract-oracles" class="toc-h1 toc-link" data-title="Smart Contract: Oracles">Smart Contract: Oracles</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#a-notes-about-batons" class="toc-h2 toc-link" data-title="A Notes About Batons">A Notes About Batons</a>
+                    <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
                   </li>
                   <li>
                     <a href="#oraclesaddress" class="toc-h2 toc-link" data-title="oraclesaddress">oraclesaddress</a>
@@ -624,7 +659,7 @@
               </ul>
           </li>
           <li>
-            <a href="#smart-contracts-tokens" class="toc-h1 toc-link" data-title="Smart Contracts: Tokens">Smart Contracts: Tokens</a>
+            <a href="#smart-contract-tokens" class="toc-h1 toc-link" data-title="Smart Contract: Tokens">Smart Contract: Tokens</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#tokenaddress" class="toc-h2 toc-link" data-title="tokenaddress">tokenaddress</a>
@@ -2431,7 +2466,7 @@ addnode=144.76.94.3
 </aside>
 
 <p>If <code>ac_private</code> is set to <code>1</code>, all transactions other than coinbase transactions (block rewards) must use zk-SNARKs. Beyond sending mined coins from a transparent addresses to a z address, all other transparent activity is disabled.</p>
-<h1 id='cryptoconditions-instructions'>CryptoConditions Instructions</h1><h2 id='understanding-cc-addresses'>Understanding CC Addresses</h2>
+<h1 id='smart-contract-instructions'>Smart Contract Instructions</h1><h2 id='understanding-cryptoconditions-addresses'>Understanding CryptoConditions Addresses</h2>
 <p>The method of transferring CryptoConditions-related assets is often slightly different than transferring the main coins of an asset chain.</p>
 
 <p>When making a transaction on the main blockchain of your asset chain, you typically only deal with a sending address and a receiving address. To move coins, you might use rpc calls such as <code>sendtoaddress</code> or <code>z_sendmany</code>.</p>
@@ -2441,7 +2476,7 @@ addnode=144.76.94.3
 <p>Also, each smart contract will move coins or tokens differently, depending on the nature of the contract. For example, if you are dealing with tokens (also called &quot;colored coins&quot;), you may use the <a href="#tokentransfer"><code>tokentransfer</code></a> method.</p>
 
 <p>The first address you must understand is the pubkey. Any user using a CryptoConditions smart contract must have a pubkey indicated in their daemon. The pubkey forms the basis for many other CryptoConditions addresses. Typically, each CryptoConditions smart contract  will take the pubkey, combine it with a unique and contract-specific EVAL code, and create a new base-58 encoded address from it. This base-58 encoded address will be the address you use to hold and manage CryptoConditions-related assets.</p>
-
+<h2 id='creating-and-launching-with-a-pubkey'>Creating and Launching with a Pubkey</h2>
 <p>To get a pubkey, launch the chain with the normal launch parameters and execute the <a href="#getnewaddress"><code>getnewaddress</code></a> rpc call.</p>
 
 <p><code>./komodo-cli -ac_name=HELLOWORLD getnewaddress</code></p>
@@ -4210,7 +4245,353 @@ addnode=144.76.94.3
 <td>the amount of funds available in the faucet</td>
 </tr>
 </tbody></table>
-<h1 id='smart-contract-oracles'>Smart Contract: Oracles</h1>
+<h1 id='smart-contract-gateways'>Smart Contract: Gateways</h1>
+<p>The idea of the <code>gateways</code> smart contract is to facilitate, manage, and trade tokenized representations of foreign blockchain assets.</p>
+
+<p>For example, a user is able to deposit their real-world BTC into a monitored address on the Bitcoin blockchain. Then, on the <code>gateways</code> asset chain, the ownership of this BTC is tokenized. Only the owner of the token has the right to withdraw the BTC to a chosen address. The user that made the deposit can use the token either for asset trading, or for other creative purposes.</p>
+
+<p>This allows the <code>gateways</code>-enabled asset chain to feature secure, on-chain, high-speed trading.</p>
+
+<p>Using an established <code>gateways</code> smart contract is not considered difficult. However, setting up the <code>gateways</code> requires the user to closely follow several detailed steps.</p>
+<h2 id='brief-gateways-tutorial'>Brief Gateways Tutorial</h2>
+<p>The flow of the <code>gateways</code> contract is as follows:</p>
+
+<ul>
+<li>Anyone can deposit a foreign asset, such as BTC, into a special address.</li>
+<li>This person then receives tokens on the <code>gateways</code>-enabled asset chain that represent the deposited BTC</li>
+<li>The user is able to trade, spend, or utilize the tokens in whatever further capacities the asset-chain developers enable</li>
+<li>Anyone who obtains the tokens can redeem the BTC to a BTC address, finishing the process</li>
+</ul>
+
+<p>By bringing operations on-chain, we avoid the need for complex cross-chain swaps for each trade. The cross-chain transfers do still have to happen on the deposit and withdraw, but that is all.</p>
+<h3 id='a-caveat-gateways-is-not-fully-decentralized'>A Caveat: Gateways is Not Fully Decentralized</h3>
+<p><code>gateways</code> relies on a special type of multisignature wallet address to function. It is called an <code>MofN</code> multisig address. In the name, <code>N</code> stands for the number of total signatories for the address and <code>M</code> stands for the number of signatories that are required to have their nodes online at the time of withdrawal.</p>
+
+<p>With <code>N</code> trusted community members present, and a reasonable <code>M</code> value, this aspect of centralization is easy to overcome. Since all operations are automated -- including both deposit and withdrawal -- the only trust needed is that <code>M</code> of the <code>N</code> signatories are running their nodes with the <code>gateways</code> dApp active, and also that <code>M</code> of them will not collude to steal the funds locked in the address.</p>
+
+<p>As anyone is able to create a <code>gateways</code>, users are free to work together as a community to discover and manage their signatories. The signatories are ultimately responsible for all <code>gateways</code> activity.</p>
+<h2 id='creating-a-gateway'>Creating a Gateway</h2>
+<p>In this guide, we will</p>
+
+<ul>
+<li>Create tokens which will represent KMD on a <code>gateways</code>-enabled asset chain</li>
+<li>Convert these tokens for <strong>GatewaysCC</strong> usage</li>
+<li>Prepare a special oracle, having the data type <code>Ihh</code>; this oracle will retrieve information regarding Komodo&#39;s chainstate using the <strong>oraclefeed dApp</strong></li>
+<li>Bind the tokens and the oracle to our gateway</li>
+<li>Deposit KMD</li>
+<li>Exchange it with other tokens on-chain</li>
+<li>Use the tokens to withdraw the KMD</li>
+</ul>
+
+<p>Please ensure that you have the KMD main chain downloaded and synced before continuing further in the guide.</p>
+
+<p>Also, please open an empty text file and save all output transaction ids and hex-encoded data from each step. You will need the information at various stages.</p>
+<h2 id='create-a-new-blockchain'>Create a new Blockchain</h2>
+<p>With the KMD main chain installed, you should have all you need to start your own asset chain.</p>
+
+<p>If you are unfamiliar with how to start an asset chain, <a href="#building-a-komodo-asset-chain">please read the relevant documentation</a>.</p>
+
+<p>For this project, we suggest using the following launch parameters:</p>
+
+<p><code>./komodod -ac_name=HELLOWORLD -ac_supply=7777777 &amp;</code></p>
+
+<p>Once your chain is up and running, you will need to create a pubkey.</p>
+
+<p><a href="#creating-and-launching-with-a-pubkey">Follow the instructions in this documentation.</a></p>
+
+<p>Once you have restarted the asset chain with your pubkey enabled, you are prepared to create on-chain tokens.</p>
+<h2 id='create-a-token-for-on-chain-representation-of-an-external-cryptocurrency'>Create a token for on-chain representation of an external cryptocurrency</h2>
+<p>Use the <a href="#tokencreate">tokencreate</a> method to create the token.</p>
+
+<p>You should set the supply of tokens equal to the maximum supply of KMD satoshis you expect users to have in the multi-signature wallet at any one point in time.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD tokencreate KMD 1000 &quot;A KMD-equivalent token for gatewaysCC&quot;</code></p>
+
+<p>This sets the name of the asset-chain token to <code>KMD</code>, the maximum supply equal to <code>1000</code> satoshis of actual KMD, and gives the description in the final string</p>
+
+<p>The method returns a <code>hex</code> value in the response. Use the <code>sendrawtransaction</code> method to braodcast this value.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<p>This returns a transaction id, which is now our <strong>tokenid</strong>.</p>
+
+<p>Wait to ensure that the <code>tokenid</code> transaction is successfully notarized.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD getinfo</code></p>
+
+<p>Watch for the notarization count to increase.</p>
+
+<p>Check that the mempool does not have your <code>tokenid</code> transaction in it.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD getrawmempool</code></p>
+
+<p>You should not see your <code>tokenid</code> transaction in the returned response.</p>
+
+<p>You may also check the info in your token:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD tokeninfo YOUR_TOKEN_ID</code></p>
+
+<p>You may also check the balance for a specific pubkey:</p>
+
+<p>(If you have not transferred any of the tokens, then the entire supply should be within your own pubkey.)</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD tokenbalance TOKEN_ID PUBKEY</code></p>
+<h2 id='convert-the-tokens-to-use-with-gatewayscc'>Convert the tokens to use with GatewaysCC</h2>
+<p>Before you may use these tokens as representatives of real KMD for spending and trading, the tokens need to be converted.</p>
+
+<p>The conversion process will change the rules that constrain the token&#39;s CC <code>vouts</code>. Constraining is important because it prevents the token from being transferred or spent, except under the agreed upon definitions of the <code>gateways</code> contract. Initially, the TokensCC smart contract itself constrains the <code>vouts</code>. Now we use <code>tokenconvert</code> to render the token <code>vouts</code> constrained for use only by the GatewaysCC smart contract.</p>
+
+<p>First, find the <strong>GatewaysPubkey</strong>:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD gatewaysaddress</code></p>
+
+<p>This will return a ===?===</p>
+
+<p>Then convert 100% of your KMD-token supply to the GatewayCC using the special <code>tokenconvert</code> call. Use the unique evalcode for <code>GatewaysCC</code> as the first parameter: <code>241</code></p>
+
+<p>You must set the supply in the number of tokens for this command. For example, if you used <code>1</code> coin from the parent chain to create <code>100000000</code> tokens, you now use <code>100000000</code> as the argument to indicate the total supply.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD tokenconvert 241 YOUR_TOKEN_ID GATEWAYS_PUBKEY TOTAL_SUPPLY</code></p>
+
+<p>The above command will output a <strong>hex</strong> value, which you now broadcast using <code>sendrawtransaction</code>:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+<h2 id='create-an-oracle-for-storing-quot-blockheader-data-quot-on-the-blockchain'>Create an Oracle for Storing &quot;Blockheader Data&quot; on the Blockchain</h2>
+<p>To add external data to the blockchain, we use the <a href="#smart-contract-oracles"><code>oracles</code></a> smart contract.</p>
+
+<p>We have to create an oracle with an identical name, ie. <code>KMD</code>, and the data format must start with <code>Ihh</code> (height, blockhash, merkleroot):</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD oraclescreate KMD blockheaders Ihh</code></p>
+
+<p>Broadcast the returned HEX data:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<p>This returns a transaction id, which is the <strong>oracleid</strong>.</p>
+
+<p>Register as a publisher for the oracle using <a href="#oraclesregister"><code>oraclesregister</code></a>:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD oraclesregister ORACLE_ID DATA_FEE_IN_SATOSHIS</code></p>
+
+<p>Broadcast the returned HEX value:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<p>Then you have to subscribe to it for getting the UTXOs for data publishing. The number of data publishing transactions you can perform in a block is equal to the number of active subscriptions there are.</p>
+
+<p>Get the <strong>data-publisher&#39;s pubkey</strong> from the <code>oracesinfo</code> call:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD oraclesinfo ORACLE_ID</code></p>
+
+<blockquote>
+<p>Sample output:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "result": "success",
+        "txid": "46e2dc958477160eb37de3a1ec1bb18899d77f5b47bd52b8a6f7a9ce14729157",
+        "name": "KMD",
+        "description": "blockheaders",
+        "format": "Ihh",
+        "marker": "RNFz9HAuzXhAjx6twEJzcHXconzChfiNM6",
+        "registered": [
+            {
+                "publisher": "03810d28146f60a42090991b044fe630d1664f3f8f46286c61e7420523318047b5",
+                "baton": "RWg43P8s8RtJatAGNa2kV8N2abhQqH93w9",
+                "batontxid": "99dd11f4eac1369f3fe8c6428f49e63da26e1b493f69b5bde29edbfbd06eb785",
+                "lifetime": "0.00000000",
+                "funds": "0.00000000",
+                "datafee": "0.01000000"
+            }
+        ]
+    }
+</code></pre>
+<p>Sample output for the above call can be seen on the right:</p>
+
+<p>The property, <code>&quot;publisher&quot;</code>, in the entry, <code>&quot;registered&quot;</code>, of the json object is the data-publisher&#39;s <code>pubkey</code>, also called the <code>publisherpubkey</code>.</p>
+
+<p>Now subscribe with a custom fee in the asset-chain coins:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD oraclessubscribe ORACLE_ID PUBLISHERPUBKEY DATA_FEE_IN_COINS</code></p>
+
+<p>Broadcast the HEX using <code>sendrawtransaction</code>:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<aside class="notice">
+  It may be useful to execute the <b>oraclessubscribe</b> and <b>sendrawtransaction</b> methods with a few different values, in case you need to broadcast more than one sample of data in each block. In our example, you want to publish data for more than one KMD-height per block.
+</aside>
+
+<p>Check the information about the oracle:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD oraclesinfo ORACLE_ID</code></p>
+
+<p>Please keep in mind the flow of the oracle data fees :</p>
+
+<ul>
+<li>The publisher sets the <code>datafee</code> in the <code>oraclesregister</code> method</li>
+<li>Anyone can subscribe to this publisher on this oracle, committing their desired amount to the publisher</li>
+<li>The publisher may withdraw their fee from the total amount each time the publisher uses <code>oraclesdata</code> to publish data</li>
+</ul>
+<h2 id='bind-the-tokens-and-oracle-as-a-gateway'>Bind the Tokens and Oracle as a Gateway</h2>
+<p>If you followed the previous steps you should already have:</p>
+
+<ul>
+<li>A supply of converted tokens, which represent the foreign coin</li>
+<li>A prepared oracle contract with the data-type <code>Ihh</code></li>
+<li>An established publisher and subscriber account</li>
+</ul>
+
+<p>With these in place, we may now create the exchange gateway.</p>
+
+<p>We use the simpliest case, where both <code>M</code> and <code>N</code> values are equal to <code>1</code> in this guide. For more complicated multisignature wallets, see <a href="#createmultisig"><code>createmultisig</code></a>.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD gatewaysbind TOKEN_ID ORACLE_ID KMD 100000000000 1 1 MYPUBKEY</code></p>
+
+<p>Broadcast the returned HEX value:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<p>This returns a transaction id, and this value is called the <strong>bindtxid</strong>. This is the id of the gateway at <code>MYPUBKEY</code>.</p>
+
+<p>If the command is successful, you may review your new gateway using <a href="#gatewaysinfo"><code>gatewaysinfo</code></a>:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD gatewaysinfo BINDTXID</code></p>
+
+<p>Verify that the returned <strong>tokenid</strong> and <strong>oracleid</strong> match those provided earlier.</p>
+<h2 id='assemble-the-dapp'>Assemble the dApp</h2>
+<p>Once compiled, the oracle dApp will handle the transfer of merkleroot data to our oracle.</p>
+
+<p>Change into the <code>komodod</code> and <code>komodo-cli</code> directory:</p>
+
+<p><code>cd  ~/komodo/src/</code></p>
+
+<p>Compile the dApp:</p>
+
+<p><code>gcc cc/dapps/oraclefeed.c -lm -o oraclefeed</code></p>
+
+<p>Run the dApp:</p>
+
+<p><code>./oraclefeed $ACNAME $ORACLETXID $MYPUBKEY $FORMAT $BINDTXID &amp;</code></p>
+
+<p><code>$ACNAME</code>: The name of our asset chain; in our example it is HELLOWORLD</p>
+
+<p><code>$ORACLETXID</code>: The ID of the oracle</p>
+
+<p><code>$MYPUBKEY</code>: Your desired pubkey</p>
+
+<p><code>$FORMAT</code>: <code>Ihh</code></p>
+
+<p><code>$BINDTXID</code>: The ID of the gateway bind, <strong>bindtxid</strong></p>
+
+<blockquote>
+<p>Sample Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>(succesfull oraclization of KMD heights):
+KMD ht.1023334 &lt;- 669d0f009eaf85900be0d54fa1b5f455d49edfc1d9dcfe71c43b8be19b7927dda3ecd20c0175bc7b8eb98d857baeeef6a18fc7d6b58bd34b4eb00beaa18c5842bbe5566a
+broadcast HELLOWORLD txid.(9484283d8d4bf28b4053e21e7b7e8210eb59c41668e9c7280c4e6c4fbf61579a)
+KMD ht.1023335 &lt;- 679d0f00173d5dc169a64bba92e5765fde848cc620a700295ecce8837cb2a13b05000000ed71033532278f72c8f64990e27f0cb185310df163b3278faf267e87d12bf84b
+broadcast HELLOWORLD txid.(837c132ab47f1ac1eee2e03828a9818369b919c1de128b99958ac95ffdc96551)
+KMD ht.1023336 &lt;- 689d0f0006a53215d5a07d9ee1c9206dcdccacd1c364968b555c56cdf78f9f0c40f87d08b30fdf63299d25bd9a09a3b3fb8a26800a0a4f6e93ca6cd8cb41b98b756dd937
+broadcast HELLOWORLD txid.(f33d5ffaec7d13f14605556cee86262299db8fad0337d1baefadc59ec24b6055)
+</code></pre>
+<p>If the oracle is working as expected, a response similar to the one in the right column of the web browser following should occur:</p>
+<h2 id='using-the-gateway'>Using the Gateway</h2><h3 id='gatewaysdeposit'><code>gatewaysdeposit</code></h3>
+<p>You will need the <strong>gatewaysDepositAddress</strong>. This is the address where you should deposit your KMD on the main KMD chain.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD gatewaysinfo BINDTXID</code></p>
+
+<p>Save the returned transaction id for later use.</p>
+
+<p>To make a deposit to the gateway, thereby locking external coins in exchange for on-chain tokens, use the <code>z_sendmany</code> call to send funds both to the gatewaysDepositAddress on the KMD chain, and also a small amount of funds to the address corresponding to the <code>pubkey</code> where you want to receive the tokenized KMD to appear on the <code>HELLOWORLD</code> chain:</p>
+
+<p><code>./komodo-cli z_sendmany &quot;SENDINGADDRESS&quot; &#39;[{&quot;address&quot;:&quot;addressOfPubkeyYouWantTokenizedKmdAppearIn&quot;,&quot;amount&quot;:0.0001},{&quot;address&quot;:&quot;gatewaysDepositAddress&quot;,&quot;amount&quot;:0.1}]&#39;</code></p>
+
+<p>The returned transaction id is our <strong>cointxid</strong>.</p>
+
+<p>This transaction should have two <code>vouts</code> (i.e. two addresses declared as recepients), and change.</p>
+
+<p>Now you should have enough data to proceed with the <a href="#gatewaysdeposit"><code>gatewaysdeposit</code></a> call. This method broadcasts data about the KMD deposit on the asset chain, allowing for the nodes to validate the actions:</p>
+
+<p><code>./komodo-cli gatewaysdeposit BINDTXID HEIGHT COIN COINTXID CLAIMVOUT DEPOSITHEX PROOF DESTPUB AMOUNT</code></p>
+
+<p><code>BINDTXID</code>: the bindtxid from earlier
+<code>HEIGHT</code>: the block height of the <code>txid</code> returned from the <code>z_sendmany</code> command
+<code>COIN</code>: the KMD desired for this example
+<code>COINTXID</code>: the txid returned from <code>z_sendmany</code>
+<code>CLAIMVOUT</code>: the <code>vout</code> of the claim (on the first use, this value should be 0)
+<code>DEPOSITHEX</code>: returned from the txid of <code>z_sendmany</code>
+<code>PROOF</code>: can be found using, <code>./komodo-cli gettxoutproof &#39;[&quot;&lt;txid of z_sendmany&gt;&quot;]&#39;</code>
+<code>DESTPUB</code>: the public key where these tokens should be received on the asset chain
+<code>AMOUNT</code>: the amount for the deposit (in this case 0.1)</p>
+
+<p>Broadcast the returned HEX data:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<p>The transaction id obtained for the above command will be called the <strong>deposittxid</strong></p>
+
+<p>Please note that for the deposit to process successfully, the needed height must be successfully process through the oracle, using the oraclefeed dApp</p>
+<h3 id='gatewaysclaim'><code>gatewaysclaim</code></h3>
+<p>The next steps are to spend the marker and deposit asset, and to perform the claim which will actually credit asset tokens to the depositor.</p>
+
+<p>This call can only be performed by the owner of the <code>privkey</code> corresponding to the pubkey which was used in the <code>gatewaysdeposit</code> call. This is the <code>-pubkey=$PUBKEY</code> parameter used to launch the daemon.</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD gatewaysclaim BINDTXID COIN DEPOSITTXID DESTPUB AMOUNT</code></p>
+
+<p><code>BINDTXID</code>: the bindtxid from earlier
+<code>COIN</code>: the KMD desired for this example
+<code>DEPOSITTXID</code>: the transaction id returned from the <code>gatewaysdeposit</code>call
+<code>DESTPUB</code>: the public key where these tokens should be received on the asset chain
+<code>AMOUNT</code>: the amount for the deposit (in this case 0.1)</p>
+
+<p>Broadcast the returned HEX value:</p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD sendrawtransaction HEX_DATA_HERE</code></p>
+
+<p>Once this transaction is successfully confirmed, tokens should be credited to the indicated pubkey. These tokens are now usable as regular TokenCC tokens.</p>
+<h3 id='gatewayswithdraw'><code>gatewayswithdraw</code></h3>
+<p>The <code>gatewayswithdraw</code> call can be done by anyone in posession of the KMD tokens.</p>
+
+<p>First, we must convert these tokens back to their non-bound form using <code>tokenconvert</code>:</p>
+
+<p><code>./komodo-cli -ac_name=ORCL tokenconvert 241 TOKENID PUBKEY TOTAL_SUPPLY</code></p>
+
+<p><code>PUBKEY</code>: the pubkey on which tokens should be availiable after conversion (this pubkey is the <code>-pubkey=</code> parameter used to launch the daemon)</p>
+
+<p>Please bear in mind that oracle dApp must be running for the <code>gatewayswithdraw</code> method to work.</p>
+
+<p>After the <code>tokenconvert</code> transaction is confirmed, you can call the <code>gatewayswithdraw</code> rpc from the node that owns the <code>pubkey</code> used in <code>tokenconvert</code>.</p>
+
+<p>Before executing <code>gatewayswithdraw</code>, import the private key for the <code>gatewaysdeposit</code> address. This is the address on the asset chain for which you are operating the gateway. Also, this should be on the same node that is running the oracle dApp.</p>
+
+<p>Retrieve the following information:</p>
+
+<ul>
+<li><p>The <strong>gatewayDepositAddress</strong> from the &quot;deposit&quot; field returned from this command:</p>
+
+<ul>
+<li><code>./komodo-cli -ac_name=HELLOWORLD gatewaysinfo BINDTXID</code></li>
+</ul></li>
+<li><p>The private key returned from this command:</p>
+
+<ul>
+<li><code>./komodo-cli -ac_name=HELLOWORLD dumprivkey gatewayDepositAddress</code></li>
+</ul></li>
+</ul>
+
+<p>Execute the following commands on the node running the oracle dApp:</p>
+
+<p><code>./komodo-cli importprivkey &lt;private key&gt;</code></p>
+
+<p><code>./komodo-cli -ac_name=HELLOWORLD gatewayswithdraw BINDTXID COIN WITHDRAWPUB AMOUNT</code></p>
+
+<p><code>BINDTXID</code>: the bindtxid from earlier
+<code>COIN</code>: the KMD desired for this example
+<code>WITHDRAWPUB</code>: the pubkey where the withdrawn coins should appear on the external chain (in this case, the KMD pubkey)
+<code>AMOUNT</code>: the amount for the deposit (in this case 0.1)</p>
+
+<p>This should complete the withdrawal process, and therefore the cycle for the <code>gateways</code> contract.</p>
+<h1 id='smart-contract-oracles'>Smart Contract: Oracles</h1><h2 id='introduction'>Introduction</h2>
 <p>The <code>oracles</code> contract allows users to make off-chain data available on-chain.</p>
 
 <p>The flow of an oracles plan is as follows:</p>
@@ -6193,7 +6574,7 @@ addnode=144.76.94.3
 <td>a raw transaction in hex-encoded format; you must broadcast this transaction to complete the <code>diceaddfunds</code> command</td>
 </tr>
 </tbody></table>
-<h1 id='smart-contracts-tokens'>Smart Contracts: Tokens</h1>
+<h1 id='smart-contract-tokens'>Smart Contract: Tokens</h1>
 <p>The <code>tokens</code> CryptoConditions smart contract enables core-asset support for the on-chain creation of colored coins, also called tokens. The functionality is facilitated by utxo technology. Tokens can be generated on any chain where the <a href="#ac_cc"><code>ac_cc</code></a> is enabled.</p>
 
 <p>The <code>tokens</code> smart contract requires locking a proportional amount of satoshis of the native coins. These satoshis create the supply for the token.</p>
@@ -6898,7 +7279,9 @@ Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
 
 <p>The <code>tokencreate</code> method creates a new token.</p>
 
-<p>It returns a hex-encoded transaction which should then be broadcast using <code>sendrawtransaction</code>.</p>
+<p>For every token created, the method requires one satoshi of the parent blockchain&#39;s coins. For example, one of the blockchain COINS provides 100000000 tokens.</p>
+
+<p>The method returns a hex-encoded transaction which should then be broadcast using <code>sendrawtransaction</code>.</p>
 
 <p><code>sendrawtransaction</code> then returns a <code>txid</code>, which is your <code>tokenid</code>.</p>
 <h3 id='arguments-7'>Arguments:</h3>
@@ -6917,7 +7300,7 @@ Got 0.00000010 to origaddr.(RANyPgfZZLhSjQB9jrzztSw66zMMYDZuxQ)
 <tr>
 <td>supply</td>
 <td>(number)</td>
-<td>the intended supply of the token</td>
+<td>the intended supply of the token, given in coins</td>
 </tr>
 <tr>
 <td>&quot;description&quot;</td>
