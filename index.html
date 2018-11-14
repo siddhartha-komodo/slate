@@ -222,7 +222,7 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#outline-for-new-developers" class="toc-h1 toc-link" data-title="Outline for New Developers">Outline for New Developers</a>
+            <a href="#start-here" class="toc-h1 toc-link" data-title="Start Here">Start Here</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#assumptions-for-this-documentation" class="toc-h2 toc-link" data-title="Assumptions for this Documentation">Assumptions for this Documentation</a>
@@ -1170,7 +1170,7 @@
 </ul>
 
 <p>Because a Komodo-based blockchain is independently managed, the developer has complete freedom, so long as the essential connections to the Komodo ecosystem remain.</p>
-<h1 id='outline-for-new-developers'>Outline for New Developers</h1>
+<h1 id='start-here'>Start Here</h1>
 <p>For the developer wishing to build your own blockchain using the Komodo software, we recommend the following approach.</p>
 <h3 id='assumptions-for-this-documentation'>Assumptions for this Documentation</h3>
 <p>Before we get into specifics, we need to cover a few assumptions we make about our readers.</p>
@@ -3592,6 +3592,8 @@ addnode=144.76.94.3
     ]
 }
 </code></pre>
+<p><strong>dicefund name funds minbet maxbet maxodds timeoutblocks</strong></p>
+
 <p>The <code>dicefund</code> method creates and funds a dice contract.</p>
 
 <p>The method returns a hex value which must then be broadcast using the <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> method.</p>
@@ -3603,8 +3605,6 @@ addnode=144.76.94.3
 <p>Typically, the creator should set the <code>timeoutblocks</code> property to a longer period. This prevents the house from losing funds if the house&#39;s node unexpectedly experiences downtime.</p>
 
 <p>The <code>maxodds</code> property must be between 1 and 9999.</p>
-
-<p><strong>dicefund name funds minbet maxbet maxodds timeoutblocks</strong></p>
 <h3 id='arguments-5'>Arguments:</h3>
 <table><thead>
 <tr>
@@ -9192,9 +9192,12 @@ response:
 <td>(string)</td>
 <td>the hash of the next block</td>
 </tr>
+<tr>
+<td>}</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
-
-<p>}</p>
 <h3 id='response-2'>Response:</h3>
 <table><thead>
 <tr>
