@@ -2807,9 +2807,9 @@ All chains are required to set `ac_supply`.
 
 <p>The method requires that the channel <code>open_tx_id</code> has at least one confirmation.</p>
 
-<p>The owner of a channel reveals the private key of a unique payment <code>txid</code> as a part of the payment. This private key is intentionally visible to anyone watching the chain at the time of payment, although the private key does not persist in the database.</p>
+<p>The owner of a channel reveals the password of a unique payment <code>txid</code> as a part of the payment. This password is intentionally visible to anyone watching the chain at the time of payment, although the password does not persist in the database.</p>
 
-<p>If the receiver is monitoring the chain at the time of payment and saves the private key, and there is a chain reorganization that nullifies the payment, the receiver now has the private key to resend the payment. This option is available so long as the channel remains open and the payment has not been refunded.</p>
+<p>If the receiver is monitoring the chain at the time of payment and saves the password, and there is a chain reorganization that nullifies the payment, the receiver now has the password to resend the payment. This option is available so long as the channel remains open and the payment has not been refunded.</p>
 
 <p>The method returns a hex value which must then be broadcast using the <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> method.</p>
 
