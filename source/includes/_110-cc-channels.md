@@ -221,9 +221,9 @@ The `channelspayment` method sends a payment in a channel to the receiver.
 
 The method requires that the channel `open_tx_id` has at least one confirmation.
 
-The owner of a channel reveals the private key of a unique payment `txid` as a part of the payment. This private key is intentionally visible to anyone watching the chain at the time of payment, although the private key does not persist in the database.
+The owner of a channel reveals the password of a unique payment `txid` as a part of the payment. This password is intentionally visible to anyone watching the chain at the time of payment, although the password does not persist in the database.
 
-If the receiver is monitoring the chain at the time of payment and saves the private key, and there is a chain reorganization that nullifies the payment, the receiver now has the private key to resend the payment. This option is available so long as the channel remains open and the payment has not been refunded.
+If the receiver is monitoring the chain at the time of payment and saves the password, and there is a chain reorganization that nullifies the payment, the receiver now has the password to resend the payment. This option is available so long as the channel remains open and the payment has not been refunded.
 
 The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
 
