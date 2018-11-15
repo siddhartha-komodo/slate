@@ -28,6 +28,10 @@ This is the ticker symbol for the coin you wish to create. We recommended it con
 
 ```
 
+<aside class="warning">
+All chains are required to set `ac_supply`.
+</aside>
+
 This is the amount of pre-mined coins you would like the chain to have.
 
 The node that sets [`gen`](#gen) during the creation process will mine these coins in the genesis block.
@@ -35,8 +39,6 @@ The node that sets [`gen`](#gen) during the creation process will mine these coi
 If `ac_supply` is not set, [`ac_reward`](#ac_reward) must be set, and a default value of 10 coins will be used in the genesis block. If [`ac_pubkey`](#ac_pubkey) is set, the  pre-mined coins will be mined to the address of the corresponding pubkey.
 
 The `ac_supply` parameter should be set to a whole number without any decimals places. It should also be set to less than `2000000000` to avoid 64-bit overflows.
-
-All chains are required to set `ac_supply`.
 
 <aside class="notice">
   An additional fraction of a coin will be added to this based on the asset chain's parameters. This is used by nodes to verify the genesis block. For example, the DEX chain's `ac_supply` parameter is set to `999999`, but in reality the genesis block was `999999.13521376`.

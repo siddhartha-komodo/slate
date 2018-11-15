@@ -79,14 +79,28 @@ hex:                                         |(string)                     |a ra
 > Response:
 
 ```
-output of channelsinfo:
 {
   "result": "success",
-  "name": "Channels Info",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 10 payments of 8 satoshi - 200013b8e0a770b359a46689e3b457a4ac0fe48f9586728726e6f697d70715ae",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 10 payments of 800000000 satoshi - 33a0d659acde3caf7f9b81fd6e0621924365fe58a9fc7ce772a2c54d795f010a",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 1 payments of 10000000 satoshi - 9d65e79eba3e37fd473b7053f993694053f806f38b8795aa10ee0a47b878e46e",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 10 payments of 10000000 satoshi - 2f95b0f4e3dbe7f5ebc0f9479800c9ff3f44e76f5378313c9406ab5a92ff4631"
+  "name": "Channel RKgkZ3RybqGHBXBhDoeM4cu7hBLD8UgHBW",
+  "Open": "20 payments of 30000 satoshi"
+}
+```
+
+> Command
+
+```
+./komodo-cli -ac_name=HELLOWORLD channelsinfo
+```
+
+> Response:
+
+```
+{
+  "result": "success",
+  "name": "Channel RKgkZ3RybqGHBXBhDoeM4cu7hBLD8UgHBW",
+  "Open": "20 payments of 30000 satoshi",
+  "Payment": "60000 satoshi to RBvjFvWJ43f8mcMCUE2MNamoRzc7KtDvn2, 18 payments left",
+  "Payment": "30000 satoshi to RBvjFvWJ43f8mcMCUE2MNamoRzc7KtDvn2, 17 payments left"
 }
 ```
 
@@ -108,8 +122,8 @@ Structure|Type|Description
 ---------|----|-----------
 {                                            |                             |
 result                                       |(string)                     |whether the command executed successfully
-name                                         |(string)                     |name of the rpc call
-Channel:                                     |(string)                     | a channel and its relevant information: ChannelCCaddress, No. of Payments, Amount Per Payment, and the open_tx_id
+name                                         |(string)                     |name of the channel
+Open:                                     |(string)                     | a channel and its relevant information: address of the destination pubkey, number of payments, denomination per payment, and the channel open_tx_id
 }                                            |                             |
 
 ## channelsopen
