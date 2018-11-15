@@ -2224,6 +2224,10 @@ addnode=144.76.94.3
 <pre class="highlight plaintext"><code>./komodod -ac_name=HELLOWORLD -ac_supply=777777 &amp;
 
 </code></pre>
+<aside class="warning">
+All chains are required to set `ac_supply`.
+</aside>
+
 <p>This is the amount of pre-mined coins you would like the chain to have.</p>
 
 <p>The node that sets <a href="#gen"><code>gen</code></a> during the creation process will mine these coins in the genesis block.</p>
@@ -2231,8 +2235,6 @@ addnode=144.76.94.3
 <p>If <code>ac_supply</code> is not set, <a href="#ac_reward"><code>ac_reward</code></a> must be set, and a default value of 10 coins will be used in the genesis block. If <a href="#ac_pubkey"><code>ac_pubkey</code></a> is set, the  pre-mined coins will be mined to the address of the corresponding pubkey.</p>
 
 <p>The <code>ac_supply</code> parameter should be set to a whole number without any decimals places. It should also be set to less than <code>2000000000</code> to avoid 64-bit overflows.</p>
-
-<p>All chains are required to set <code>ac_supply</code>.</p>
 
 <aside class="notice">
   An additional fraction of a coin will be added to this based on the asset chain's parameters. This is used by nodes to verify the genesis block. For example, the DEX chain's `ac_supply` parameter is set to `999999`, but in reality the genesis block was `999999.13521376`.
@@ -2622,14 +2624,26 @@ addnode=144.76.94.3
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>output of channelsinfo:
-{
+<pre class="highlight plaintext"><code>{
   "result": "success",
-  "name": "Channels Info",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 10 payments of 8 satoshi - 200013b8e0a770b359a46689e3b457a4ac0fe48f9586728726e6f697d70715ae",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 10 payments of 800000000 satoshi - 33a0d659acde3caf7f9b81fd6e0621924365fe58a9fc7ce772a2c54d795f010a",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 1 payments of 10000000 satoshi - 9d65e79eba3e37fd473b7053f993694053f806f38b8795aa10ee0a47b878e46e",
-  "Channel": "RC3VHbSFQioJsu3xb3qPuEr9dSW3VqZhWj - 10 payments of 10000000 satoshi - 2f95b0f4e3dbe7f5ebc0f9479800c9ff3f44e76f5378313c9406ab5a92ff4631"
+  "name": "Channel RKgkZ3RybqGHBXBhDoeM4cu7hBLD8UgHBW",
+  "Open": "20 payments of 30000 satoshi"
+}
+</code></pre>
+<blockquote>
+<p>Command</p>
+</blockquote>
+<pre class="highlight plaintext"><code>./komodo-cli -ac_name=HELLOWORLD channelsinfo
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+  "result": "success",
+  "name": "Channel RKgkZ3RybqGHBXBhDoeM4cu7hBLD8UgHBW",
+  "Open": "20 payments of 30000 satoshi",
+  "Payment": "60000 satoshi to RBvjFvWJ43f8mcMCUE2MNamoRzc7KtDvn2, 18 payments left",
+  "Payment": "30000 satoshi to RBvjFvWJ43f8mcMCUE2MNamoRzc7KtDvn2, 17 payments left"
 }
 </code></pre>
 <p><strong>channelsinfo (open_tx_id)</strong></p>
@@ -2672,12 +2686,12 @@ addnode=144.76.94.3
 <tr>
 <td>name</td>
 <td>(string)</td>
-<td>name of the rpc call</td>
+<td>name of the channel</td>
 </tr>
 <tr>
-<td>Channel:</td>
+<td>Open:</td>
 <td>(string)</td>
-<td>a channel and its relevant information: ChannelCCaddress, No. of Payments, Amount Per Payment, and the open_tx_id</td>
+<td>a channel and its relevant information: address of the destination pubkey, number of payments, denomination per payment, and the channel open_tx_id</td>
 </tr>
 <tr>
 <td>}</td>
