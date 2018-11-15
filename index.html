@@ -1355,14 +1355,12 @@
 
 <p>First, you must create an asset chain that has the <a href="#ac_cc">ac_cc runtime parameter properly enabled</a>.</p>
 
-<p><strong>===Documentation for the following examples is not yet imported, coming very soon===</strong></p>
-
 <p>With this activated, you can try a few existing templates:</p>
 
 <ul>
-<li><a href="#tokens">Create ERC20 tokens on your new asset chain</a></li>
-<li>Try using your <a href="#trade">built-in on-chain DEX</a></li>
-<li>Use <a href="#dice">the DICE smart-contract template</a> to do some blockchain-enforced gambling</li>
+<li><a href="#smart-contract-tokens">Create ERC20 tokens on your new asset chain</a></li>
+<li>Try using your <a href="#smart-contract-channels">built-in on-chain DEX</a></li>
+<li>Use <a href="#smart-contract-oracles">the oracles smart-contract template</a> to import real-world data to your blockchain, which can then affect blockchain behavior</li>
 </ul>
 
 <p>...and more!</p>
@@ -4359,7 +4357,7 @@ All chains are required to set `ac_supply`.
 
 <p><code>./komodo-cli -ac_name=HELLOWORLD gatewaysaddress</code></p>
 
-<p>This will return a ===?===</p>
+<p>This will return the gateways pubkey. ===?===</p>
 
 <p>Then convert 100% of your KMD-token supply to the GatewayCC using the special <code>tokenconvert</code> call. Use the unique evalcode for <code>GatewaysCC</code> as the first parameter: <code>241</code></p>
 
