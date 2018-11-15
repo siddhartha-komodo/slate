@@ -219,7 +219,7 @@ sendrawtransaction output:
 
 The `channelspayment` method sends a payment in a channel to the receiver.
 
-The method requires that the channel `open_tx_id` has at least one confirmation.
+The method requires that the channel `open_tx_id` has either one notarization or 60 confirmations.
 
 The owner of a channel reveals the password of a unique payment `txid` as a part of the payment. This password is intentionally visible to anyone watching the chain at the time of payment, although the password does not persist in the database.
 
@@ -271,7 +271,7 @@ hex:                                         |(string)                     |a ra
 
 The `channelsrefund` method withdraws funds directly to the CC address of the channel creator.
 
-The method can only be executed after the channel `close_tx_id` has at least one confirmation.
+The method can only be executed after the channel `close_tx_id` has either one notarization or 60 confirmations.
 
 The method returns a hex value which must then be broadcast using the [`sendrawtransaction`](#sendrawtransaction) method.
 
