@@ -107,7 +107,7 @@ First, find the **GatewaysPubkey**:
 
 `./komodo-cli -ac_name=HELLOWORLD gatewaysaddress`
 
-This will return a ===?===
+This will return the gateways pubkey. ===?===
 
 Then convert 100% of your KMD-token supply to the GatewayCC using the special `tokenconvert` call. Use the unique evalcode for `GatewaysCC` as the first parameter: `241`
 

@@ -229,13 +229,11 @@ Smart contracts on Komodo are a bit different (and we think a bit better, too, b
 
 First, you must create an asset chain that has the [ac_cc runtime parameter properly enabled](#ac_cc).
 
-**===Documentation for the following examples is not yet imported, coming very soon===**
-
 With this activated, you can try a few existing templates:
 
-* [Create ERC20 tokens on your new asset chain](#tokens)
-* Try using your [built-in on-chain DEX](#trade)
-* Use [the DICE smart-contract template](#dice) to do some blockchain-enforced gambling
+* [Create ERC20 tokens on your new asset chain](#smart-contract-tokens)
+* Try using your [built-in on-chain DEX](#smart-contract-channels)
+* Use [the oracles smart-contract template](#smart-contract-oracles) to import real-world data to your blockchain, which can then affect blockchain behavior
 
 ...and more!
 
