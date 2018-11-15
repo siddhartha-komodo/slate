@@ -2805,9 +2805,11 @@ All chains are required to set `ac_supply`.
 
 <p>The <code>channelspayment</code> method sends a payment in a channel to the receiver.</p>
 
-<p>The method requires that the channel <code>open_tx_id</code> has at least one notarization to the KMD main chain.</p>
+<p>The method requires that the channel <code>open_tx_id</code> has at least one confirmation.</p>
 
-<p>The owner of a channel may optionally choose to reveal the secret private key of a unique payment txid. The receive may then include the <code>secret</code> property to trigger this payment at any time, so long as the channel remains open and the payment has not been refunded.</p>
+<p>The owner of a channel reveals the private key of a unique payment <code>txid</code> as a part of the payment. This private key is intentionally visible to anyone watching the chain at the time of payment, although the private key does not persist in the database.</p>
+
+<p>If the receiver is monitoring the chain at the time of payment and saves the private key, and there is a chain reorganization that nullifies the payment, the receiver now has the private key to resend the payment. This option is available so long as the channel remains open and the payment has not been refunded.</p>
 
 <p>The method returns a hex value which must then be broadcast using the <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> method.</p>
 
@@ -2878,7 +2880,7 @@ All chains are required to set `ac_supply`.
 
 <p>The <code>channelsrefund</code> method withdraws funds directly to the CC address of the channel creator.</p>
 
-<p>The method can only be executed after the channel <code>close_tx_id</code> has at least one notarization on the KMD main chain.</p>
+<p>The method can only be executed after the channel <code>close_tx_id</code> has at least one confirmation.</p>
 
 <p>The method returns a hex value which must then be broadcast using the <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> method.</p>
 <h3 id='arguments-5'>Arguments:</h3>
