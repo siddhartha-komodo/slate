@@ -2805,7 +2805,7 @@ All chains are required to set `ac_supply`.
 
 <p>The <code>channelspayment</code> method sends a payment in a channel to the receiver.</p>
 
-<p>The method requires that the channel <code>open_tx_id</code> has at least one confirmation.</p>
+<p>The method requires that the channel <code>open_tx_id</code> has either one notarization or 60 confirmations.</p>
 
 <p>The owner of a channel reveals the password of a unique payment <code>txid</code> as a part of the payment. This password is intentionally visible to anyone watching the chain at the time of payment, although the password does not persist in the database.</p>
 
@@ -2880,7 +2880,7 @@ All chains are required to set `ac_supply`.
 
 <p>The <code>channelsrefund</code> method withdraws funds directly to the CC address of the channel creator.</p>
 
-<p>The method can only be executed after the channel <code>close_tx_id</code> has at least one confirmation.</p>
+<p>The method can only be executed after the channel <code>close_tx_id</code> has either one notarization or 60 confirmations.</p>
 
 <p>The method returns a hex value which must then be broadcast using the <a href="#sendrawtransaction"><code>sendrawtransaction</code></a> method.</p>
 <h3 id='arguments-5'>Arguments:</h3>
