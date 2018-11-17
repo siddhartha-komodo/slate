@@ -12,7 +12,7 @@ Using an established `gateways` smart contract is not considered difficult. Howe
 
 The flow of the `gateways` contract is as follows:
 
-* Anyone can deposit an external to asset chain asset, such as BTC or KMD, into a special address.
+* Anyone can deposit an external asset, such as BTC or KMD, into a special address on asset-chain.
 * This person then receives tokens on the `gateways`-enabled asset chain that represent the deposited BTC
 * The user is able to trade, spend, or utilize the tokens in whatever further capacities the asset-chain developers enable
 * Anyone who obtains the tokens can redeem the BTC to a BTC address, finishing the process
