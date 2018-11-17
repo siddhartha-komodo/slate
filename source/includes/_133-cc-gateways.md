@@ -12,7 +12,7 @@ Using an established `gateways` smart contract is not considered difficult. Howe
 
 The flow of the `gateways` contract is as follows:
 
-* Anyone can deposit a foreign asset, such as BTC, into a special address.
+* Anyone can deposit an external to asset chain asset, such as BTC or KMD, into a special address.
 * This person then receives tokens on the `gateways`-enabled asset chain that represent the deposited BTC
 * The user is able to trade, spend, or utilize the tokens in whatever further capacities the asset-chain developers enable
 * Anyone who obtains the tokens can redeem the BTC to a BTC address, finishing the process
@@ -67,7 +67,7 @@ You should set the supply of tokens equal to the maximum supply of KMD satoshis 
 
 `./komodo-cli -ac_name=HELLOWORLD tokencreate KMD 1000 "A KMD-equivalent token for gatewaysCC"`
 
-This sets the name of the asset-chain token to `KMD`, the maximum supply equal to `1000` satoshis of actual KMD, and gives the description in the final string
+This sets the name of the asset-chain token to `KMD`, with the token supply of 100000000000 and the maximum external asset capacity equal to `1000` KMD, and gives the description in the final string.
 
 The method returns a `hex` value in the response. Use the `sendrawtransaction` method to braodcast this value.
 
@@ -107,7 +107,7 @@ First, find the **GatewaysPubkey**:
 
 `./komodo-cli -ac_name=HELLOWORLD gatewaysaddress`
 
-This will return the gateways pubkey. ===?===
+In this call output you'll get the **GatewaysPubkey**
 
 Then convert 100% of your KMD-token supply to the GatewayCC using the special `tokenconvert` call. Use the unique evalcode for `GatewaysCC` as the first parameter: `241`
 
@@ -208,7 +208,8 @@ If you followed the previous steps you should already have:
 
 With these in place, we may now create the exchange gateway.
 
-We use the simpliest case, where both `M` and `N` values are equal to `1` in this guide. For more complicated multisignature wallets, see [`createmultisig`](#createmultisig).
+We use the simpliest case, where both `M` and `N` values are equal to `1` in this guide. For more complicated multisignature gateway different values of M N params needed.
+Such examples will be demonstrated in the separate guide.
 
 `./komodo-cli -ac_name=HELLOWORLD gatewaysbind TOKEN_ID ORACLE_ID KMD 100000000000 1 1 MYPUBKEY`
 
@@ -242,7 +243,7 @@ Run the dApp:
 
 `$ACNAME`: The name of our asset chain; in our example it is HELLOWORLD
 
-`$ORACLETXID`: The ID of the oracle
+`$ORACLETXID`: The ID of the oracle binded to gateway created above
 
 `$MYPUBKEY`: Your desired pubkey
 
